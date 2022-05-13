@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AG version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\ConsultCompanion\database\consultcompanion.4dbx">
+    <Table name="seqreg">
+      <DBColumn datatype="VARCHAR(30)" defaultValue="" fglDatatype="VARCHAR2(30)" fglLength="30" length="30" name="sr_name" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="sr_name"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="sr_last" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="sr_last"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="pk_seqreg">
+        <Column name="sr_name"/>
+      </DBConstraint>
+      <DBIndex name="pk_seqreg" primary="1" unique="0">
+        <Column name="sr_name"/>
+      </DBIndex>
+    </Table>
+    <Table name="rfs">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="rfsId" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="rfsId"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="clientid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="clientid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="stakeholderId" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="stakeholderId"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(20)" defaultValue="" fglDatatype="CHAR(20)" fglLength="20" length="20" name="offernumber" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offernumber"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(60)" defaultValue="" fglDatatype="CHAR(60)" fglLength="60" length="60" name="offertitle" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offertitle"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="DATE" defaultValue="" fglDatatype="DATE" fglLength="4" length="10" name="offerdate" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offerdate"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="DATE" defaultValue="" fglDatatype="DATE" fglLength="4" length="10" name="offersubmitted" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offersubmitted"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="offerstatusid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="offerstatusid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="DATE" defaultValue="" fglDatatype="DATE" fglLength="4" length="10" name="interviewdate" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="interviewdate"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="TEXT" defaultValue="" fglDatatype="TEXT" fglLength="56" length="1024" name="offerlink" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offerlink"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="TEXT" defaultValue="" fglDatatype="TEXT" fglLength="56" length="1024" name="offernote" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offernote"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="DATE" defaultValue="" fglDatatype="DATE" fglLength="4" length="10" name="accepteddate" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="accepteddate"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_RFS_1">
+        <Column name="rfsId"/>
+      </DBConstraint>
+      <DBIndex name="PK_RFS_1" primary="1" unique="0">
+        <Column name="rfsId"/>
+      </DBIndex>
+      <ForeignKey name="FK_RFS_clientStakeholders_1" ref_table="clientstakeholders" table="rfs">
+        <Column name="stakeholderId" ref_name="stakeholderId"/>
+      </ForeignKey>
+      <ForeignKey name="FK_RFS_clients_1" ref_table="clients" table="rfs">
+        <Column name="clientid" ref_name="clientid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_RFS_offerStatuses_1" ref_table="offerstatuses" table="rfs">
+        <Column name="offerstatusid" ref_name="offerstatusid"/>
+      </ForeignKey>
+    </Table>
+    <Table name="provinces">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="provinceid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="provinceid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="provincename" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="provincename"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="countryid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="countryid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_provinces_1">
+        <Column name="provinceid"/>
+      </DBConstraint>
+      <DBIndex name="PK_provinces_1" primary="1" unique="0">
+        <Column name="provinceid"/>
+      </DBIndex>
+      <ForeignKey name="FK_provinces_country_1" ref_table="country" table="provinces">
+        <Column name="countryid" ref_name="countryid"/>
+      </ForeignKey>
+    </Table>
+    <Table name="projects">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="projectId" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="projectId"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="projectName" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="projectName"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_projects_1">
+        <Column name="projectId"/>
+      </DBConstraint>
+      <DBIndex name="PK_projects_1" primary="1" unique="0">
+        <Column name="projectId"/>
+      </DBIndex>
+    </Table>
+    <Table name="preferences">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="seqid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="seqid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_preferences_1">
+        <Column name="seqid"/>
+      </DBConstraint>
+      <DBIndex name="PK_preferences_1" primary="1" unique="0">
+        <Column name="seqid"/>
+      </DBIndex>
+    </Table>
+    <Table name="paymentterms">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="paytermid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="paytermid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="paytermname" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="paytermname"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="paytermdays" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="paytermdays"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_paymentTerms_1">
+        <Column name="paytermid"/>
+      </DBConstraint>
+      <DBIndex name="PK_paymentTerms_1" primary="1" unique="0">
+        <Column name="paytermid"/>
+      </DBIndex>
+    </Table>
+    <Table name="offerstatuses">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="offerstatusid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offerstatusid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="offerstatusname" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offerstatusname"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_offerStatuses_1">
+        <Column name="offerstatusid"/>
+      </DBConstraint>
+      <DBIndex name="PK_offerStatuses_1" primary="1" unique="0">
+        <Column name="offerstatusid"/>
+      </DBIndex>
+    </Table>
+    <Table name="employeetypes">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="emptypeid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="emptypeid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="emptypename" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="emptypename"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_employeeTypes_1">
+        <Column name="emptypeid"/>
+      </DBConstraint>
+      <DBIndex name="PK_employeeTypes_1" primary="1" unique="0">
+        <Column name="emptypeid"/>
+      </DBIndex>
+    </Table>
+    <Table name="employees">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="employeeid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="employeeid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="empname" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="empname"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="emptype" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="emptype"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(60)" defaultValue="" fglDatatype="CHAR(60)" fglLength="60" length="60" name="address1" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="address1"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(60)" defaultValue="" fglDatatype="CHAR(60)" fglLength="60" length="60" name="address2" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="address2"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="city" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="city"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="provinceId" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="provinceId"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(10)" defaultValue="" fglDatatype="CHAR(10)" fglLength="10" length="10" name="postalzip" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="postalzip"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="mobilephone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="mobilephone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="workphone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="workphone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="homephone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="homephone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(1)" defaultValue="" fglDatatype="CHAR(1)" fglLength="1" length="1" name="primaryphone" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ComboBox"/>
+          <DynamicProperty name="label" value="primaryphone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="DECIMAL(5,2)" defaultValue="" fglDatatype="DECIMAL(5,2)" fglLength="1282" length="7" name="dayRate" notNull="1" precision="5" scale="2">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="dayRate"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="countryid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="countryid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_employees_1">
+        <Column name="employeeid"/>
+      </DBConstraint>
+      <DBIndex name="PK_employees_1" primary="1" unique="0">
+        <Column name="employeeid"/>
+      </DBIndex>
+      <ForeignKey name="FK_employees_country_1" ref_table="country" table="employees">
+        <Column name="countryid" ref_name="countryid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_employees_employeeTypes_1" ref_table="employeetypes" table="employees">
+        <Column name="emptype" ref_name="emptypeid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_employees_provinces_1" ref_table="provinces" table="employees">
+        <Column name="provinceId" ref_name="provinceid"/>
+      </ForeignKey>
+    </Table>
+    <Table name="country">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="countryid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="countryid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="countryname" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="countryname"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_country_1">
+        <Column name="countryid"/>
+      </DBConstraint>
+      <DBIndex name="PK_country_1" primary="1" unique="0">
+        <Column name="countryid"/>
+      </DBIndex>
+    </Table>
+    <Table name="clienttypes">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="clienttypeid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="clienttypeid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="clientypename" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="clientypename"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_clientTypes_1">
+        <Column name="clienttypeid"/>
+      </DBConstraint>
+      <DBIndex name="PK_clientTypes_1" primary="1" unique="0">
+        <Column name="clienttypeid"/>
+      </DBIndex>
+    </Table>
+    <Table name="clientstakeholders">
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="clientId" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="clientId"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="stakeholderId" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="stakeholderId"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="stakeholdername" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="stakeholdername"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_clientStakeholders_1">
+        <Column name="stakeholderId"/>
+      </DBConstraint>
+      <DBIndex name="PK_clientStakeholders_1" primary="1" unique="0">
+        <Column name="stakeholderId"/>
+      </DBIndex>
+      <ForeignKey name="FK_clientStakeholders_clients_1" ref_table="clients" table="clientstakeholders">
+        <Column name="clientId" ref_name="clientid"/>
+      </ForeignKey>
+    </Table>
+    <Table name="clients">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="clientid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="clientid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="clientname" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="clientname"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(60)" defaultValue="" fglDatatype="CHAR(60)" fglLength="60" length="60" name="address1" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="address1"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(60)" defaultValue="" fglDatatype="CHAR(60)" fglLength="60" length="60" name="address2" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="address2"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="city" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="city"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="provinceid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="provinceid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(10)" defaultValue="" fglDatatype="CHAR(10)" fglLength="10" length="10" name="postalzip" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="postalzip"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="primarycontact" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="primarycontact"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(80)" defaultValue="" fglDatatype="CHAR(80)" fglLength="80" length="80" name="primaryemail" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="primaryemail"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="clienttypeid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="clienttypeid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="BOOLEAN" defaultValue="" fglDatatype="BOOLEAN" fglLength="1" length="1" name="preferred" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="preferred"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="paytermid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="paytermid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(1)" defaultValue="" fglDatatype="CHAR(1)" fglLength="1" length="1" name="primaryphone" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ComboBox"/>
+          <DynamicProperty name="label" value="primaryphone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="homephone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="homephone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="workphone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="workphone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="mobilephone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="mobilephone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(10)" defaultValue="" fglDatatype="CHAR(10)" fglLength="10" length="10" name="workextension" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="workextension"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="countryid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="countryid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_clients_1">
+        <Column name="clientid"/>
+      </DBConstraint>
+      <DBIndex name="PK_clients_1" primary="1" unique="0">
+        <Column name="clientid"/>
+      </DBIndex>
+      <ForeignKey name="FK_clients_clientTypes_1" ref_table="clienttypes" table="clients">
+        <Column name="clienttypeid" ref_name="clienttypeid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_clients_country_1" ref_table="country" table="clients">
+        <Column name="countryid" ref_name="countryid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_clients_paymentTerms_1" ref_table="paymentterms" table="clients">
+        <Column name="paytermid" ref_name="paytermid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_clients_provinces_1" ref_table="provinces" table="clients">
+        <Column name="provinceid" ref_name="provinceid"/>
+      </ForeignKey>
+    </Table>
+  </Database>
+</AG>

@@ -1,0 +1,26 @@
+#- Informix databaases
+dbi.database.stores.source   = "stores"
+dbi.database.stores.driver   = "dbmifx"
+
+#- SQL Server databases
+dbi.database.consultcompanion.source = "consultcompanion"
+dbi.database.consultcompanion.driver = "dbmsnc_11"
+dbi.database.consultcompanion.username = "sa"
+dbi.database.consultcompanion.password = "fre2611"
+dbi.database.consultcompanion.FGLSQLDEBUG = "9"
+dbi.database.consultcompanion.ifxemul.datatype.serial.emulation = "native"
+
+#- SQLLITE databases
+dbi.database.vendorplus.source = "C:\\SoftDev\\GeneroApps\\StoreDemo\\database\\vendorplus.db"
+dbi.database.vendorplus.driver = "dbmsqt"
+
+#- Oracle Database
+#- see Genero guide 
+#- https://4js.com/online_documentation/fjs-fgl-manual-html/#fgl-topics/t_fgl_odiagora_004.html
+
+#- MySql Database
+dbi.database.vendorextra.source = "vendorextra"
+dbi.database.vendorextra.driver = "dbmmys"
+dbi.database.vendorextra.username = "daniel"
+dbi.database.vendorextra.password = "fre2611"
+

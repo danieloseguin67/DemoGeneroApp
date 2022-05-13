@@ -1,0 +1,282 @@
+#+ DB schema - Events Management (consultcompanion)
+
+--------------------------------------------------------------------------------
+--This code is generated with the template dbapp5.0
+
+IMPORT FGL libdbappEvents
+IMPORT FGL consultcompanion_common
+IMPORT FGL consultcompanion
+
+--------------------------------------------------------------------------------
+--Database schema
+SCHEMA consultcompanion
+
+-- DATABASE EVENT FUNCTION TYPES - TABLE LEVEL
+PUBLIC TYPE T_DbxDataEvent_seqreg_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE seqreg.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_seqreg_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE seqreg.*) RETURNS (INTEGER, STRING, RECORD LIKE seqreg.*)
+PUBLIC TYPE T_DbxDataEvent_seqreg_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE seqreg.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_seqreg_BeforeDeleteRowByKey FUNCTION(p_key seqreg_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_seqreg_AfterDeleteRowByKey FUNCTION(p_key seqreg_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_seqreg_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE seqreg.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_seqreg_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE seqreg.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_seqreg_SetDefaultValues FUNCTION(p_data RECORD LIKE seqreg.*) RETURNS (RECORD LIKE seqreg.*)
+
+PUBLIC TYPE T_DbxDataEvent_rfs_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE rfs.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_rfs_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE rfs.*) RETURNS (INTEGER, STRING, RECORD LIKE rfs.*)
+PUBLIC TYPE T_DbxDataEvent_rfs_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE rfs.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_rfs_BeforeDeleteRowByKey FUNCTION(p_key rfs_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_rfs_AfterDeleteRowByKey FUNCTION(p_key rfs_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_rfs_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE rfs.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_rfs_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE rfs.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_rfs_SetDefaultValues FUNCTION(p_data RECORD LIKE rfs.*) RETURNS (RECORD LIKE rfs.*)
+
+PUBLIC TYPE T_DbxDataEvent_provinces_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE provinces.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_provinces_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE provinces.*) RETURNS (INTEGER, STRING, RECORD LIKE provinces.*)
+PUBLIC TYPE T_DbxDataEvent_provinces_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE provinces.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_provinces_BeforeDeleteRowByKey FUNCTION(p_key provinces_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_provinces_AfterDeleteRowByKey FUNCTION(p_key provinces_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_provinces_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE provinces.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_provinces_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE provinces.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_provinces_SetDefaultValues FUNCTION(p_data RECORD LIKE provinces.*) RETURNS (RECORD LIKE provinces.*)
+
+PUBLIC TYPE T_DbxDataEvent_projects_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE projects.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_projects_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE projects.*) RETURNS (INTEGER, STRING, RECORD LIKE projects.*)
+PUBLIC TYPE T_DbxDataEvent_projects_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE projects.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_projects_BeforeDeleteRowByKey FUNCTION(p_key projects_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_projects_AfterDeleteRowByKey FUNCTION(p_key projects_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_projects_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE projects.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_projects_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE projects.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_projects_SetDefaultValues FUNCTION(p_data RECORD LIKE projects.*) RETURNS (RECORD LIKE projects.*)
+
+PUBLIC TYPE T_DbxDataEvent_preferences_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE preferences.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_preferences_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE preferences.*) RETURNS (INTEGER, STRING, RECORD LIKE preferences.*)
+PUBLIC TYPE T_DbxDataEvent_preferences_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE preferences.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_preferences_BeforeDeleteRowByKey FUNCTION(p_key preferences_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_preferences_AfterDeleteRowByKey FUNCTION(p_key preferences_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_preferences_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE preferences.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_preferences_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE preferences.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_preferences_SetDefaultValues FUNCTION(p_data RECORD LIKE preferences.*) RETURNS (RECORD LIKE preferences.*)
+
+PUBLIC TYPE T_DbxDataEvent_paymentterms_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE paymentterms.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_paymentterms_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE paymentterms.*) RETURNS (INTEGER, STRING, RECORD LIKE paymentterms.*)
+PUBLIC TYPE T_DbxDataEvent_paymentterms_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE paymentterms.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_paymentterms_BeforeDeleteRowByKey FUNCTION(p_key paymentterms_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_paymentterms_AfterDeleteRowByKey FUNCTION(p_key paymentterms_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_paymentterms_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE paymentterms.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_paymentterms_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE paymentterms.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_paymentterms_SetDefaultValues FUNCTION(p_data RECORD LIKE paymentterms.*) RETURNS (RECORD LIKE paymentterms.*)
+
+PUBLIC TYPE T_DbxDataEvent_offerstatuses_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE offerstatuses.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_offerstatuses_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE offerstatuses.*) RETURNS (INTEGER, STRING, RECORD LIKE offerstatuses.*)
+PUBLIC TYPE T_DbxDataEvent_offerstatuses_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE offerstatuses.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_offerstatuses_BeforeDeleteRowByKey FUNCTION(p_key offerstatuses_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_offerstatuses_AfterDeleteRowByKey FUNCTION(p_key offerstatuses_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_offerstatuses_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE offerstatuses.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_offerstatuses_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE offerstatuses.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_offerstatuses_SetDefaultValues FUNCTION(p_data RECORD LIKE offerstatuses.*) RETURNS (RECORD LIKE offerstatuses.*)
+
+PUBLIC TYPE T_DbxDataEvent_employeetypes_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE employeetypes.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_employeetypes_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE employeetypes.*) RETURNS (INTEGER, STRING, RECORD LIKE employeetypes.*)
+PUBLIC TYPE T_DbxDataEvent_employeetypes_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE employeetypes.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_employeetypes_BeforeDeleteRowByKey FUNCTION(p_key employeetypes_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_employeetypes_AfterDeleteRowByKey FUNCTION(p_key employeetypes_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_employeetypes_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE employeetypes.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_employeetypes_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE employeetypes.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_employeetypes_SetDefaultValues FUNCTION(p_data RECORD LIKE employeetypes.*) RETURNS (RECORD LIKE employeetypes.*)
+
+PUBLIC TYPE T_DbxDataEvent_employees_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE employees.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_employees_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE employees.*) RETURNS (INTEGER, STRING, RECORD LIKE employees.*)
+PUBLIC TYPE T_DbxDataEvent_employees_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE employees.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_employees_BeforeDeleteRowByKey FUNCTION(p_key employees_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_employees_AfterDeleteRowByKey FUNCTION(p_key employees_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_employees_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE employees.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_employees_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE employees.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_employees_SetDefaultValues FUNCTION(p_data RECORD LIKE employees.*) RETURNS (RECORD LIKE employees.*)
+
+PUBLIC TYPE T_DbxDataEvent_country_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE country.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_country_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE country.*) RETURNS (INTEGER, STRING, RECORD LIKE country.*)
+PUBLIC TYPE T_DbxDataEvent_country_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE country.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_country_BeforeDeleteRowByKey FUNCTION(p_key country_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_country_AfterDeleteRowByKey FUNCTION(p_key country_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_country_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE country.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_country_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE country.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_country_SetDefaultValues FUNCTION(p_data RECORD LIKE country.*) RETURNS (RECORD LIKE country.*)
+
+PUBLIC TYPE T_DbxDataEvent_clienttypes_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE clienttypes.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clienttypes_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE clienttypes.*) RETURNS (INTEGER, STRING, RECORD LIKE clienttypes.*)
+PUBLIC TYPE T_DbxDataEvent_clienttypes_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE clienttypes.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clienttypes_BeforeDeleteRowByKey FUNCTION(p_key clienttypes_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_clienttypes_AfterDeleteRowByKey FUNCTION(p_key clienttypes_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_clienttypes_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE clienttypes.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clienttypes_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE clienttypes.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_clienttypes_SetDefaultValues FUNCTION(p_data RECORD LIKE clienttypes.*) RETURNS (RECORD LIKE clienttypes.*)
+
+PUBLIC TYPE T_DbxDataEvent_clientstakeholders_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE clientstakeholders.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clientstakeholders_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE clientstakeholders.*) RETURNS (INTEGER, STRING, RECORD LIKE clientstakeholders.*)
+PUBLIC TYPE T_DbxDataEvent_clientstakeholders_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE clientstakeholders.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clientstakeholders_BeforeDeleteRowByKey FUNCTION(p_key clientstakeholders_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_clientstakeholders_AfterDeleteRowByKey FUNCTION(p_key clientstakeholders_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_clientstakeholders_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE clientstakeholders.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clientstakeholders_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE clientstakeholders.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_clientstakeholders_SetDefaultValues FUNCTION(p_data RECORD LIKE clientstakeholders.*) RETURNS (RECORD LIKE clientstakeholders.*)
+
+PUBLIC TYPE T_DbxDataEvent_clients_CheckTableConstraints FUNCTION(p_forUpdate BOOLEAN, p_data RECORD LIKE clients.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clients_BeforeInsertRowByKey FUNCTION(p_data RECORD LIKE clients.*) RETURNS (INTEGER, STRING, RECORD LIKE clients.*)
+PUBLIC TYPE T_DbxDataEvent_clients_AfterInsertRowByKey FUNCTION(p_data RECORD LIKE clients.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clients_BeforeDeleteRowByKey FUNCTION(p_key clients_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_clients_AfterDeleteRowByKey FUNCTION(p_key clients_pk) RETURNS (INTEGER)
+PUBLIC TYPE T_DbxDataEvent_clients_BeforeUpdateRowByKey FUNCTION(p_data RECORD LIKE clients.*) RETURNS (INTEGER, STRING)
+PUBLIC TYPE T_DbxDataEvent_clients_AfterUpdateRowByKey FUNCTION(p_data RECORD LIKE clients.*) RETURNS (INTEGER, STRING)
+
+PUBLIC TYPE T_DbxDataEvent_clients_SetDefaultValues FUNCTION(p_data RECORD LIKE clients.*) RETURNS (RECORD LIKE clients.*)
+
+-- DATABASE EVENT FUNCTION VARIABLES - TABLE LEVEL
+
+PUBLIC DEFINE m_DbxDataEvent_seqreg_CheckTableConstraints T_DbxDataEvent_seqreg_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_seqreg_BeforeInsertRowByKey T_DbxDataEvent_seqreg_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_seqreg_AfterInsertRowByKey T_DbxDataEvent_seqreg_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_seqreg_BeforeDeleteRowByKey T_DbxDataEvent_seqreg_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_seqreg_AfterDeleteRowByKey T_DbxDataEvent_seqreg_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_seqreg_BeforeUpdateRowByKey T_DbxDataEvent_seqreg_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_seqreg_AfterUpdateRowByKey T_DbxDataEvent_seqreg_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_seqreg_SetDefaultValues T_DbxDataEvent_seqreg_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_rfs_CheckTableConstraints T_DbxDataEvent_rfs_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_rfs_BeforeInsertRowByKey T_DbxDataEvent_rfs_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_rfs_AfterInsertRowByKey T_DbxDataEvent_rfs_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_rfs_BeforeDeleteRowByKey T_DbxDataEvent_rfs_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_rfs_AfterDeleteRowByKey T_DbxDataEvent_rfs_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_rfs_BeforeUpdateRowByKey T_DbxDataEvent_rfs_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_rfs_AfterUpdateRowByKey T_DbxDataEvent_rfs_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_rfs_SetDefaultValues T_DbxDataEvent_rfs_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_provinces_CheckTableConstraints T_DbxDataEvent_provinces_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_provinces_BeforeInsertRowByKey T_DbxDataEvent_provinces_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_provinces_AfterInsertRowByKey T_DbxDataEvent_provinces_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_provinces_BeforeDeleteRowByKey T_DbxDataEvent_provinces_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_provinces_AfterDeleteRowByKey T_DbxDataEvent_provinces_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_provinces_BeforeUpdateRowByKey T_DbxDataEvent_provinces_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_provinces_AfterUpdateRowByKey T_DbxDataEvent_provinces_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_provinces_SetDefaultValues T_DbxDataEvent_provinces_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_projects_CheckTableConstraints T_DbxDataEvent_projects_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_projects_BeforeInsertRowByKey T_DbxDataEvent_projects_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_projects_AfterInsertRowByKey T_DbxDataEvent_projects_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_projects_BeforeDeleteRowByKey T_DbxDataEvent_projects_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_projects_AfterDeleteRowByKey T_DbxDataEvent_projects_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_projects_BeforeUpdateRowByKey T_DbxDataEvent_projects_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_projects_AfterUpdateRowByKey T_DbxDataEvent_projects_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_projects_SetDefaultValues T_DbxDataEvent_projects_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_preferences_CheckTableConstraints T_DbxDataEvent_preferences_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_preferences_BeforeInsertRowByKey T_DbxDataEvent_preferences_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_preferences_AfterInsertRowByKey T_DbxDataEvent_preferences_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_preferences_BeforeDeleteRowByKey T_DbxDataEvent_preferences_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_preferences_AfterDeleteRowByKey T_DbxDataEvent_preferences_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_preferences_BeforeUpdateRowByKey T_DbxDataEvent_preferences_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_preferences_AfterUpdateRowByKey T_DbxDataEvent_preferences_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_preferences_SetDefaultValues T_DbxDataEvent_preferences_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_paymentterms_CheckTableConstraints T_DbxDataEvent_paymentterms_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_paymentterms_BeforeInsertRowByKey T_DbxDataEvent_paymentterms_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_paymentterms_AfterInsertRowByKey T_DbxDataEvent_paymentterms_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_paymentterms_BeforeDeleteRowByKey T_DbxDataEvent_paymentterms_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_paymentterms_AfterDeleteRowByKey T_DbxDataEvent_paymentterms_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_paymentterms_BeforeUpdateRowByKey T_DbxDataEvent_paymentterms_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_paymentterms_AfterUpdateRowByKey T_DbxDataEvent_paymentterms_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_paymentterms_SetDefaultValues T_DbxDataEvent_paymentterms_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_offerstatuses_CheckTableConstraints T_DbxDataEvent_offerstatuses_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_offerstatuses_BeforeInsertRowByKey T_DbxDataEvent_offerstatuses_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_offerstatuses_AfterInsertRowByKey T_DbxDataEvent_offerstatuses_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_offerstatuses_BeforeDeleteRowByKey T_DbxDataEvent_offerstatuses_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_offerstatuses_AfterDeleteRowByKey T_DbxDataEvent_offerstatuses_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_offerstatuses_BeforeUpdateRowByKey T_DbxDataEvent_offerstatuses_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_offerstatuses_AfterUpdateRowByKey T_DbxDataEvent_offerstatuses_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_offerstatuses_SetDefaultValues T_DbxDataEvent_offerstatuses_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_employeetypes_CheckTableConstraints T_DbxDataEvent_employeetypes_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_employeetypes_BeforeInsertRowByKey T_DbxDataEvent_employeetypes_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employeetypes_AfterInsertRowByKey T_DbxDataEvent_employeetypes_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employeetypes_BeforeDeleteRowByKey T_DbxDataEvent_employeetypes_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employeetypes_AfterDeleteRowByKey T_DbxDataEvent_employeetypes_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employeetypes_BeforeUpdateRowByKey T_DbxDataEvent_employeetypes_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employeetypes_AfterUpdateRowByKey T_DbxDataEvent_employeetypes_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_employeetypes_SetDefaultValues T_DbxDataEvent_employeetypes_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_employees_CheckTableConstraints T_DbxDataEvent_employees_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_employees_BeforeInsertRowByKey T_DbxDataEvent_employees_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employees_AfterInsertRowByKey T_DbxDataEvent_employees_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employees_BeforeDeleteRowByKey T_DbxDataEvent_employees_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employees_AfterDeleteRowByKey T_DbxDataEvent_employees_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employees_BeforeUpdateRowByKey T_DbxDataEvent_employees_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_employees_AfterUpdateRowByKey T_DbxDataEvent_employees_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_employees_SetDefaultValues T_DbxDataEvent_employees_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_country_CheckTableConstraints T_DbxDataEvent_country_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_country_BeforeInsertRowByKey T_DbxDataEvent_country_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_country_AfterInsertRowByKey T_DbxDataEvent_country_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_country_BeforeDeleteRowByKey T_DbxDataEvent_country_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_country_AfterDeleteRowByKey T_DbxDataEvent_country_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_country_BeforeUpdateRowByKey T_DbxDataEvent_country_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_country_AfterUpdateRowByKey T_DbxDataEvent_country_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_country_SetDefaultValues T_DbxDataEvent_country_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_clienttypes_CheckTableConstraints T_DbxDataEvent_clienttypes_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_clienttypes_BeforeInsertRowByKey T_DbxDataEvent_clienttypes_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clienttypes_AfterInsertRowByKey T_DbxDataEvent_clienttypes_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clienttypes_BeforeDeleteRowByKey T_DbxDataEvent_clienttypes_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clienttypes_AfterDeleteRowByKey T_DbxDataEvent_clienttypes_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clienttypes_BeforeUpdateRowByKey T_DbxDataEvent_clienttypes_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clienttypes_AfterUpdateRowByKey T_DbxDataEvent_clienttypes_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_clienttypes_SetDefaultValues T_DbxDataEvent_clienttypes_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_clientstakeholders_CheckTableConstraints T_DbxDataEvent_clientstakeholders_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_clientstakeholders_BeforeInsertRowByKey T_DbxDataEvent_clientstakeholders_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clientstakeholders_AfterInsertRowByKey T_DbxDataEvent_clientstakeholders_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clientstakeholders_BeforeDeleteRowByKey T_DbxDataEvent_clientstakeholders_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clientstakeholders_AfterDeleteRowByKey T_DbxDataEvent_clientstakeholders_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clientstakeholders_BeforeUpdateRowByKey T_DbxDataEvent_clientstakeholders_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clientstakeholders_AfterUpdateRowByKey T_DbxDataEvent_clientstakeholders_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_clientstakeholders_SetDefaultValues T_DbxDataEvent_clientstakeholders_SetDefaultValues
+
+PUBLIC DEFINE m_DbxDataEvent_clients_CheckTableConstraints T_DbxDataEvent_clients_CheckTableConstraints
+PUBLIC DEFINE m_DbxDataEvent_clients_BeforeInsertRowByKey T_DbxDataEvent_clients_BeforeInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clients_AfterInsertRowByKey T_DbxDataEvent_clients_AfterInsertRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clients_BeforeDeleteRowByKey T_DbxDataEvent_clients_BeforeDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clients_AfterDeleteRowByKey T_DbxDataEvent_clients_AfterDeleteRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clients_BeforeUpdateRowByKey T_DbxDataEvent_clients_BeforeUpdateRowByKey
+PUBLIC DEFINE m_DbxDataEvent_clients_AfterUpdateRowByKey T_DbxDataEvent_clients_AfterUpdateRowByKey
+
+PUBLIC DEFINE m_DbxDataEvent_clients_SetDefaultValues T_DbxDataEvent_clients_SetDefaultValues
+
+-- REGISTER EVENT FUNCTIONS
+PUBLIC FUNCTION registerDbxEvents()
+    -- REGISTER DATABASE EVENT FUNCTIONS - TABLE LEVEL
+
+    LET m_DbxDataEvent_clients_BeforeInsertRowByKey = FUNCTION consultcompanion.dbxDataEvent_clients_BeforeInsertRowByKey
+END FUNCTION

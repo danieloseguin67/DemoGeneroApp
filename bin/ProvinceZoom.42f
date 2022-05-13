@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="ProvinceZoom.tmp" build="3.20.11" sqlDbName="consultcompanion" text="ProvinceZoom" width="59" height="5">
+  <LStr text="ProvinceZoom"/>
+  <Grid>
+    <Table gridWidth="59" gridHeight="5" pageSize="5" name="consultcompanion1" tabName="record1">
+      <TableColumn name="provinces.countryid" colName="countryid" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="provinces" text="Country" tabIndex="1" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="Country"/>
+      </TableColumn>
+      <TableColumn name="provinces.provinceid" colName="provinceid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="1" sqlTabName="provinces" text="Province / State" tabIndex="2" numAlign="1">
+        <Edit width="14" scroll="1"/>
+        <LStr text="Province / State"/>
+      </TableColumn>
+      <TableColumn name="provinces.provincename" colName="provincename" sqlType="CHAR(30)" required="1" notNull="1" fieldId="2" sqlTabName="provinces" text="Province / State Name" tabIndex="3">
+        <Edit width="30" scroll="1"/>
+        <LStr text="Province / State Name"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="provinces">
+    <Link colName="countryid" fieldIdRef="0"/>
+    <Link colName="provinceid" fieldIdRef="1"/>
+    <Link colName="provincename" fieldIdRef="2"/>
+  </RecordView>
+</Form>

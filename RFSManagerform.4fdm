@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{b4271237-0b96-4fbc-bcf7-3a456ca9a9db}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canAdd" name="canAdd" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDelete" name="canDelete" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canModify" name="canModify" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="rfs" name="record1" order="rfs.rfsId(ASC)" uid="{ea993100-8e22-4a51-a3fb-8e5b56825ddf}">
+    <RecordField colName="rfsId" fieldIdRef="1" fieldType="TABLE_COLUMN" name="rfs.rfsId" sqlTabName="rfs" uid="{fcb2ae09-42b7-47e7-8675-e3df6233cbde}"/>
+    <RecordField colName="clientid" fieldIdRef="2" fieldType="TABLE_COLUMN" name="rfs.clientid" sqlTabName="rfs" uid="{e5da3626-18b5-479e-b868-4d29ac9a2fd8}"/>
+    <RecordField colName="stakeholderId" fieldIdRef="3" fieldType="TABLE_COLUMN" name="rfs.stakeholderId" sqlTabName="rfs" uid="{eaf57b92-b75f-4748-9bbc-914e030f2cca}"/>
+    <RecordField colName="offernumber" fieldIdRef="4" fieldType="TABLE_COLUMN" name="rfs.offernumber" sqlTabName="rfs" uid="{c2a94fee-2829-4ec0-a6d1-fbd7d62fe88a}"/>
+    <RecordField colName="offertitle" fieldIdRef="5" fieldType="TABLE_COLUMN" name="rfs.offertitle" sqlTabName="rfs" uid="{98435cb7-ec43-4fdd-bb43-e4b3fe2982d7}"/>
+    <RecordField colName="offerdate" fieldIdRef="6" fieldType="TABLE_COLUMN" name="rfs.offerdate" sqlTabName="rfs" uid="{4fe9ee7e-5363-429b-afe3-0a02cc52f967}"/>
+    <RecordField colName="offersubmitted" fieldIdRef="7" fieldType="TABLE_COLUMN" name="rfs.offersubmitted" sqlTabName="rfs" uid="{3b222555-4763-4a97-979d-ce37e0ba3b18}"/>
+    <RecordField colName="offerstatusid" fieldIdRef="8" fieldType="TABLE_COLUMN" name="rfs.offerstatusid" sqlTabName="rfs" uid="{419a3981-4db8-4835-b1b8-5b715a978661}"/>
+    <RecordField colName="interviewdate" fieldIdRef="9" fieldType="TABLE_COLUMN" name="rfs.interviewdate" sqlTabName="rfs" uid="{a8e1c219-1266-4fc5-bd3e-8cdecfa1006f}"/>
+    <RecordField colName="offerlink" fieldIdRef="10" fieldType="TABLE_COLUMN" name="rfs.offerlink" sqlTabName="rfs" uid="{cb55fb79-b0c3-43b2-8517-7da3bb245aa8}"/>
+    <RecordField colName="offernote" fieldIdRef="11" fieldType="TABLE_COLUMN" name="rfs.offernote" sqlTabName="rfs" uid="{9e6eb720-8837-4804-845f-eb3e40647d54}"/>
+    <RecordField colName="accepteddate" fieldIdRef="12" fieldType="TABLE_COLUMN" name="rfs.accepteddate" sqlTabName="rfs" uid="{cb635c3f-96ac-45ee-ae1d-306131ad9db1}"/>
+  </Record>
+  <Form gridHeight="8" gridWidth="209" name="form" text="RFSManagerform">
+    <Table gridHeight="6" gridWidth="207" name="consultcompanion1" posX="1" posY="1" totalRows="5">
+      <Edit colName="rfsId" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" hidden="true" name="rfs.rfsId" noEntry="true" posX="0" posY="0" scroll="true" sqlTabName="rfs" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <ButtonEdit action="zm_client" colName="clientid" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="mag" name="rfs.clientid" posX="11" posY="0" scroll="true" sqlTabName="rfs" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <ButtonEdit action="zm_stakeholder" colName="stakeholderId" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="mag" name="rfs.stakeholderId" posX="22" posY="0" scroll="true" sqlTabName="rfs" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Edit colName="offernumber" fieldId="4" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="20" name="rfs.offernumber" posX="33" posY="0" scroll="true" sqlTabName="rfs" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="offertitle" fieldId="5" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="rfs.offertitle" posX="53" posY="0" scroll="true" sqlTabName="rfs" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <DateEdit colName="offerdate" fieldId="6" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="10" name="rfs.offerdate" posX="83" posY="0" sqlTabName="rfs" tabIndex="-1" widget="DateEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </DateEdit>
+      <DateEdit colName="offersubmitted" fieldId="7" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="10" name="rfs.offersubmitted" posX="93" posY="0" sqlTabName="rfs" tabIndex="-1" widget="DateEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </DateEdit>
+      <ButtonEdit action="zm_offerstastus" colName="offerstatusid" fieldId="8" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="mag" name="rfs.offerstatusid" posX="103" posY="0" scroll="true" sqlTabName="rfs" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <DateEdit colName="interviewdate" fieldId="9" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="10" name="rfs.interviewdate" posX="114" posY="0" sqlTabName="rfs" tabIndex="-1" widget="DateEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </DateEdit>
+      <TextEdit colName="offerlink" fieldId="10" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="rfs.offerlink" posX="124" posY="0" scroll="true" sqlTabName="rfs" tabIndex="-1" widget="TextEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </TextEdit>
+      <TextEdit colName="offernote" fieldId="11" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="rfs.offernote" posX="154" posY="0" scroll="true" sqlTabName="rfs" tabIndex="-1" widget="TextEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </TextEdit>
+      <DateEdit colName="accepteddate" fieldId="12" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="10" name="rfs.accepteddate" posX="184" posY="0" sqlTabName="rfs" tabIndex="-1" widget="DateEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </DateEdit>
+    </Table>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBlAGEAOQA5ADMAMQAwADAALQA4AGUAMgAyAC0ANABhADUAMQAtAGEAMwBmAGIALQA4AGUANQBiADUANgA4ADIANQBkAGQAZgB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

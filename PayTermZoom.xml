@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\ConsultCompanion\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="PayTermZoom.4fdz" locator="/Item/PayTermZoom" name="PayTermZoom" type="Zoom">
+    <DynamicProperties>
+      <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
+      <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
+      <DynamicProperty name="zoomTransitionAddCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionAddClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionAddExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionAddOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionDisplayCancel" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionDisplayClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionDisplayExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionDisplayOk" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionModifyCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionModifyClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionModifyExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionModifyOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionSearchCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionSearchClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
+    </DynamicProperties>
+    <ModuleRelation destination="PayTermZoom" locator="/Relation/Relation5" source="Client Manager Form" type="Relation">
+      <DynamicProperties>
+        <DynamicProperty name="action" value="zm_payterm"/>
+        <DynamicProperty name="dataRefresh" value="Current Row"/>
+        <DynamicProperty name="defaultMode" value=""/>
+        <DynamicProperty name="disableAdd" value="false"/>
+        <DynamicProperty name="disableDelete" value="false"/>
+        <DynamicProperty name="disableDisplay" value="false"/>
+        <DynamicProperty name="disableEmpty" value="false"/>
+        <DynamicProperty name="disableModify" value="false"/>
+        <DynamicProperty name="disableSearch" value="false"/>
+        <DynamicProperty name="filterDstField"/>
+        <DynamicProperty name="filterSrcField"/>
+        <DynamicProperty name="openMode" value=""/>
+        <DynamicProperty name="relationTransitionAddCancel" value=""/>
+        <DynamicProperty name="relationTransitionAddClose" value=""/>
+        <DynamicProperty name="relationTransitionAddExit" value=""/>
+        <DynamicProperty name="relationTransitionAddOk" value=""/>
+        <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+        <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+        <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+        <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+        <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+        <DynamicProperty name="relationTransitionModifyClose" value=""/>
+        <DynamicProperty name="relationTransitionModifyExit" value=""/>
+        <DynamicProperty name="relationTransitionModifyOk" value=""/>
+        <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+        <DynamicProperty name="relationTransitionSearchClose" value=""/>
+        <DynamicProperty name="relationTransitionSearchExit" value=""/>
+        <DynamicProperty name="relationTransitionSearchOk" value=""/>
+        <DynamicProperty name="rowbound" value="false"/>
+        <DynamicProperty name="srcField">
+          <Field alias="clients" column="paytermid" name="clients.paytermid" table="clients"/>
+        </DynamicProperty>
+        <DynamicProperty name="srcRecord" value=""/>
+      </DynamicProperties>
+    </ModuleRelation>
+    <Module databaseName="consultcompanion" locator="/managedform">
+      <Record alias="paymentterms" container="Table" locator="/managedform/record1" name="record1" size="5" table="paymentterms">
+        <DynamicProperties>
+          <DynamicProperty name="canDisplay" value="true"/>
+          <DynamicProperty name="canAdd" value="false"/>
+          <DynamicProperty name="canModify" value="false"/>
+          <DynamicProperty name="canDelete" value="false"/>
+          <DynamicProperty name="canSearch" value="true"/>
+          <DynamicProperty name="canEmpty" value="true"/>
+        </DynamicProperties>
+        <Fields>
+          <Field alias="paymentterms" column="paytermid" defaultValue="" isKey="1" isRequired="1" locator="/managedform/record1/paymentterms.paytermid" name="paymentterms.paytermid" table="paymentterms" widget="Edit"/>
+          <Field alias="paymentterms" column="paytermname" defaultValue="" isRequired="1" locator="/managedform/record1/paymentterms.paytermname" name="paymentterms.paytermname" table="paymentterms" widget="Edit"/>
+        </Fields>
+        <UniqueKey>
+          <Field alias="paymentterms" column="paytermid" name="paymentterms.paytermid" table="paymentterms"/>
+        </UniqueKey>
+        <Query>
+          <OrderBy alias="paymentterms" column="paytermid" order="ASC" table="paymentterms"/>
+        </Query>
+      </Record>
+    </Module>
+  </File>
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\ConsultCompanion\database\consultcompanion.4dbx">
+    <Table name="paymentterms">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="paytermid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="paytermid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="paytermname" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="paytermname"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="paytermdays" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="paytermdays"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_paymentTerms_1">
+        <Column name="paytermid"/>
+      </DBConstraint>
+      <DBIndex name="PK_paymentTerms_1" primary="1" unique="0">
+        <Column name="paytermid"/>
+      </DBIndex>
+    </Table>
+  </Database>
+</AG>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{9537e130-4b22-47af-87e2-e8d10408cb96}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canAdd" name="canAdd" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDelete" name="canDelete" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canModify" name="canModify" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="employees" name="record1" order="employees.employeeid(ASC)" uid="{b6c4a504-a3e4-4210-aa0d-e175c673c30e}">
+    <RecordField colName="employeeid" fieldIdRef="1" fieldType="TABLE_COLUMN" name="employees.employeeid" sqlTabName="employees" uid="{e4c7ddd5-1313-4a67-9f0d-9e88952e7fe4}"/>
+    <RecordField colName="empname" fieldIdRef="2" fieldType="TABLE_COLUMN" name="employees.empname" sqlTabName="employees" uid="{93ebd56c-0575-405c-92b8-02de9f2ad2ff}"/>
+    <RecordField colName="emptype" fieldIdRef="3" fieldType="TABLE_COLUMN" name="employees.emptype" sqlTabName="employees" uid="{20f93f7c-cd15-4216-9cf1-c5f44a9672c9}"/>
+    <RecordField colName="address1" fieldIdRef="4" fieldType="TABLE_COLUMN" name="employees.address1" sqlTabName="employees" uid="{e5a22692-d1af-4fe2-a884-f6982f683f6c}"/>
+    <RecordField colName="address2" fieldIdRef="5" fieldType="TABLE_COLUMN" name="employees.address2" sqlTabName="employees" uid="{efe1d676-8cdc-4fa5-a7af-36277b10fb42}"/>
+    <RecordField colName="city" fieldIdRef="6" fieldType="TABLE_COLUMN" name="employees.city" sqlTabName="employees" uid="{e18e201d-24ea-4b94-bb88-1e47c11218d3}"/>
+    <RecordField colName="provinceId" fieldIdRef="7" fieldType="TABLE_COLUMN" name="employees.provinceId" sqlTabName="employees" uid="{85294690-a2ee-4f00-9297-6ba83f9b51e3}"/>
+    <RecordField colName="countryid" fieldIdRef="15" fieldType="TABLE_COLUMN" name="employees.countryid" sqlTabName="employees" uid="{8fbfabc8-eff1-4538-b5d5-66251e5fe6e9}"/>
+    <RecordField colName="postalzip" fieldIdRef="8" fieldType="TABLE_COLUMN" name="employees.postalzip" sqlTabName="employees" uid="{a0b766fe-b79a-42d5-9c12-5e9c30310764}"/>
+    <RecordField colName="mobilephone" fieldIdRef="9" fieldType="TABLE_COLUMN" name="employees.mobilephone" sqlTabName="employees" uid="{288690c0-cc58-4907-a0b0-6baae5b1cee4}"/>
+    <RecordField colName="workphone" fieldIdRef="10" fieldType="TABLE_COLUMN" name="employees.workphone" sqlTabName="employees" uid="{8b7ac5e9-58f3-4568-b0c6-7c39e132c43c}"/>
+    <RecordField colName="homephone" fieldIdRef="11" fieldType="TABLE_COLUMN" name="employees.homephone" sqlTabName="employees" uid="{5e6db187-e0c3-4758-bb29-17c6e3caa3b7}"/>
+    <RecordField colName="primaryphone" fieldIdRef="12" fieldType="TABLE_COLUMN" name="employees.primaryphone" sqlTabName="employees" uid="{b86d9659-e6a7-46ea-8ea2-93821ee52d70}"/>
+    <RecordField colName="dayRate" fieldIdRef="13" fieldType="TABLE_COLUMN" name="employees.dayRate" sqlTabName="employees" uid="{e9c26110-cb88-4e2c-ab3f-b1e2eefc9971}"/>
+  </Record>
+  <Form gridHeight="8" gridWidth="262" name="form" text="EmployeeManagerForm">
+    <Table gridHeight="6" gridWidth="261" name="consultcompanion1" posX="1" posY="1" totalRows="5">
+      <Edit colName="employeeid" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" name="employees.employeeid" posX="0" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="empname" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="employees.empname" posX="11" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <ButtonEdit action="zm_emptype" colName="emptype" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="mag" name="employees.emptype" posX="41" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Edit colName="address1" fieldId="4" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="employees.address1" posX="52" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="address2" fieldId="5" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="employees.address2" posX="82" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="city" fieldId="6" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="employees.city" posX="112" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <ButtonEdit action="zm_country" colName="countryid" fieldId="15" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="8" image="mag" name="employees.countryid" posX="142" posY="0" sqlTabName="employees" tabIndex="-1" title="Country" widget="ButtonEdit"/>
+      <ButtonEdit action="zm_provinces" colName="provinceId" fieldId="7" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="mag" name="employees.provinceId" posX="150" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Edit colName="postalzip" fieldId="8" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="10" name="employees.postalzip" posX="161" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="mobilephone" fieldId="9" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="15" name="employees.mobilephone" posX="171" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="workphone" fieldId="10" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="15" name="employees.workphone" posX="186" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="homephone" fieldId="11" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="15" name="employees.homephone" posX="201" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <ComboBox colName="primaryphone" fieldId="12" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="13" items="" name="employees.primaryphone" posX="216" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="ComboBox">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ComboBox>
+      <Edit colName="dayRate" fieldId="13" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="7" name="employees.dayRate" posX="229" posY="0" scroll="true" sqlTabName="employees" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Table>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBiADYAYwA0AGEANQAwADQALQBhADMAZQA0AC0ANAAyADEAMAAtAGEAYQAwAGQALQBlADEANwA1AGMANgA3ADMAYwAzADAAZQB9AAAAAAAAAAAAAAAAAAAAAD9gYk3S8an8AQ==]]>
+  </DiagramLayout>
+</ManagedForm>

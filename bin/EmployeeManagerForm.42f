@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="EmployeeManagerForm.tmp" build="3.20.11" sqlDbName="consultcompanion" text="EmployeeManagerForm" width="251" height="5">
+  <LStr text="EmployeeManagerForm"/>
+  <Grid>
+    <Table gridWidth="251" gridHeight="5" pageSize="5" name="consultcompanion1" tabName="+tn_0">
+      <TableColumn name="employees.employeeid" colName="employeeid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="employees" text="employeeid" tabIndex="1" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="employeeid"/>
+      </TableColumn>
+      <TableColumn name="employees.empname" colName="empname" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="employees" text="empname" tabIndex="2">
+        <Edit width="30" scroll="1"/>
+        <LStr text="empname"/>
+      </TableColumn>
+      <TableColumn name="employees.emptype" colName="emptype" sqlType="INTEGER" required="1" notNull="1" fieldId="2" sqlTabName="employees" text="emptype" tabIndex="3" numAlign="1">
+        <ButtonEdit width="9" action="zm_emptype" image="mag" scroll="1"/>
+        <LStr text="emptype"/>
+      </TableColumn>
+      <TableColumn name="employees.address1" colName="address1" sqlType="CHAR(60)" required="1" notNull="1" fieldId="3" sqlTabName="employees" text="address1" tabIndex="4">
+        <Edit width="30" scroll="1"/>
+        <LStr text="address1"/>
+      </TableColumn>
+      <TableColumn name="employees.address2" colName="address2" sqlType="CHAR(60)" fieldId="4" sqlTabName="employees" text="address2" tabIndex="5">
+        <Edit width="30" scroll="1"/>
+        <LStr text="address2"/>
+      </TableColumn>
+      <TableColumn name="employees.city" colName="city" sqlType="CHAR(30)" required="1" notNull="1" fieldId="5" sqlTabName="employees" text="city" tabIndex="6">
+        <Edit width="30" scroll="1"/>
+        <LStr text="city"/>
+      </TableColumn>
+      <TableColumn name="employees.countryid" colName="countryid" sqlType="INTEGER" required="1" notNull="1" fieldId="6" sqlTabName="employees" text="Country" tabIndex="7" numAlign="1">
+        <ButtonEdit width="6" action="zm_country" image="mag"/>
+        <LStr text="Country"/>
+      </TableColumn>
+      <TableColumn name="employees.provinceid" colName="provinceid" sqlType="INTEGER" required="1" notNull="1" fieldId="7" sqlTabName="employees" text="provinceId" tabIndex="8" numAlign="1">
+        <ButtonEdit width="9" action="zm_provinces" image="mag" scroll="1"/>
+        <LStr text="provinceId"/>
+      </TableColumn>
+      <TableColumn name="employees.postalzip" colName="postalzip" sqlType="CHAR(10)" required="1" notNull="1" fieldId="8" sqlTabName="employees" text="postalzip" tabIndex="9">
+        <Edit width="10" scroll="1"/>
+        <LStr text="postalzip"/>
+      </TableColumn>
+      <TableColumn name="employees.mobilephone" colName="mobilephone" sqlType="CHAR(15)" fieldId="9" sqlTabName="employees" text="mobilephone" tabIndex="10">
+        <Edit width="15" scroll="1"/>
+        <LStr text="mobilephone"/>
+      </TableColumn>
+      <TableColumn name="employees.workphone" colName="workphone" sqlType="CHAR(15)" fieldId="10" sqlTabName="employees" text="workphone" tabIndex="11">
+        <Edit width="15" scroll="1"/>
+        <LStr text="workphone"/>
+      </TableColumn>
+      <TableColumn name="employees.homephone" colName="homephone" sqlType="CHAR(15)" fieldId="11" sqlTabName="employees" text="homephone" tabIndex="12">
+        <Edit width="15" scroll="1"/>
+        <LStr text="homephone"/>
+      </TableColumn>
+      <TableColumn name="employees.primaryphone" colName="primaryphone" sqlType="CHAR(1)" required="1" notNull="1" fieldId="12" sqlTabName="employees" text="primaryphone" tabIndex="13">
+        <ComboBox width="11" scroll="1"/>
+        <LStr text="primaryphone"/>
+      </TableColumn>
+      <TableColumn name="employees.dayrate" colName="dayrate" sqlType="DECIMAL(5,2)" required="1" notNull="1" fieldId="13" sqlTabName="employees" text="dayRate" tabIndex="14" numAlign="1">
+        <Edit width="7" scroll="1"/>
+        <LStr text="dayRate"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="employees">
+    <Link colName="employeeid" fieldIdRef="0"/>
+    <Link colName="empname" fieldIdRef="1"/>
+    <Link colName="emptype" fieldIdRef="2"/>
+    <Link colName="address1" fieldIdRef="3"/>
+    <Link colName="address2" fieldIdRef="4"/>
+    <Link colName="city" fieldIdRef="5"/>
+    <Link colName="countryid" fieldIdRef="6"/>
+    <Link colName="provinceid" fieldIdRef="7"/>
+    <Link colName="postalzip" fieldIdRef="8"/>
+    <Link colName="mobilephone" fieldIdRef="9"/>
+    <Link colName="workphone" fieldIdRef="10"/>
+    <Link colName="homephone" fieldIdRef="11"/>
+    <Link colName="primaryphone" fieldIdRef="12"/>
+    <Link colName="dayrate" fieldIdRef="13"/>
+  </RecordView>
+  <RecordView tabName="record1">
+    <Link colName="employeeid" fieldIdRef="0"/>
+    <Link colName="empname" fieldIdRef="1"/>
+    <Link colName="emptype" fieldIdRef="2"/>
+    <Link colName="address1" fieldIdRef="3"/>
+    <Link colName="address2" fieldIdRef="4"/>
+    <Link colName="city" fieldIdRef="5"/>
+    <Link colName="provinceid" fieldIdRef="7"/>
+    <Link colName="countryid" fieldIdRef="6"/>
+    <Link colName="postalzip" fieldIdRef="8"/>
+    <Link colName="mobilephone" fieldIdRef="9"/>
+    <Link colName="workphone" fieldIdRef="10"/>
+    <Link colName="homephone" fieldIdRef="11"/>
+    <Link colName="primaryphone" fieldIdRef="12"/>
+    <Link colName="dayrate" fieldIdRef="13"/>
+  </RecordView>
+</Form>

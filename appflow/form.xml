@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\ConsultCompanion\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\ConsultCompanion\appflow" filename="form.4fdm" locator="/Item/form" name="form" type="Form">
+    <DynamicProperties>
+      <DynamicProperty name="canExport" value="true"/>
+      <DynamicProperty name="formDefaultMode" value="DISPLAY"/>
+      <DynamicProperty name="formOpenMode" value="DISPLAY"/>
+      <DynamicProperty name="formTransitionAddCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionAddClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionAddExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionAddOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionDisplayCancel" value="ExitForm"/>
+      <DynamicProperty name="formTransitionDisplayClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionDisplayExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionDisplayOk" value="ExitForm"/>
+      <DynamicProperty name="formTransitionModifyCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionModifyClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionModifyExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionModifyOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionSearchCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionSearchClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionSearchExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionSearchOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="quickHTML" value="true"/>
+      <DynamicProperty name="quickPDF" value="true"/>
+      <DynamicProperty name="quickPreview" value="true"/>
+      <DynamicProperty name="quickPrint" value="true"/>
+      <DynamicProperty name="quickRTF" value="true"/>
+      <DynamicProperty name="quickXLS" value="true"/>
+    </DynamicProperties>
+    <ModuleRelation destination="form" locator="/Relation/Relation1" source="MainProgram" type="Relation">
+      <DynamicProperties>
+        <DynamicProperty name="action" value=""/>
+        <DynamicProperty name="dataRefresh" value="None"/>
+        <DynamicProperty name="defaultMode" value=""/>
+        <DynamicProperty name="disableAdd" value="false"/>
+        <DynamicProperty name="disableDelete" value="false"/>
+        <DynamicProperty name="disableDisplay" value="false"/>
+        <DynamicProperty name="disableEmpty" value="false"/>
+        <DynamicProperty name="disableModify" value="false"/>
+        <DynamicProperty name="disableSearch" value="false"/>
+        <DynamicProperty name="filterDstField"/>
+        <DynamicProperty name="filterSrcField"/>
+        <DynamicProperty name="openMode" value=""/>
+        <DynamicProperty name="relationTransitionAddCancel" value=""/>
+        <DynamicProperty name="relationTransitionAddClose" value=""/>
+        <DynamicProperty name="relationTransitionAddExit" value=""/>
+        <DynamicProperty name="relationTransitionAddOk" value=""/>
+        <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+        <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+        <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+        <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+        <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+        <DynamicProperty name="relationTransitionModifyClose" value=""/>
+        <DynamicProperty name="relationTransitionModifyExit" value=""/>
+        <DynamicProperty name="relationTransitionModifyOk" value=""/>
+        <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+        <DynamicProperty name="relationTransitionSearchClose" value=""/>
+        <DynamicProperty name="relationTransitionSearchExit" value=""/>
+        <DynamicProperty name="relationTransitionSearchOk" value=""/>
+        <DynamicProperty name="rowbound" value="false"/>
+        <DynamicProperty name="srcField"/>
+        <DynamicProperty name="srcRecord" value=""/>
+      </DynamicProperties>
+    </ModuleRelation>
+    <Module databaseName="consultcompanion" locator="/managedform">
+      <Record alias="" container="Grid" locator="/managedform/preferences" name="preferences" size="1" table="">
+        <DynamicProperties>
+          <DynamicProperty name="canDisplay" value="true"/>
+          <DynamicProperty name="canAdd" value="true"/>
+          <DynamicProperty name="canModify" value="true"/>
+          <DynamicProperty name="canDelete" value="true"/>
+          <DynamicProperty name="canSearch" value="true"/>
+          <DynamicProperty name="canEmpty" value="true"/>
+        </DynamicProperties>
+        <Fields>
+          <Field datatype="CHAR(1)" defaultValue="" isKey="1" length="1" locator="/managedform/preferences/seqid" name="seqid" widget="Edit"/>
+        </Fields>
+        <UniqueKey>
+          <Field name="seqid"/>
+        </UniqueKey>
+        <Query>
+          <Custom value="select * from preferences"/>
+        </Query>
+      </Record>
+    </Module>
+  </File>
+</AG>

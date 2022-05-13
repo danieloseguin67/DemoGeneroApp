@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm fileVersion="31400" gstVersion="31409" name="managedform" uid="{812ea8fa-7f8e-4db2-839e-ed4d26919acf}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+  </AGSettings>
+  <Record active="true" name="record1" uid="{177fa152-ec36-466b-b7f6-36bcc2157030}"/>
+  <Form gridHeight="25" gridWidth="80" name="form" text="MainForm">
+    <Grid gridHeight="23" gridWidth="78" name="grid1" posX="1" posY="1"/>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewAxADcANwBmAGEAMQA1ADIALQBlAGMAMwA2AC0ANAA2ADYAYgAtAGIANwBmADYALQAzADYAYgBjAGMAMgAxADUANwAwADMAMAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

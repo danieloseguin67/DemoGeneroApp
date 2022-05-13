@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\ConsultCompanion\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="ClientManagerform.4fdm" locator="/Item/Client Manager Form" name="Client Manager Form" type="Form">
+    <DynamicProperties>
+      <DynamicProperty name="canExport" value="true"/>
+      <DynamicProperty name="formDefaultMode" value="DISPLAY"/>
+      <DynamicProperty name="formOpenMode" value="DISPLAY"/>
+      <DynamicProperty name="formTransitionAddCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionAddClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionAddExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionAddOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionDisplayCancel" value="ExitForm"/>
+      <DynamicProperty name="formTransitionDisplayClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionDisplayExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionDisplayOk" value="ExitForm"/>
+      <DynamicProperty name="formTransitionModifyCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionModifyClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionModifyExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionModifyOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionSearchCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionSearchClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionSearchExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionSearchOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="quickHTML" value="true"/>
+      <DynamicProperty name="quickPDF" value="true"/>
+      <DynamicProperty name="quickPreview" value="true"/>
+      <DynamicProperty name="quickPrint" value="true"/>
+      <DynamicProperty name="quickRTF" value="true"/>
+      <DynamicProperty name="quickXLS" value="true"/>
+    </DynamicProperties>
+    <ModuleRelation destination="Client Manager Form" locator="/Relation/Relation2" source="ClientManager" type="Relation">
+      <DynamicProperties>
+        <DynamicProperty name="action" value=""/>
+        <DynamicProperty name="dataRefresh" value="Current Row"/>
+        <DynamicProperty name="defaultMode" value=""/>
+        <DynamicProperty name="disableAdd" value="false"/>
+        <DynamicProperty name="disableDelete" value="false"/>
+        <DynamicProperty name="disableDisplay" value="false"/>
+        <DynamicProperty name="disableEmpty" value="false"/>
+        <DynamicProperty name="disableModify" value="false"/>
+        <DynamicProperty name="disableSearch" value="false"/>
+        <DynamicProperty name="filterDstField"/>
+        <DynamicProperty name="filterSrcField"/>
+        <DynamicProperty name="openMode" value=""/>
+        <DynamicProperty name="relationTransitionAddCancel" value=""/>
+        <DynamicProperty name="relationTransitionAddClose" value=""/>
+        <DynamicProperty name="relationTransitionAddExit" value=""/>
+        <DynamicProperty name="relationTransitionAddOk" value=""/>
+        <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+        <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+        <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+        <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+        <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+        <DynamicProperty name="relationTransitionModifyClose" value=""/>
+        <DynamicProperty name="relationTransitionModifyExit" value=""/>
+        <DynamicProperty name="relationTransitionModifyOk" value=""/>
+        <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+        <DynamicProperty name="relationTransitionSearchClose" value=""/>
+        <DynamicProperty name="relationTransitionSearchExit" value=""/>
+        <DynamicProperty name="relationTransitionSearchOk" value=""/>
+        <DynamicProperty name="rowbound" value="false"/>
+        <DynamicProperty name="srcField"/>
+        <DynamicProperty name="srcRecord" value=""/>
+      </DynamicProperties>
+    </ModuleRelation>
+    <File dir="C:\SoftDev\GeneroApps\ConsultCompanion\appflow" filename="ProvinceZoom.4fdz" locator="/Item/ProvinceZoom" name="ProvinceZoom" type="Zoom">
+      <DynamicProperties>
+        <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomTransitionAddCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionAddClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionAddExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionAddOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionDisplayCancel" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionDisplayOk" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionModifyClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionModifyOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
+      </DynamicProperties>
+      <ModuleRelation destination="ProvinceZoom" locator="/Relation/Relation4" source="Client Manager Form" type="Relation">
+        <DynamicProperties>
+          <DynamicProperty name="action" value="zm_provinces"/>
+          <DynamicProperty name="dataRefresh" value="Current Row"/>
+          <DynamicProperty name="defaultMode" value=""/>
+          <DynamicProperty name="disableAdd" value="false"/>
+          <DynamicProperty name="disableDelete" value="false"/>
+          <DynamicProperty name="disableDisplay" value="false"/>
+          <DynamicProperty name="disableEmpty" value="false"/>
+          <DynamicProperty name="disableModify" value="false"/>
+          <DynamicProperty name="disableSearch" value="false"/>
+          <DynamicProperty name="filterDstField">
+            <Field alias="provinces" column="countryid" name="provinces.countryid" table="provinces"/>
+          </DynamicProperty>
+          <DynamicProperty name="filterSrcField">
+            <Field alias="clients" column="countryid" name="clients.countryid" table="clients"/>
+          </DynamicProperty>
+          <DynamicProperty name="openMode" value=""/>
+          <DynamicProperty name="relationTransitionAddCancel" value=""/>
+          <DynamicProperty name="relationTransitionAddClose" value=""/>
+          <DynamicProperty name="relationTransitionAddExit" value=""/>
+          <DynamicProperty name="relationTransitionAddOk" value=""/>
+          <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+          <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+          <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+          <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+          <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+          <DynamicProperty name="relationTransitionModifyClose" value=""/>
+          <DynamicProperty name="relationTransitionModifyExit" value=""/>
+          <DynamicProperty name="relationTransitionModifyOk" value=""/>
+          <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+          <DynamicProperty name="relationTransitionSearchClose" value=""/>
+          <DynamicProperty name="relationTransitionSearchExit" value=""/>
+          <DynamicProperty name="relationTransitionSearchOk" value=""/>
+          <DynamicProperty name="rowbound" value="false"/>
+          <DynamicProperty name="srcField">
+            <Field alias="clients" column="provinceid" name="clients.provinceid" table="clients"/>
+          </DynamicProperty>
+          <DynamicProperty name="srcRecord" value=""/>
+        </DynamicProperties>
+      </ModuleRelation>
+      <ModuleRelation destination="ProvinceZoom" locator="/Relation/Relation8" source="EmployeeManagerForm" type="Relation">
+        <DynamicProperties>
+          <DynamicProperty name="action" value="zm_provinces"/>
+          <DynamicProperty name="dataRefresh" value="Current Row"/>
+          <DynamicProperty name="defaultMode" value=""/>
+          <DynamicProperty name="disableAdd" value="false"/>
+          <DynamicProperty name="disableDelete" value="false"/>
+          <DynamicProperty name="disableDisplay" value="false"/>
+          <DynamicProperty name="disableEmpty" value="false"/>
+          <DynamicProperty name="disableModify" value="false"/>
+          <DynamicProperty name="disableSearch" value="false"/>
+          <DynamicProperty name="filterDstField">
+            <Field alias="provinces" column="countryid" name="provinces.countryid" table="provinces"/>
+          </DynamicProperty>
+          <DynamicProperty name="filterSrcField">
+            <Field alias="employees" column="countryid" name="employees.countryid" table="employees"/>
+          </DynamicProperty>
+          <DynamicProperty name="openMode" value=""/>
+          <DynamicProperty name="relationTransitionAddCancel" value=""/>
+          <DynamicProperty name="relationTransitionAddClose" value=""/>
+          <DynamicProperty name="relationTransitionAddExit" value=""/>
+          <DynamicProperty name="relationTransitionAddOk" value=""/>
+          <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+          <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+          <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+          <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+          <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+          <DynamicProperty name="relationTransitionModifyClose" value=""/>
+          <DynamicProperty name="relationTransitionModifyExit" value=""/>
+          <DynamicProperty name="relationTransitionModifyOk" value=""/>
+          <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+          <DynamicProperty name="relationTransitionSearchClose" value=""/>
+          <DynamicProperty name="relationTransitionSearchExit" value=""/>
+          <DynamicProperty name="relationTransitionSearchOk" value=""/>
+          <DynamicProperty name="rowbound" value="false"/>
+          <DynamicProperty name="srcField">
+            <Field alias="employees" column="provinceId" name="employees.provinceId" table="employees"/>
+          </DynamicProperty>
+          <DynamicProperty name="srcRecord" value=""/>
+        </DynamicProperties>
+      </ModuleRelation>
+    </File>
+    <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="PayTermZoom.4fdz" locator="/Item/PayTermZoom" name="PayTermZoom" type="Zoom">
+      <DynamicProperties>
+        <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomTransitionAddCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionAddClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionAddExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionAddOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionDisplayCancel" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionDisplayOk" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionModifyClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionModifyOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
+      </DynamicProperties>
+      <ModuleRelation destination="PayTermZoom" locator="/Relation/Relation5" source="Client Manager Form" type="Relation">
+        <DynamicProperties>
+          <DynamicProperty name="action" value="zm_payterm"/>
+          <DynamicProperty name="dataRefresh" value="Current Row"/>
+          <DynamicProperty name="defaultMode" value=""/>
+          <DynamicProperty name="disableAdd" value="false"/>
+          <DynamicProperty name="disableDelete" value="false"/>
+          <DynamicProperty name="disableDisplay" value="false"/>
+          <DynamicProperty name="disableEmpty" value="false"/>
+          <DynamicProperty name="disableModify" value="false"/>
+          <DynamicProperty name="disableSearch" value="false"/>
+          <DynamicProperty name="filterDstField"/>
+          <DynamicProperty name="filterSrcField"/>
+          <DynamicProperty name="openMode" value=""/>
+          <DynamicProperty name="relationTransitionAddCancel" value=""/>
+          <DynamicProperty name="relationTransitionAddClose" value=""/>
+          <DynamicProperty name="relationTransitionAddExit" value=""/>
+          <DynamicProperty name="relationTransitionAddOk" value=""/>
+          <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+          <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+          <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+          <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+          <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+          <DynamicProperty name="relationTransitionModifyClose" value=""/>
+          <DynamicProperty name="relationTransitionModifyExit" value=""/>
+          <DynamicProperty name="relationTransitionModifyOk" value=""/>
+          <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+          <DynamicProperty name="relationTransitionSearchClose" value=""/>
+          <DynamicProperty name="relationTransitionSearchExit" value=""/>
+          <DynamicProperty name="relationTransitionSearchOk" value=""/>
+          <DynamicProperty name="rowbound" value="false"/>
+          <DynamicProperty name="srcField">
+            <Field alias="clients" column="paytermid" name="clients.paytermid" table="clients"/>
+          </DynamicProperty>
+          <DynamicProperty name="srcRecord" value=""/>
+        </DynamicProperties>
+      </ModuleRelation>
+    </File>
+    <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="ClientTypeZoom.4fdz" locator="/Item/ClientTypeZoom" name="ClientTypeZoom" type="Zoom">
+      <DynamicProperties>
+        <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomTransitionAddCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionAddClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionAddExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionAddOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionDisplayCancel" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionDisplayOk" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionModifyClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionModifyOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
+      </DynamicProperties>
+      <ModuleRelation destination="ClientTypeZoom" locator="/Relation/Relation6" source="Client Manager Form" type="Relation">
+        <DynamicProperties>
+          <DynamicProperty name="action" value="zm_clienttype"/>
+          <DynamicProperty name="dataRefresh" value="Current Row"/>
+          <DynamicProperty name="defaultMode" value=""/>
+          <DynamicProperty name="disableAdd" value="false"/>
+          <DynamicProperty name="disableDelete" value="false"/>
+          <DynamicProperty name="disableDisplay" value="false"/>
+          <DynamicProperty name="disableEmpty" value="false"/>
+          <DynamicProperty name="disableModify" value="false"/>
+          <DynamicProperty name="disableSearch" value="false"/>
+          <DynamicProperty name="filterDstField"/>
+          <DynamicProperty name="filterSrcField"/>
+          <DynamicProperty name="openMode" value=""/>
+          <DynamicProperty name="relationTransitionAddCancel" value=""/>
+          <DynamicProperty name="relationTransitionAddClose" value=""/>
+          <DynamicProperty name="relationTransitionAddExit" value=""/>
+          <DynamicProperty name="relationTransitionAddOk" value=""/>
+          <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+          <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+          <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+          <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+          <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+          <DynamicProperty name="relationTransitionModifyClose" value=""/>
+          <DynamicProperty name="relationTransitionModifyExit" value=""/>
+          <DynamicProperty name="relationTransitionModifyOk" value=""/>
+          <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+          <DynamicProperty name="relationTransitionSearchClose" value=""/>
+          <DynamicProperty name="relationTransitionSearchExit" value=""/>
+          <DynamicProperty name="relationTransitionSearchOk" value=""/>
+          <DynamicProperty name="rowbound" value="false"/>
+          <DynamicProperty name="srcField">
+            <Field alias="clients" column="clienttypeid" name="clients.clienttypeid" table="clients"/>
+          </DynamicProperty>
+          <DynamicProperty name="srcRecord" value=""/>
+        </DynamicProperties>
+      </ModuleRelation>
+    </File>
+    <File dir="C:\SoftDev\GeneroApps\ConsultCompanion\database" filename="CountryZoom.4fdz" locator="/Item/CountryZoom" name="CountryZoom" type="Zoom">
+      <DynamicProperties>
+        <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomTransitionAddCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionAddClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionAddExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionAddOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionDisplayCancel" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionDisplayOk" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionModifyClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionModifyOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
+      </DynamicProperties>
+      <ModuleRelation destination="CountryZoom" locator="/Relation/Relation21" source="Client Manager Form" type="Relation">
+        <DynamicProperties>
+          <DynamicProperty name="action" value="zm_country"/>
+          <DynamicProperty name="dataRefresh" value="Current Row"/>
+          <DynamicProperty name="defaultMode" value=""/>
+          <DynamicProperty name="disableAdd" value="false"/>
+          <DynamicProperty name="disableDelete" value="false"/>
+          <DynamicProperty name="disableDisplay" value="false"/>
+          <DynamicProperty name="disableEmpty" value="false"/>
+          <DynamicProperty name="disableModify" value="false"/>
+          <DynamicProperty name="disableSearch" value="false"/>
+          <DynamicProperty name="filterDstField"/>
+          <DynamicProperty name="filterSrcField"/>
+          <DynamicProperty name="openMode" value=""/>
+          <DynamicProperty name="relationTransitionAddCancel" value=""/>
+          <DynamicProperty name="relationTransitionAddClose" value=""/>
+          <DynamicProperty name="relationTransitionAddExit" value=""/>
+          <DynamicProperty name="relationTransitionAddOk" value=""/>
+          <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+          <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+          <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+          <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+          <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+          <DynamicProperty name="relationTransitionModifyClose" value=""/>
+          <DynamicProperty name="relationTransitionModifyExit" value=""/>
+          <DynamicProperty name="relationTransitionModifyOk" value=""/>
+          <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+          <DynamicProperty name="relationTransitionSearchClose" value=""/>
+          <DynamicProperty name="relationTransitionSearchExit" value=""/>
+          <DynamicProperty name="relationTransitionSearchOk" value=""/>
+          <DynamicProperty name="rowbound" value="false"/>
+          <DynamicProperty name="srcField">
+            <Field alias="clients" column="countryid" name="clients.countryid" table="clients"/>
+          </DynamicProperty>
+          <DynamicProperty name="srcRecord" value=""/>
+        </DynamicProperties>
+      </ModuleRelation>
+      <ModuleRelation destination="CountryZoom" locator="/Relation/Relation22" source="EmployeeManagerForm" type="Relation">
+        <DynamicProperties>
+          <DynamicProperty name="action" value="zm_country"/>
+          <DynamicProperty name="dataRefresh" value="Current Row"/>
+          <DynamicProperty name="defaultMode" value=""/>
+          <DynamicProperty name="disableAdd" value="false"/>
+          <DynamicProperty name="disableDelete" value="false"/>
+          <DynamicProperty name="disableDisplay" value="false"/>
+          <DynamicProperty name="disableEmpty" value="false"/>
+          <DynamicProperty name="disableModify" value="false"/>
+          <DynamicProperty name="disableSearch" value="false"/>
+          <DynamicProperty name="filterDstField"/>
+          <DynamicProperty name="filterSrcField"/>
+          <DynamicProperty name="openMode" value=""/>
+          <DynamicProperty name="relationTransitionAddCancel" value=""/>
+          <DynamicProperty name="relationTransitionAddClose" value=""/>
+          <DynamicProperty name="relationTransitionAddExit" value=""/>
+          <DynamicProperty name="relationTransitionAddOk" value=""/>
+          <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+          <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+          <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+          <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+          <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+          <DynamicProperty name="relationTransitionModifyClose" value=""/>
+          <DynamicProperty name="relationTransitionModifyExit" value=""/>
+          <DynamicProperty name="relationTransitionModifyOk" value=""/>
+          <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+          <DynamicProperty name="relationTransitionSearchClose" value=""/>
+          <DynamicProperty name="relationTransitionSearchExit" value=""/>
+          <DynamicProperty name="relationTransitionSearchOk" value=""/>
+          <DynamicProperty name="rowbound" value="false"/>
+          <DynamicProperty name="srcField">
+            <Field alias="employees" column="countryid" name="employees.countryid" table="employees"/>
+          </DynamicProperty>
+          <DynamicProperty name="srcRecord" value=""/>
+        </DynamicProperties>
+      </ModuleRelation>
+    </File>
+    <Module databaseName="consultcompanion" locator="/managedform">
+      <Record alias="clients" container="Table" locator="/managedform/record1" name="record1" size="5" table="clients">
+        <DynamicProperties>
+          <DynamicProperty name="canDisplay" value="true"/>
+          <DynamicProperty name="canAdd" value="true"/>
+          <DynamicProperty name="canModify" value="true"/>
+          <DynamicProperty name="canDelete" value="true"/>
+          <DynamicProperty name="canSearch" value="true"/>
+          <DynamicProperty name="canEmpty" value="true"/>
+        </DynamicProperties>
+        <Fields>
+          <Field alias="clients" column="clientid" defaultValue="" isKey="1" isRequired="1" locator="/managedform/record1/clients.clientid" name="clients.clientid" table="clients" widget="Edit"/>
+          <Field alias="clients" column="clientname" defaultValue="" isRequired="1" locator="/managedform/record1/clients.clientname" name="clients.clientname" table="clients" widget="Edit"/>
+          <Field alias="clients" column="address1" defaultValue="" isRequired="1" locator="/managedform/record1/clients.address1" name="clients.address1" table="clients" widget="Edit"/>
+          <Field alias="clients" column="address2" defaultValue="" locator="/managedform/record1/clients.address2" name="clients.address2" table="clients" widget="Edit"/>
+          <Field alias="clients" column="city" defaultValue="" isRequired="1" locator="/managedform/record1/clients.city" name="clients.city" table="clients" widget="Edit"/>
+          <Field alias="clients" column="countryid" defaultValue="" isRequired="1" locator="/managedform/record1/clients.countryid" name="clients.countryid" table="clients" widget="ButtonEdit"/>
+          <Field alias="clients" column="provinceid" defaultValue="" isRequired="1" locator="/managedform/record1/clients.provinceid" name="clients.provinceid" table="clients" widget="ButtonEdit"/>
+          <Field alias="clients" column="postalzip" defaultValue="" isRequired="1" locator="/managedform/record1/clients.postalzip" name="clients.postalzip" table="clients" widget="Edit"/>
+          <Field alias="clients" column="primarycontact" defaultValue="" isRequired="1" locator="/managedform/record1/clients.primarycontact" name="clients.primarycontact" table="clients" widget="Edit"/>
+          <Field alias="clients" column="primaryemail" defaultValue="" isRequired="1" locator="/managedform/record1/clients.primaryemail" name="clients.primaryemail" table="clients" widget="Edit"/>
+          <Field alias="clients" column="clienttypeid" defaultValue="" isRequired="1" locator="/managedform/record1/clients.clienttypeid" name="clients.clienttypeid" table="clients" widget="ButtonEdit"/>
+          <Field alias="clients" column="preferred" defaultValue="0" isRequired="1" locator="/managedform/record1/clients.preferred" name="clients.preferred" table="clients" widget="CheckBox"/>
+          <Field alias="clients" column="paytermid" defaultValue="" isRequired="1" locator="/managedform/record1/clients.paytermid" name="clients.paytermid" table="clients" widget="ButtonEdit"/>
+          <Field alias="clients" column="primaryphone" defaultValue="" hasItems="1" initializer="" isComboBox="1" isRequired="1" locator="/managedform/record1/clients.primaryphone" name="clients.primaryphone" table="clients" widget="ComboBox"/>
+          <Field alias="clients" column="homephone" defaultValue="" locator="/managedform/record1/clients.homephone" name="clients.homephone" table="clients" widget="Edit"/>
+          <Field alias="clients" column="workphone" defaultValue="" locator="/managedform/record1/clients.workphone" name="clients.workphone" table="clients" widget="Edit"/>
+          <Field alias="clients" column="workextension" defaultValue="" locator="/managedform/record1/clients.workextension" name="clients.workextension" table="clients" widget="Edit"/>
+          <Field alias="clients" column="mobilephone" defaultValue="" locator="/managedform/record1/clients.mobilephone" name="clients.mobilephone" table="clients" widget="Edit"/>
+        </Fields>
+        <UniqueKey>
+          <Field alias="clients" column="clientid" name="clients.clientid" table="clients"/>
+        </UniqueKey>
+        <Query>
+          <OrderBy alias="clients" column="clientid" order="ASC" table="clients"/>
+        </Query>
+      </Record>
+    </Module>
+  </File>
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\ConsultCompanion\database\consultcompanion.4dbx">
+    <Table name="clients">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="clientid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="clientid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="clientname" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="clientname"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(60)" defaultValue="" fglDatatype="CHAR(60)" fglLength="60" length="60" name="address1" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="address1"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(60)" defaultValue="" fglDatatype="CHAR(60)" fglLength="60" length="60" name="address2" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="address2"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="city" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="city"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="provinceid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="provinceid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(10)" defaultValue="" fglDatatype="CHAR(10)" fglLength="10" length="10" name="postalzip" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="postalzip"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="primarycontact" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="primarycontact"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(80)" defaultValue="" fglDatatype="CHAR(80)" fglLength="80" length="80" name="primaryemail" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="primaryemail"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="clienttypeid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="clienttypeid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="BOOLEAN" defaultValue="" fglDatatype="BOOLEAN" fglLength="1" length="1" name="preferred" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="preferred"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="paytermid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="paytermid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(1)" defaultValue="" fglDatatype="CHAR(1)" fglLength="1" length="1" name="primaryphone" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ComboBox"/>
+          <DynamicProperty name="label" value="primaryphone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="homephone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="homephone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="workphone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="workphone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(15)" defaultValue="" fglDatatype="CHAR(15)" fglLength="15" length="15" name="mobilephone" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="mobilephone"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(10)" defaultValue="" fglDatatype="CHAR(10)" fglLength="10" length="10" name="workextension" notNull="0">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="workextension"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="countryid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="ButtonEdit"/>
+          <DynamicProperty name="label" value="countryid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_clients_1">
+        <Column name="clientid"/>
+      </DBConstraint>
+      <DBIndex name="PK_clients_1" primary="1" unique="0">
+        <Column name="clientid"/>
+      </DBIndex>
+      <ForeignKey name="FK_clients_clientTypes_1" ref_table="clienttypes" table="clients">
+        <Column name="clienttypeid" ref_name="clienttypeid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_clients_country_1" ref_table="country" table="clients">
+        <Column name="countryid" ref_name="countryid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_clients_paymentTerms_1" ref_table="paymentterms" table="clients">
+        <Column name="paytermid" ref_name="paytermid"/>
+      </ForeignKey>
+      <ForeignKey name="FK_clients_provinces_1" ref_table="provinces" table="clients">
+        <Column name="provinceid" ref_name="provinceid"/>
+      </ForeignKey>
+    </Table>
+  </Database>
+</AG>

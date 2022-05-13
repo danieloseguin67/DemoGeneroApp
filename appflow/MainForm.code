@@ -1,0 +1,37 @@
+{<CODEFILE version="1.0" encoding="CP1252">}
+{<SOURCEFILE name="MainForm.4gl" hash="9HGqpq5YRle0hePkJH+ryA==">}
+{<USERCODE>}
+{<POINT Name="import" Status="MODIFIED">}
+IMPORT FGL fgldialog
+ {</POINT>}
+{<POINT Name="fct.uiOpenForm.user" Status="MODIFIED">} 
+
+    DEFINE l_cmd STRING 
+    
+    OPEN WINDOW w_mainmenu AT 1,1 WITH FORM "MAINFORM"  ATTRIBUTE (BORDER)
+    
+    MENU "Main Menu"
+        COMMAND "Setup" "Setup components needed throughout the application"
+          CALL fgl_winmessage("Message","Option not implemented yet", "information")
+        COMMAND "Client" "Client manager"
+           LET l_cmd = "Fglrun ClientManager.42r"             
+           RUN l_cmd clipped          
+        COMMAND "Employee" "Employee manager"
+          CALL fgl_winmessage("Message","Option not implemented yet", "information")
+        COMMAND "RFS" "Request for service  manager"
+          CALL fgl_winmessage("Message","Option not implemented yet", "information")
+        COMMAND "Reports" "View reports"
+          CALL fgl_winmessage("Message","Option not implemented yet", "information")
+        COMMAND "Exit" 
+           EXIT PROGRAM (0)
+    END MENU
+
+    CLOSE WINDOW w_mainmenu
+    
+    {</POINT>}
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{</CODEFILE>}

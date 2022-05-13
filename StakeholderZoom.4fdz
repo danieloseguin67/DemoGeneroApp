@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{9c0ccee7-88ce-4694-b742-23a76c477771}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canAdd" name="canAdd" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canDelete" name="canDelete" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canModify" name="canModify" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="clientstakeholders" name="record1" order="clientstakeholders.clientId(ASC),clientstakeholders.stakeholdername(ASC)" uid="{e644af83-3597-4c5f-9876-4a6b4b7103a6}">
+    <RecordField colName="stakeholderId" fieldIdRef="1" fieldType="TABLE_COLUMN" name="clientstakeholders.stakeholderId" sqlTabName="clientstakeholders" uid="{0413875d-86aa-4494-a31c-f294e9c32f39}"/>
+    <RecordField colName="stakeholdername" fieldIdRef="2" fieldType="TABLE_COLUMN" name="clientstakeholders.stakeholdername" sqlTabName="clientstakeholders" uid="{b1d05e3f-9fc8-4ba9-89fb-c5945f3689a0}"/>
+    <RecordField colName="clientId" fieldIdRef="3" fieldType="TABLE_COLUMN" name="clientstakeholders.clientId" sqlTabName="clientstakeholders" uid="{e2dd9f79-9f2f-4a85-89d4-de76e095e444}"/>
+  </Record>
+  <Form gridHeight="8" gridWidth="58" name="form" text="StakeholderZoom">
+    <Table gridHeight="6" gridWidth="56" name="consultcompanion1" posX="1" posY="1" totalRows="5">
+      <Edit colName="stakeholderId" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" name="clientstakeholders.stakeholderId" posX="1" posY="0" scroll="true" sqlTabName="clientstakeholders" tabIndex="-1" title="Stakeholder ID" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="stakeholdername" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clientstakeholders.stakeholdername" posX="12" posY="0" scroll="true" sqlTabName="clientstakeholders" tabIndex="-1" title="Stakeholder Name" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="clientId" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" hidden="true" name="clientstakeholders.clientId" noEntry="true" posX="42" posY="0" scroll="true" sqlTabName="clientstakeholders" tabIndex="-1" title="Client ID" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Table>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBlADYANAA0AGEAZgA4ADMALQAzADUAOQA3AC0ANABjADUAZgAtADkAOAA3ADYALQA0AGEANgBiADQAYgA3ADEAMAAzAGEANgB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

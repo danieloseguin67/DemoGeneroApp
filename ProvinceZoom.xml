@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\ConsultCompanion\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="ProvinceZoom.4fdz" locator="/Item/ProvinceZoom" name="ProvinceZoom" type="Zoom">
+    <DynamicProperties>
+      <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
+      <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
+      <DynamicProperty name="zoomTransitionAddCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionAddClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionAddExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionAddOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionDisplayCancel" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionDisplayClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionDisplayExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionDisplayOk" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionModifyCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionModifyClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionModifyExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionModifyOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionSearchCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionSearchClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
+    </DynamicProperties>
+    <ModuleRelation destination="ProvinceZoom" locator="/Relation/Relation8" source="EmployeeManagerForm" type="Relation">
+      <DynamicProperties>
+        <DynamicProperty name="action" value="zm_provinces"/>
+        <DynamicProperty name="dataRefresh" value="Current Row"/>
+        <DynamicProperty name="defaultMode" value=""/>
+        <DynamicProperty name="disableAdd" value="false"/>
+        <DynamicProperty name="disableDelete" value="false"/>
+        <DynamicProperty name="disableDisplay" value="false"/>
+        <DynamicProperty name="disableEmpty" value="false"/>
+        <DynamicProperty name="disableModify" value="false"/>
+        <DynamicProperty name="disableSearch" value="false"/>
+        <DynamicProperty name="filterDstField">
+          <Field alias="provinces" column="countryid" name="provinces.countryid" table="provinces"/>
+        </DynamicProperty>
+        <DynamicProperty name="filterSrcField">
+          <Field alias="employees" column="countryid" name="employees.countryid" table="employees"/>
+        </DynamicProperty>
+        <DynamicProperty name="openMode" value=""/>
+        <DynamicProperty name="relationTransitionAddCancel" value=""/>
+        <DynamicProperty name="relationTransitionAddClose" value=""/>
+        <DynamicProperty name="relationTransitionAddExit" value=""/>
+        <DynamicProperty name="relationTransitionAddOk" value=""/>
+        <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+        <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+        <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+        <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+        <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+        <DynamicProperty name="relationTransitionModifyClose" value=""/>
+        <DynamicProperty name="relationTransitionModifyExit" value=""/>
+        <DynamicProperty name="relationTransitionModifyOk" value=""/>
+        <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+        <DynamicProperty name="relationTransitionSearchClose" value=""/>
+        <DynamicProperty name="relationTransitionSearchExit" value=""/>
+        <DynamicProperty name="relationTransitionSearchOk" value=""/>
+        <DynamicProperty name="rowbound" value="false"/>
+        <DynamicProperty name="srcField">
+          <Field alias="employees" column="provinceId" name="employees.provinceId" table="employees"/>
+        </DynamicProperty>
+        <DynamicProperty name="srcRecord" value=""/>
+      </DynamicProperties>
+    </ModuleRelation>
+    <ModuleRelation destination="ProvinceZoom" locator="/Relation/Relation4" source="Client Manager Form" type="Relation">
+      <DynamicProperties>
+        <DynamicProperty name="action" value="zm_provinces"/>
+        <DynamicProperty name="dataRefresh" value="Current Row"/>
+        <DynamicProperty name="defaultMode" value=""/>
+        <DynamicProperty name="disableAdd" value="false"/>
+        <DynamicProperty name="disableDelete" value="false"/>
+        <DynamicProperty name="disableDisplay" value="false"/>
+        <DynamicProperty name="disableEmpty" value="false"/>
+        <DynamicProperty name="disableModify" value="false"/>
+        <DynamicProperty name="disableSearch" value="false"/>
+        <DynamicProperty name="filterDstField">
+          <Field alias="provinces" column="countryid" name="provinces.countryid" table="provinces"/>
+        </DynamicProperty>
+        <DynamicProperty name="filterSrcField">
+          <Field alias="clients" column="countryid" name="clients.countryid" table="clients"/>
+        </DynamicProperty>
+        <DynamicProperty name="openMode" value=""/>
+        <DynamicProperty name="relationTransitionAddCancel" value=""/>
+        <DynamicProperty name="relationTransitionAddClose" value=""/>
+        <DynamicProperty name="relationTransitionAddExit" value=""/>
+        <DynamicProperty name="relationTransitionAddOk" value=""/>
+        <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+        <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+        <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+        <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+        <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+        <DynamicProperty name="relationTransitionModifyClose" value=""/>
+        <DynamicProperty name="relationTransitionModifyExit" value=""/>
+        <DynamicProperty name="relationTransitionModifyOk" value=""/>
+        <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+        <DynamicProperty name="relationTransitionSearchClose" value=""/>
+        <DynamicProperty name="relationTransitionSearchExit" value=""/>
+        <DynamicProperty name="relationTransitionSearchOk" value=""/>
+        <DynamicProperty name="rowbound" value="false"/>
+        <DynamicProperty name="srcField">
+          <Field alias="clients" column="provinceid" name="clients.provinceid" table="clients"/>
+        </DynamicProperty>
+        <DynamicProperty name="srcRecord" value=""/>
+      </DynamicProperties>
+    </ModuleRelation>
+    <Module databaseName="consultcompanion" locator="/managedform">
+      <Record alias="provinces" container="Table" locator="/managedform/record1" name="record1" size="5" table="provinces">
+        <DynamicProperties>
+          <DynamicProperty name="canDisplay" value="true"/>
+          <DynamicProperty name="canAdd" value="false"/>
+          <DynamicProperty name="canModify" value="false"/>
+          <DynamicProperty name="canDelete" value="false"/>
+          <DynamicProperty name="canSearch" value="true"/>
+          <DynamicProperty name="canEmpty" value="true"/>
+        </DynamicProperties>
+        <Fields>
+          <Field alias="provinces" column="provinceid" defaultValue="" isKey="1" isRequired="1" locator="/managedform/record1/provinces.provinceid" name="provinces.provinceid" table="provinces" widget="Edit"/>
+          <Field alias="provinces" column="provincename" defaultValue="" isRequired="1" locator="/managedform/record1/provinces.provincename" name="provinces.provincename" table="provinces" widget="Edit"/>
+          <Field alias="provinces" column="countryid" defaultValue="" isRequired="1" locator="/managedform/record1/provinces.countryid" name="provinces.countryid" table="provinces" widget="Edit"/>
+        </Fields>
+        <UniqueKey>
+          <Field alias="provinces" column="provinceid" name="provinces.provinceid" table="provinces"/>
+        </UniqueKey>
+        <Query>
+          <OrderBy alias="provinces" column="countryid" order="ASC" table="provinces"/>
+          <OrderBy alias="provinces" column="provincename" order="ASC" table="provinces"/>
+        </Query>
+      </Record>
+    </Module>
+  </File>
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\ConsultCompanion\database\consultcompanion.4dbx">
+    <Table name="provinces">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="provinceid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="provinceid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="provincename" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="provincename"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="INTEGER" defaultValue="" fglDatatype="INTEGER" fglLength="4" length="11" name="countryid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="countryid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_provinces_1">
+        <Column name="provinceid"/>
+      </DBConstraint>
+      <DBIndex name="PK_provinces_1" primary="1" unique="0">
+        <Column name="provinceid"/>
+      </DBIndex>
+      <ForeignKey name="FK_provinces_country_1" ref_table="country" table="provinces">
+        <Column name="countryid" ref_name="countryid"/>
+      </ForeignKey>
+    </Table>
+  </Database>
+</AG>

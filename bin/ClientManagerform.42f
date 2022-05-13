@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="ClientManagerform.tmp" build="3.20.11" sqlDbName="consultcompanion" text="ClientManagerform" width="338" height="5">
+  <LStr text="ClientManagerform"/>
+  <Grid>
+    <Table gridWidth="338" gridHeight="5" pageSize="5" name="consultcompanion1" comment="Enter the line 1 of the address" tabName="record1">
+      <TableColumn name="clients.clientid" colName="clientid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="clients" text="Client ID" tabIndex="1" numAlign="1">
+        <Edit width="8"/>
+        <LStr text="Client ID"/>
+      </TableColumn>
+      <TableColumn name="clients.clientname" colName="clientname" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="clients" text="C.lient Name" tabIndex="2">
+        <Edit width="30" placeholder="Enter cmpany name" scroll="1" comment="Enter the company name">
+          <LStr placeholder="Enter cmpany name" comment="Enter the company name"/>
+        </Edit>
+        <LStr text="C.lient Name"/>
+      </TableColumn>
+      <TableColumn name="clients.address1" colName="address1" sqlType="CHAR(60)" required="1" notNull="1" fieldId="2" sqlTabName="clients" text="Address 1" tabIndex="3">
+        <Edit width="30" placeholder="Enter address line 1" scroll="1" comment="Enter the address line 1">
+          <LStr placeholder="Enter address line 1" comment="Enter the address line 1"/>
+        </Edit>
+        <LStr text="Address 1"/>
+      </TableColumn>
+      <TableColumn name="clients.address2" colName="address2" sqlType="CHAR(60)" fieldId="3" sqlTabName="clients" text="Address 2" tabIndex="4">
+        <Edit width="30" placeholder="Enter address line 2" scroll="1" comment="Enter the address line 2">
+          <LStr placeholder="Enter address line 2" comment="Enter the address line 2"/>
+        </Edit>
+        <LStr text="Address 2"/>
+      </TableColumn>
+      <TableColumn name="clients.city" colName="city" sqlType="CHAR(30)" required="1" notNull="1" fieldId="4" sqlTabName="clients" text="city" tabIndex="5">
+        <Edit width="30" placeholder="Enter the city name" scroll="1" comment="Enter the name of the city">
+          <LStr placeholder="Enter the city name" comment="Enter the name of the city"/>
+        </Edit>
+        <LStr text="city"/>
+      </TableColumn>
+      <TableColumn name="clients.countryid" colName="countryid" sqlType="INTEGER" required="1" notNull="1" fieldId="5" sqlTabName="clients" text="Country" tabIndex="6" numAlign="1">
+        <ButtonEdit width="6" action="zm_country" placeholder="Select country" image="mag" scroll="1" comment="Select the country name of the client">
+          <LStr placeholder="Select country" comment="Select the country name of the client"/>
+        </ButtonEdit>
+        <LStr text="Country"/>
+      </TableColumn>
+      <TableColumn name="clients.provinceid" colName="provinceid" sqlType="INTEGER" required="1" notNull="1" fieldId="6" sqlTabName="clients" text="Province / State" tabIndex="7" numAlign="1">
+        <ButtonEdit width="9" action="zm_provinces" placeholder="Select province or state" image="mag" scroll="1" comment="Enter the province or state ">
+          <LStr placeholder="Select province or state" comment="Enter the province or state "/>
+        </ButtonEdit>
+        <LStr text="Province / State"/>
+      </TableColumn>
+      <TableColumn name="clients.postalzip" colName="postalzip" sqlType="CHAR(10)" required="1" notNull="1" fieldId="7" sqlTabName="clients" text="Postal / Zip Code" tabIndex="8">
+        <Edit width="13" placeholder="Postal or zip code" shift="up" scroll="1" comment="Enter the postal or zip code">
+          <LStr placeholder="Postal or zip code" comment="Enter the postal or zip code"/>
+        </Edit>
+        <LStr text="Postal / Zip Code"/>
+      </TableColumn>
+      <TableColumn name="clients.primarycontact" colName="primarycontact" sqlType="CHAR(30)" required="1" notNull="1" fieldId="8" sqlTabName="clients" text="Primary contact" tabIndex="9">
+        <Edit width="30" placeholder="Enter primary contact name" scroll="1" comment="Enter the name of the primary contact">
+          <LStr placeholder="Enter primary contact name" comment="Enter the name of the primary contact"/>
+        </Edit>
+        <LStr text="Primary contact"/>
+      </TableColumn>
+      <TableColumn name="clients.primaryemail" colName="primaryemail" sqlType="CHAR(80)" required="1" notNull="1" fieldId="9" sqlTabName="clients" text="Primary Email" tabIndex="10">
+        <Edit width="30" comment="Enter the email addess of you primary contact">
+          <LStr comment="Enter the email addess of you primary contact"/>
+        </Edit>
+        <LStr text="Primary Email"/>
+      </TableColumn>
+      <TableColumn name="clients.clienttypeid" colName="clienttypeid" sqlType="INTEGER" required="1" notNull="1" fieldId="10" sqlTabName="clients" text="Client Type" tabIndex="11" numAlign="1">
+        <ButtonEdit width="11" action="zm_clienttype" placeholder="Select client type" image="mag" scroll="1" comment="Select the client&apos;s type">
+          <LStr placeholder="Select client type" comment="Select the client&apos;s type"/>
+        </ButtonEdit>
+        <LStr text="Client Type"/>
+      </TableColumn>
+      <TableColumn name="clients.preferred" colName="preferred" sqlType="BOOLEAN" required="1" notNull="1" fieldId="11" sqlTabName="clients" defaultValue="0" text="Preferred client?" tabIndex="12" numAlign="1">
+        <CheckBox width="11" text="" comment="Check the client if he is a preferred one">
+          <LStr text="" comment="Check the client if he is a preferred one"/>
+        </CheckBox>
+        <LStr text="Preferred client?"/>
+      </TableColumn>
+      <TableColumn name="clients.paytermid" colName="paytermid" sqlType="INTEGER" required="1" notNull="1" fieldId="12" sqlTabName="clients" text="Payment Term" tabIndex="13" numAlign="1">
+        <ButtonEdit width="9" action="zm_payterm" placeholder="Payment term" image="mag" scroll="1" comment="Select the payment term of the client">
+          <LStr placeholder="Payment term" comment="Select the payment term of the client"/>
+        </ButtonEdit>
+        <LStr text="Payment Term"/>
+      </TableColumn>
+      <TableColumn name="clients.primaryphone" colName="primaryphone" sqlType="CHAR(1)" required="1" notNull="1" fieldId="13" sqlTabName="clients" text="Primary Phone?" tabIndex="14">
+        <ComboBox width="8" scroll="1" comment="Select the preferred method to contact the client">
+          <LStr comment="Select the preferred method to contact the client"/>
+          <Item name="H" text="Home Phone Number"/>
+          <Item name="W" text="Work Phone Number"/>
+          <Item name="M" text="Mobile Phone Number"/>
+        </ComboBox>
+        <LStr text="Primary Phone?"/>
+      </TableColumn>
+      <TableColumn name="clients.homephone" colName="homephone" sqlType="CHAR(15)" fieldId="14" sqlTabName="clients" text="Home Phone" tabIndex="15">
+        <Edit width="12" keyboardHint="phone" scroll="1" comment="Enter the home phone number of the client">
+          <LStr comment="Enter the home phone number of the client"/>
+        </Edit>
+        <LStr text="Home Phone"/>
+      </TableColumn>
+      <TableColumn name="clients.workphone" colName="workphone" sqlType="CHAR(15)" fieldId="15" sqlTabName="clients" text="Work Phone" tabIndex="16">
+        <Edit width="13" keyboardHint="phone" scroll="1" comment="Enter the office phone number of the client">
+          <LStr comment="Enter the office phone number of the client"/>
+        </Edit>
+        <LStr text="Work Phone"/>
+      </TableColumn>
+      <TableColumn name="clients.workextension" colName="workextension" sqlType="CHAR(10)" fieldId="16" sqlTabName="clients" text="Work Phone Extension" tabIndex="17">
+        <Edit width="14"/>
+        <LStr text="Work Phone Extension"/>
+      </TableColumn>
+      <TableColumn name="clients.mobilephone" colName="mobilephone" sqlType="CHAR(15)" fieldId="17" sqlTabName="clients" text="Mobile Phone" tabIndex="18">
+        <Edit width="15" placeholder="Mobile phone" keyboardHint="phone" scroll="1" comment="Enter the mobile phone number of the client">
+          <LStr placeholder="Mobile phone" comment="Enter the mobile phone number of the client"/>
+        </Edit>
+        <LStr text="Mobile Phone"/>
+      </TableColumn>
+      <LStr comment="Enter the line 1 of the address"/>
+    </Table>
+  </Grid>
+  <RecordView tabName="clients">
+    <Link colName="clientid" fieldIdRef="0"/>
+    <Link colName="clientname" fieldIdRef="1"/>
+    <Link colName="address1" fieldIdRef="2"/>
+    <Link colName="address2" fieldIdRef="3"/>
+    <Link colName="city" fieldIdRef="4"/>
+    <Link colName="countryid" fieldIdRef="5"/>
+    <Link colName="provinceid" fieldIdRef="6"/>
+    <Link colName="postalzip" fieldIdRef="7"/>
+    <Link colName="primarycontact" fieldIdRef="8"/>
+    <Link colName="primaryemail" fieldIdRef="9"/>
+    <Link colName="clienttypeid" fieldIdRef="10"/>
+    <Link colName="preferred" fieldIdRef="11"/>
+    <Link colName="paytermid" fieldIdRef="12"/>
+    <Link colName="primaryphone" fieldIdRef="13"/>
+    <Link colName="homephone" fieldIdRef="14"/>
+    <Link colName="workphone" fieldIdRef="15"/>
+    <Link colName="workextension" fieldIdRef="16"/>
+    <Link colName="mobilephone" fieldIdRef="17"/>
+  </RecordView>
+</Form>

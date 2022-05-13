@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{be258a46-1777-46a8-9f94-c3c44e8ab0cf}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canAdd" name="canAdd" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDelete" name="canDelete" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canModify" name="canModify" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="clients" name="record1" order="clients.clientid(ASC)" uid="{e95a10f4-ab82-4447-a156-79e4c0c941cd}">
+    <RecordField colName="clientid" fieldIdRef="1" fieldType="TABLE_COLUMN" name="clients.clientid" sqlTabName="clients" uid="{1acf4686-922d-438e-b7d7-65d628af320a}"/>
+    <RecordField colName="clientname" fieldIdRef="2" fieldType="TABLE_COLUMN" name="clients.clientname" sqlTabName="clients" uid="{18da8d0e-0bbb-4320-80d7-d18bcabfb86b}"/>
+    <RecordField colName="address1" fieldIdRef="3" fieldType="TABLE_COLUMN" name="clients.address1" sqlTabName="clients" uid="{cab900d9-a5ba-4708-bb5b-2f2465f71a2c}"/>
+    <RecordField colName="address2" fieldIdRef="4" fieldType="TABLE_COLUMN" name="clients.address2" sqlTabName="clients" uid="{0a585d5f-56c5-4d57-b3b7-c8781ff39067}"/>
+    <RecordField colName="city" fieldIdRef="5" fieldType="TABLE_COLUMN" name="clients.city" sqlTabName="clients" uid="{c7e41df8-b923-4ecf-9738-4f1a8453ccd6}"/>
+    <RecordField colName="countryid" fieldIdRef="11" fieldType="TABLE_COLUMN" name="clients.countryid" sqlTabName="clients" uid="{a42d86d5-8a71-4be0-885a-93c8f792e402}"/>
+    <RecordField colName="provinceid" fieldIdRef="6" fieldType="TABLE_COLUMN" name="clients.provinceid" sqlTabName="clients" uid="{3c0509ad-3b51-4ffb-a979-de051ea7a146}"/>
+    <RecordField colName="postalzip" fieldIdRef="7" fieldType="TABLE_COLUMN" name="clients.postalzip" sqlTabName="clients" uid="{102724f1-133a-4b14-8b79-f75d0a843ebe}"/>
+    <RecordField colName="primarycontact" fieldIdRef="8" fieldType="TABLE_COLUMN" name="clients.primarycontact" sqlTabName="clients" uid="{be574fb5-9c36-445a-a180-520500505fd7}"/>
+    <RecordField colName="primaryemail" fieldIdRef="9" fieldType="TABLE_COLUMN" name="clients.primaryemail" sqlTabName="clients" uid="{921226f5-a314-49a4-ac5c-c4647fba23a4}"/>
+    <RecordField colName="clienttypeid" fieldIdRef="10" fieldType="TABLE_COLUMN" name="clients.clienttypeid" sqlTabName="clients" uid="{6c5b433b-6c5e-4fee-af09-814b66c761e7}"/>
+    <RecordField colName="preferred" defaultValue="0" fieldIdRef="17" fieldType="TABLE_COLUMN" name="clients.preferred" sqlTabName="clients" uid="{d84dbf78-813f-425e-8b71-435c04d1589c}"/>
+    <RecordField colName="paytermid" fieldIdRef="12" fieldType="TABLE_COLUMN" name="clients.paytermid" sqlTabName="clients" uid="{927dbea7-d489-4edb-916e-957e742e39f0}"/>
+    <RecordField colName="primaryphone" fieldIdRef="13" fieldType="TABLE_COLUMN" name="clients.primaryphone" sqlTabName="clients" uid="{19d3f87c-ab67-4cde-8fd1-5b68eab43d30}"/>
+    <RecordField colName="homephone" fieldIdRef="14" fieldType="TABLE_COLUMN" name="clients.homephone" sqlTabName="clients" uid="{d6456de8-d095-435e-8bf4-2a5f36df47cb}"/>
+    <RecordField colName="workphone" fieldIdRef="15" fieldType="TABLE_COLUMN" name="clients.workphone" sqlTabName="clients" uid="{0e14acf7-f483-49d6-852c-556d598e927f}"/>
+    <RecordField colName="workextension" fieldIdRef="18" fieldType="TABLE_COLUMN" name="clients.workextension" sqlTabName="clients" uid="{ec44cf72-c9af-4bc6-85c9-a1370066bb85}"/>
+    <RecordField colName="mobilephone" fieldIdRef="16" fieldType="TABLE_COLUMN" name="clients.mobilephone" sqlTabName="clients" uid="{32230ce1-334b-42b6-9400-93b6b8ec15db}"/>
+  </Record>
+  <Form gridHeight="8" gridWidth="343" name="form" text="ClientManagerform">
+    <Table comment="Enter the line 1 of the address" gridHeight="6" gridWidth="342" name="consultcompanion1" posX="1" posY="0" totalRows="5">
+      <Edit colName="clientid" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="8" name="clients.clientid" posX="0" posY="0" sqlTabName="clients" tabIndex="-1" title="Client ID" widget="Edit"/>
+      <Edit colName="clientname" comment="Enter the company name" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clients.clientname" placeholder="Enter cmpany name" posX="8" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="C.lient Name" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="address1" comment="Enter the address line 1" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clients.address1" placeholder="Enter address line 1" posX="38" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Address 1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="address2" comment="Enter the address line 2" fieldId="4" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clients.address2" placeholder="Enter address line 2" posX="68" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Address 2" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="city" comment="Enter the name of the city" fieldId="5" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clients.city" placeholder="Enter the city name" posX="98" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <ButtonEdit action="zm_country" colName="countryid" comment="Select the country name of the client" fieldId="11" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="8" image="mag" name="clients.countryid" placeholder="Select country" posX="128" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Country" widget="ButtonEdit"/>
+      <ButtonEdit action="zm_provinces" colName="provinceid" comment="Enter the province or state " fieldId="6" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="mag" name="clients.provinceid" placeholder="Select province or state" posX="136" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Province / State" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Edit case="upper" colName="postalzip" comment="Enter the postal or zip code" fieldId="7" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="13" name="clients.postalzip" placeholder="Postal or zip code" posX="147" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Postal / Zip Code" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="primarycontact" comment="Enter the name of the primary contact" fieldId="8" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clients.primarycontact" placeholder="Enter primary contact name" posX="160" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Primary contact" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="primaryemail" comment="Enter the email addess of you primary contact" fieldId="9" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clients.primaryemail" posX="190" posY="0" sqlTabName="clients" tabIndex="-1" title="Primary Email" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <ButtonEdit action="zm_clienttype" colName="clienttypeid" comment="Select the client&apos;s type" fieldId="10" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="13" image="mag" name="clients.clienttypeid" placeholder="Select client type" posX="220" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Client Type" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <CheckBox colName="preferred" comment="Check the client if he is a preferred one" defaultValue="0" fieldId="17" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" name="clients.preferred" posX="233" posY="0" sqlTabName="clients" tabIndex="-1" text="" title="Preferred client?" widget="CheckBox"/>
+      <ButtonEdit action="zm_payterm" colName="paytermid" comment="Select the payment term of the client" fieldId="12" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="mag" name="clients.paytermid" placeholder="Payment term" posX="244" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Payment Term" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <ComboBox colName="primaryphone" comment="Select the preferred method to contact the client" fieldId="13" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="10" items="Home Phone Number, Work Phone Number, Mobile Phone Number" name="clients.primaryphone" posX="255" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Primary Phone?" widget="ComboBox">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+        <Item lstrtext="false" name="H" text="Home Phone Number"/>
+        <Item lstrtext="false" name="W" text="Work Phone Number"/>
+        <Item lstrtext="false" name="M" text="Mobile Phone Number"/>
+      </ComboBox>
+      <Edit colName="homephone" comment="Enter the home phone number of the client" fieldId="14" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="12" keyboardHint="phone" name="clients.homephone" posX="265" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Home Phone" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="workphone" comment="Enter the office phone number of the client" fieldId="15" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="13" keyboardHint="phone" name="clients.workphone" posX="277" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Work Phone" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="workextension" fieldId="18" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="14" name="clients.workextension" posX="290" posY="0" sqlTabName="clients" tabIndex="-1" title="Work Phone Extension" widget="Edit"/>
+      <Edit colName="mobilephone" comment="Enter the mobile phone number of the client" fieldId="16" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="15" keyboardHint="phone" name="clients.mobilephone" placeholder="Mobile phone" posX="304" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Mobile Phone" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Table>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBlADkANQBhADEAMABmADQALQBhAGIAOAAyAC0ANAA0ADQANwAtAGEAMQA1ADYALQA3ADkAZQA0AGMAMABjADkANAAxAGMAZAB9wHeQAAAAAADAOQAAAAAAAD+vvnbItDlfAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

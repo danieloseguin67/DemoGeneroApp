@@ -1,0 +1,377 @@
+{<CODEFILE version="1.0" encoding="CP1252">}
+{<SOURCEFILE name="ProvinceZoom_uidata.4gl" hash="nt1PUnseG2Lv3QghQvqvIw==">}
+{<USERCODE>}
+{<BLOCK Name="fct.record1_getDataArray" Status="MODIFIED">}
+#+ Create and fill a dynamic array of Business Record(BR) fields for record1
+#+
+#+ @param p_arr_br_fields The array of Business Record(BR) fields
+#+ @param p_arr_db_fields The array of  Database(DB) fields
+#+ @param p_where The where clause of the query
+#+ @param p_detailList List of details on whom a CONSTRUCT was done
+#+ @returnType INTEGER, record1_br_type, provinces.*
+#+ @return Error number, 0-success, other-error
+#+ @return p_arr_br_fields, p_arr_db_fields
+PUBLIC FUNCTION (p_arr_br_fields, p_arr_db_fields, p_where, p_detailList)
+    --Declaration of parameters
+    DEFINE p_arr_br_fields DYNAMIC ARRAY OF record1_br_type
+    DEFINE p_arr_db_fields DYNAMIC ARRAY OF RECORD LIKE provinces.*
+    DEFINE p_where STRING
+    DEFINE p_detailList STRING
+    --Declaration of local types, variables, constants
+    DEFINE l_sqlQuery STRING --The SELECT SQL statement to retrieve keys of records
+    DEFINE l_from STRING
+    DEFINE l_distinct STRING
+    DEFINE l_detailListTok base.StringTokenizer
+    DEFINE l_tokValue STRING
+    DEFINE i INTEGER
+    {<POINT Name="fct.record1_getDataArray.define">} {</POINT>}
+    CALL p_arr_br_fields.clear()
+    CALL p_arr_db_fields.clear()
+    LET l_from = ' FROM
+    provinces
+    '
+    LET l_distinct = ''
+    LET l_detailListTok = base.StringTokenizer.create(p_detailList, '|')
+    WHILE l_detailListTok.hasMoreTokens()
+        LET l_tokValue = l_detailListTok.nextToken()
+    END WHILE
+    LET l_sqlQuery = 'SELECT ', l_distinct
+        , ' provinces.provinceid, '
+        , ' provinces.provincename, '
+        , ' provinces.countryid, '
+        , ' provinces.* '
+        , l_from
+        , p_where
+        , ''
+        , ' ORDER BY provinces.countryid ASC, '
+        , '   provinces.provincename ASC '
+    {<POINT Name="fct.record1_getDataArray.init">} {</POINT>}
+    IF ProvinceZoom_events.m_DataEvent_record1_OnSelectRows IS NOT NULL THEN
+        CALL ProvinceZoom_events.m_DataEvent_record1_OnSelectRows(l_sqlQuery)
+            RETURNING l_sqlQuery
+    END IF
+
+    LET i = 1
+
+    WHENEVER ERROR CONTINUE
+        DECLARE getDataArray_cursqlsid_ProvinceZoom_record1 CURSOR FROM l_sqlQuery
+    WHENEVER ERROR STOP
+    IF SQLCA.SQLCODE != 0 THEN
+        RETURN SQLCA.SQLCODE
+    END IF
+    WHENEVER ERROR CONTINUE
+        FOREACH getDataArray_cursqlsid_ProvinceZoom_record1 INTO
+                p_arr_br_fields[i].provinces_provinceid,
+                p_arr_br_fields[i].provinces_provincename,
+                p_arr_br_fields[i].provinces_countryid,
+                p_arr_db_fields[i].*
+
+            IF ProvinceZoom_events.m_DataEvent_record1_OnComputedFields IS NOT NULL THEN
+                CALL ProvinceZoom_events.m_DataEvent_record1_OnComputedFields(p_arr_br_fields[i])
+            END IF
+            {<POINT Name="fct.record1_getDataArray.computeFieldsAddOn">} {</POINT>}
+            LET i = i + 1
+
+        END FOREACH
+        CALL p_arr_br_fields.deleteElement(p_arr_br_fields.getLength())
+        CALL p_arr_db_fields.deleteElement(p_arr_db_fields.getLength())
+        FREE getDataArray_cursqlsid_ProvinceZoom_record1
+    WHENEVER ERROR STOP
+    IF SQLCA.SQLCODE != 0 THEN
+        CALL p_arr_br_fields.clear()
+        CALL p_arr_db_fields.clear()
+    END IF
+    {<POINT Name="fct.record1_getDataArray.user">} {</POINT>}
+    RETURN SQLCA.SQLCODE
+END FUNCTION
+{</BLOCK>}
+
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{<SOURCEFILE name="ProvinceZoom_uidialogdata.4gl" hash="7JQCYIx7vAgxlR4grvtljQ==">}
+{<USERCODE>}
+{<BLOCK Name="fct.record1_fetchAll" Status="MODIFIED">}
+#+ Fetch the data set for 'record1'
+#+
+#+ @param p_where        The WHERE part to apply
+#+ @param p_detailList   List of details on whom a CONSTRUCT was done
+PUBLIC FUNCTION (p_where, p_detailList)
+    DEFINE p_where STRING
+    DEFINE p_detailList STRING
+    DEFINE errNo INTEGER
+    {<POINT Name="fct.record1_fetchAll.define">} {</POINT>}
+    {<POINT Name="fct.record1_fetchAll.init">} {</POINT>}
+    CALL ProvinceZoom_uidialogdata_record1_clear()
+    CALL ProvinceZoom_uidata.ProvinceZoom_uidata_record1_getDataArray(m_record1_arrRecList, m_record1_arrRecDB, p_where, p_detailList) RETURNING errNo
+    IF errNo < ERROR_SQL_SUCCESS THEN
+        LET m_record1_keyIndex = 0
+        CALL libdbapp_utilMsgStatusBar(errNo, libdbapp_formatSqlErrorMsg(errNo))
+    END IF
+    LET m_record1_keyIndex = libdbapp_setRowIndex(m_record1_keyIndex, m_record1_arrRecList.getLength())
+    CALL ProvinceZoom_uidialogdata_record1_fetchDetails()
+END FUNCTION
+{</BLOCK>}
+
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{<SOURCEFILE name="ProvinceZoom_uidialog.4gl" hash="1B2M2Y8AsgTpgAmY7PhCfg==">}
+{<USERCODE>}
+
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{<SOURCEFILE name="ProvinceZoom_ui.4gl" hash="PAju+vnG3ZSlnpip4isQXQ==">}
+{<USERCODE>}
+{<BLOCK Name="fct.uiOpenFormByKey" Status="MODIFIED">}
+#+ Launch the module according to the open mode and position to the key
+#+
+#+ @param p_whereRelation   Part of the WHERE clause defined by entity relations in the BA
+#+ @param p_uiSettings      UI Settings defined on the relation
+#+ @param p_br_uk           Key used for position
+PUBLIC FUNCTION ProvinceZoom_ui_uiOpenFormByKey(p_whereRelation, p_uiSettings, p_br_uk)
+    DEFINE p_whereRelation STRING
+    DEFINE p_uiSettings UISettings_Type
+    DEFINE p_br_uk record1_br_uk_type
+    DEFINE errNo INTEGER
+    DEFINE actionNo SMALLINT
+    DEFINE l_record1_br_uk record1_br_uk_type
+    DEFINE l_defaultUISettings UISettings_Type
+    DEFINE l_actionList DYNAMIC ARRAY OF STRING
+    DEFINE l_windowStyle STRING
+    DEFINE l_toolbar STRING
+    DEFINE l_topmenu STRING
+    DEFINE w ui.Window
+    {<POINT Name="fct.uiOpenFormByKey.define">} {</POINT>}
+
+    OPEN WINDOW w_ProvinceZoom WITH FORM 'ProvinceZoom' ATTRIBUTES(STYLE=NVL(l_windowStyle, "zoom_dbapp"))
+    --Initialize UI settings with default form UI settings
+    CALL ProvinceZoom_ui_initializeDefaultUISettings() RETURNING l_defaultUISettings.*
+    -- Update UI settings with Relation UI settings
+    CALL libdbapp_mergeUISettings(p_uiSettings.*, l_defaultUISettings.*) RETURNING m_uiSettings.*
+    --Initialize UI
+    LET w = ui.Window.getCurrent()
+
+    CALL ProvinceZoom_events.registerDlgEvents()
+    CALL consultcompanion_events.registerDbxEvents()
+
+    --Load actions in the ToolBar and the TopMenu
+    IF NOT libdbapp_isMobile() THEN
+        CALL ProvinceZoom_ui_uiInitializeDefaultActions(l_actionList)
+        CALL libdbapp_utilInitToolBar(NVL(l_toolbar, "dbapp"), w, l_actionList)
+        CALL libdbapp_utilInitTopMenu(NVL(l_topmenu, "dbapp"), w, l_actionList)
+    END IF
+
+    --Define the list of 'detail' records defined by entity relations in the BA
+    INITIALIZE m_detailList TO NULL
+    --Define the part of the WHERE clause defined by entity relations in the BA
+    LET m_whereRelation = IIF(p_whereRelation IS NULL, ' 1=1', p_whereRelation)
+    LET m_where = ' WHERE      ' || m_whereRelation
+    --Initialize index(es) of keys array(s)
+    LET m_record1_keyIndex = 0
+    {<POINT Name="fct.uiOpenFormByKey.init">} {</POINT>}
+    IF ProvinceZoom_events.m_DlgEvent_OnOpenForm IS NOT NULL THEN
+        CALL ProvinceZoom_events.m_DlgEvent_OnOpenForm(w.getForm())
+    END IF
+
+    --Fetch keys and data according to open mode
+    IF m_uiSettings.openMode != C_MODE_SEARCH AND m_uiSettings.openMode != C_MODE_EMPTY THEN
+        CALL (m_where, m_detailList)
+        LET m_record1_keyIndex = ProvinceZoom_uidialogdata_record1_seek(p_br_uk.*)
+    END IF
+    --Call the UI automaton
+    CALL ProvinceZoom_ui_uiAutomaton(m_uiSettings.*) RETURNING errNo, actionNo
+    INITIALIZE l_record1_br_uk.* TO NULL
+    IF m_record1_keyIndex > 0 THEN
+        LET l_record1_br_uk.provinces_provinceid = m_record1_arrRecList[m_record1_keyIndex].provinces_provinceid
+        LET l_record1_br_uk.provinces_countryid = m_record1_arrRecList[m_record1_keyIndex].provinces_countryid
+    END IF
+    CLOSE WINDOW w_ProvinceZoom
+
+    {<POINT Name="fct.uiOpenFormByKey.user">} {</POINT>}
+    RETURN errNo, actionNo, l_record1_br_uk.*
+END FUNCTION
+{</BLOCK>}
+{<BLOCK Name="fct.uiConstruct" Status="MODIFIED">}
+#+ DIALOG statement function for full CONSTRUCT mode
+#+
+#+ @param p_prevState  The state from which the function was invoked
+#+ @param p_prevAction The action from which the function was invoked
+#+ @param p_state      The current automaton state
+#+
+#+ @returnType         INTEGER, SMALLINT
+#+ @return             Error number, 0-success, other-error
+#+ @return             The next performed action
+FUNCTION ProvinceZoom_ui_uiConstruct(p_prevState, p_prevAction, p_state)
+    DEFINE p_prevState SMALLINT
+    DEFINE p_prevAction SMALLINT
+    DEFINE p_state SMALLINT
+    DEFINE l_where STRING
+    DEFINE l_detailList STRING
+    DEFINE errNo INTEGER
+
+    {<POINT Name="fct.uiConstruct.define">} {</POINT>}
+
+    LET errNo = ERROR_SUCCESS
+    LET m_prevAction = p_prevAction
+    LET m_state = p_state
+    LET m_actionNo = C_ACTION_EXIT_FORM
+    CLEAR FORM
+    {<POINT Name="fct.uiConstruct.init">} {</POINT>}
+
+    DIALOG ATTRIBUTES(UNBUFFERED, FIELD ORDER FORM)
+        SUBDIALOG ProvinceZoom_uidialog.ProvinceZoom_uidialog_record1_uiConstruct
+
+        ON ACTION accept
+            {<POINT Name="fct.uiConstruct.dlg.onAction.accept">} {</POINT>}
+            LET m_actionNo = C_ACTION_ACCEPT
+
+            LET ProvinceZoom_events.m_DlgCtrlInstruction = libdbappEvents.ACCEPT_DIALOG
+            IF ProvinceZoom_events.m_DlgEvent_OnActionAccept IS NOT NULL THEN
+                CALL ProvinceZoom_events.m_DlgEvent_OnActionAccept(DIALOG, m_state, ProvinceZoom_events.m_DlgCtrlInstruction)
+                    RETURNING ProvinceZoom_events.m_DlgCtrlInstruction
+            END IF
+
+            CASE ProvinceZoom_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
+        ON ACTION cancel
+            {<POINT Name="fct.uiConstruct.dlg.onAction.cancel">} {</POINT>}
+            LET m_actionNo = C_ACTION_CANCEL
+
+            LET ProvinceZoom_events.m_DlgCtrlInstruction = libdbappEvents.EXIT_DIALOG
+            IF ProvinceZoom_events.m_DlgEvent_OnActionCancel IS NOT NULL THEN
+                CALL ProvinceZoom_events.m_DlgEvent_OnActionCancel(DIALOG, m_state, ProvinceZoom_events.m_DlgCtrlInstruction)
+                    RETURNING ProvinceZoom_events.m_DlgCtrlInstruction
+            END IF
+
+            CASE ProvinceZoom_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
+        ON ACTION close
+            {<POINT Name="fct.uiConstruct.dlg.onAction.close">} {</POINT>}
+            LET m_actionNo = C_ACTION_CLOSE
+
+            LET ProvinceZoom_events.m_DlgCtrlInstruction = libdbappEvents.EXIT_DIALOG
+            IF ProvinceZoom_events.m_DlgEvent_OnActionClose IS NOT NULL THEN
+                CALL ProvinceZoom_events.m_DlgEvent_OnActionClose(DIALOG, m_state, ProvinceZoom_events.m_DlgCtrlInstruction)
+                    RETURNING ProvinceZoom_events.m_DlgCtrlInstruction
+            END IF
+
+            CASE ProvinceZoom_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
+        ON ACTION exit
+            {<POINT Name="fct.uiConstruct.dlg.onAction.exit">} {</POINT>}
+            LET m_actionNo = C_ACTION_EXIT_FORM
+
+            LET ProvinceZoom_events.m_DlgCtrlInstruction = libdbappEvents.EXIT_DIALOG
+            IF ProvinceZoom_events.m_DlgEvent_OnActionExit IS NOT NULL THEN
+                CALL ProvinceZoom_events.m_DlgEvent_OnActionExit(DIALOG, m_state, ProvinceZoom_events.m_DlgCtrlInstruction)
+                    RETURNING ProvinceZoom_events.m_DlgCtrlInstruction
+            END IF
+
+            CASE ProvinceZoom_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
+        BEFORE DIALOG
+            {<POINT Name="fct.uiConstruct.dlg.beforeDialog">} {</POINT>}
+            IF libdbapp_isMobile() THEN
+                CALL DIALOG.setActionActive('exit', FALSE)
+                CALL DIALOG.setActionHidden('exit', TRUE)
+            END IF
+
+            INITIALIZE ProvinceZoom_events.m_DlgCtrlInstruction TO NULL
+            IF ProvinceZoom_events.m_DlgEvent_Before_SearchDialog IS NOT NULL THEN
+                CALL ProvinceZoom_events.m_DlgEvent_Before_SearchDialog(DIALOG, m_state, ProvinceZoom_events.m_DlgCtrlInstruction)
+                    RETURNING ProvinceZoom_events.m_DlgCtrlInstruction
+            END IF
+            CASE ProvinceZoom_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
+        AFTER DIALOG
+            {<POINT Name="fct.uiConstruct.dlg.afterDialog">} {</POINT>}
+            --Build WHERE clause
+            LET l_where = ' 1=1'
+            LET l_detailList = ''
+
+            IF NOT m_record1_where.equals(' 1=1') THEN
+                LET l_where = IIF(l_where.equals(' 1=1'), m_record1_where, l_where || ' and ' || m_record1_where)
+            END IF
+            IF NOT m_whereRelation.equals(' 1=1') THEN
+                LET l_where = IIF(l_where.equals(' 1=1'), m_whereRelation, l_where || ' and ' || m_whereRelation)
+            END IF
+            LET l_where = ' WHERE      ' || l_where
+            --Retrieve data
+            LET m_where = l_where
+            LET m_detailList = l_detailList
+
+            INITIALIZE ProvinceZoom_events.m_DlgCtrlInstruction TO NULL
+            IF ProvinceZoom_events.m_DlgEvent_After_SearchDialog IS NOT NULL THEN
+                CALL ProvinceZoom_events.m_DlgEvent_After_SearchDialog(DIALOG, m_state, ProvinceZoom_events.m_DlgCtrlInstruction, m_where, m_detailList)
+                    RETURNING ProvinceZoom_events.m_DlgCtrlInstruction, m_where, m_detailList
+            END IF
+
+            CASE ProvinceZoom_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
+            CALL (m_where, m_detailList)
+            --After the execution of the search, the focus goes to the master record of the form
+            LET m_subDialog = "record1"
+            CLEAR FORM
+
+        {<POINT Name="fct.uiConstruct.dlg.userControlBlocks">} {</POINT>}
+    END DIALOG
+    RETURN errNo, m_actionNo
+END FUNCTION
+{</BLOCK>}
+
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{</CODEFILE>}

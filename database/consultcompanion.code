@@ -1,0 +1,151 @@
+{<CODEFILE version="1.0" encoding="CP1252">}
+{<SOURCEFILE name="consultcompanion_dbxconstraints.4gl" hash="BNJhix8qwiJQ/kCh6/Y4Zw==">}
+{<USERCODE>}
+{<POINT Name="import" Status="MODIFIED">}
+IMPORT FGL fgldialog
+{</POINT>}
+{<BLOCK Name="fct.provinces_countryid_checkColumnConstraints" Status="MODIFIED">}
+#+ Check constraints on the "provinces.countryid" column
+#+
+#+ @param p_countryid - INTEGER - countryid
+#+
+#+ @returnType INTEGER, STRING
+#+ @return     ERROR_SUCCESS|ERROR_FAILURE, error message
+PUBLIC FUNCTION consultcompanion_dbxconstraints_provinces_countryid_checkColumnConstraints(p_countryid)
+    DEFINE errNo INTEGER
+    DEFINE errMsg STRING
+    DEFINE p_countryid LIKE provinces.countryid
+    {<POINT Name="fct.provinces_countryid_checkColumnConstraints.define">} {</POINT>}
+
+    LET errNo = ERROR_SUCCESS
+    INITIALIZE errMsg TO NULL
+    {<POINT Name="fct.provinces_countryid_checkColumnConstraints.init">} {</POINT>}
+    IF p_countryid IS NULL THEN
+        CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, ERROR_FAILURE, "\n- countryid: " || p_countryid || " - "  || ERROR_BAM_00001) RETURNING errNo, errMsg
+    END IF
+    {<POINT Name="fct.provinces_countryid_checkColumnConstraints.user">} {</POINT>}
+    RETURN errNo, errMsg
+END FUNCTION
+{</BLOCK>}
+{<POINT Name="fct.provinces_PK_provinces_1_checkFKConstraint.define" Status="MODIFIED">} 
+    {</POINT>}{<BLOCK Name="fct.clients_checkTableConstraints" Status="MODIFIED">}
+#+ Check constraints on the "clients" table
+#+
+#+ @param p_forUpdate TRUE: for 'update' SQL operation, FALSE for 'insert' SQL operation
+#+ @param p_data - a row data LIKE clients.*
+#+
+#+ @returnType INTEGER, STRING
+#+ @return     ERROR_SUCCESS|ERROR_FAILURE, error message
+PUBLIC FUNCTION consultcompanion_dbxconstraints_clients_checkTableConstraints(p_forUpdate, p_data)
+    DEFINE p_forUpdate BOOLEAN
+    DEFINE p_data RECORD LIKE clients.*
+    DEFINE errNo INTEGER
+    DEFINE errMsg STRING
+    DEFINE l_errNo INTEGER
+    DEFINE l_errMsg STRING
+    {<POINT Name="fct.clients_checkTableConstraints.define" Status="MODIFIED">} 
+    DEFINE l_scratch string
+    {</POINT>}
+
+    LET errNo = ERROR_SUCCESS
+    INITIALIZE errMsg TO NULL
+    {<POINT Name="fct.clients_checkTableConstraints.init">} {</POINT>}
+
+    CALL consultcompanion_dbxconstraints_clients_clientid_checkColumnConstraints(p_data.clientid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_clientname_checkColumnConstraints(p_data.clientname) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_address1_checkColumnConstraints(p_data.address1) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_city_checkColumnConstraints(p_data.city) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_provinceid_checkColumnConstraints(p_data.provinceid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_postalzip_checkColumnConstraints(p_data.postalzip) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_primarycontact_checkColumnConstraints(p_data.primarycontact) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_primaryemail_checkColumnConstraints(p_data.primaryemail) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_clienttypeid_checkColumnConstraints(p_data.clienttypeid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_preferred_checkColumnConstraints(p_data.preferred) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_paytermid_checkColumnConstraints(p_data.paytermid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_primaryphone_checkColumnConstraints(p_data.primaryphone) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_clients_countryid_checkColumnConstraints(p_data.countryid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+
+    CALL consultcompanion_dbxconstraints_clients_PK_clients_1_checkUniqueConstraint(p_forUpdate, p_data.clientid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+
+    CALL consultcompanion_dbxconstraints_clienttypes_PK_clientTypes_1_checkFKConstraint(p_data.clienttypeid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_country_PK_country_1_checkFKConstraint(p_data.countryid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_paymentterms_PK_paymentTerms_1_checkFKConstraint(p_data.paytermid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+    CALL consultcompanion_dbxconstraints_provinces_PK_provinces_1_checkFKConstraint(p_data.provinceid) RETURNING l_errNo, l_errMsg
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+
+    IF consultcompanion_events.m_DbxDataEvent_clients_CheckTableConstraints IS NOT NULL THEN
+        CALL consultcompanion_events.m_DbxDataEvent_clients_CheckTableConstraints(p_forUpdate, p_data.*)
+            RETURNING l_errNo, l_errMsg
+    END IF
+    CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, l_errNo, l_errMsg) RETURNING errNo, errMsg
+
+    {<POINT Name="fct.clients_checkTableConstraints.user" Status="MODIFIED">}
+    {</POINT>}
+    
+    RETURN errNo, errMsg
+END FUNCTION
+{</BLOCK>}
+{<POINT Name="fct.clients_checkTableConstraints.define" Status="MODIFIED">} 
+    DEFINE l_scratch string
+    {</POINT>}{<POINT Name="fct.clients_checkTableConstraints.user" Status="MODIFIED">}
+    {</POINT>}{<BLOCK Name="fct.clients_countryid_checkColumnConstraints" Status="MODIFIED">}
+#+ Check constraints on the "clients.countryid" column
+#+
+#+ @param p_countryid - INTEGER - countryid
+#+
+#+ @returnType INTEGER, STRING
+#+ @return     ERROR_SUCCESS|ERROR_FAILURE, error message
+PUBLIC FUNCTION consultcompanion_dbxconstraints_clients_countryid_checkColumnConstraints(p_countryid)
+    DEFINE errNo INTEGER
+    DEFINE errMsg STRING
+    DEFINE p_countryid LIKE clients.countryid
+    {<POINT Name="fct.clients_countryid_checkColumnConstraints.define">} {</POINT>}
+
+    LET errNo = ERROR_SUCCESS
+    INITIALIZE errMsg TO NULL
+    {<POINT Name="fct.clients_countryid_checkColumnConstraints.init">} {</POINT>}
+    IF p_countryid IS NULL THEN
+        CALL libdbapp_utilBuildErrorNoAndErrorMsg(errNo, errMsg, ERROR_FAILURE, "\n- countryid: " || p_countryid || " - " || ERROR_BAM_00001) RETURNING errNo, errMsg
+    END IF
+    {<POINT Name="fct.clients_countryid_checkColumnConstraints.user">} {</POINT>}
+    RETURN errNo, errMsg
+END FUNCTION
+{</BLOCK>}
+
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{<SOURCEFILE name="consultcompanion_dbxdata.4gl" hash="TDun5D9TjVoCYmTGdcSO2A==">}
+{<USERCODE>}
+{<POINT Name="import" Status="MODIFIED">} 
+IMPORT FGL fgldialog
+{</POINT>}
+{<POINT Name="fct.clients_insertRowByKey.define" Status="MODIFIED">} 
+    DEFINE l_scratch string
+    {</POINT>}{<POINT Name="fct.clients_insertRowByKey.beforeInsert" Status="MODIFIED">} 
+            {</POINT>}
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{</CODEFILE>}

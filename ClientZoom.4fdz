@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{a3a944bb-7aea-4736-ab39-b49a979a9b99}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canAdd" name="canAdd" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canDelete" name="canDelete" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canModify" name="canModify" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="clients" name="record1" order="clients.clientname(ASC)" uid="{251dbb3f-64b0-4416-a180-47c083dadb90}">
+    <RecordField colName="clientid" fieldIdRef="1" fieldType="TABLE_COLUMN" name="clients.clientid" sqlTabName="clients" uid="{ceb8bbcc-d20a-4f73-a8a5-110977e0db47}"/>
+    <RecordField colName="clientname" fieldIdRef="2" fieldType="TABLE_COLUMN" name="clients.clientname" sqlTabName="clients" uid="{da274d16-1449-485f-bf91-463465bbf5b8}"/>
+  </Record>
+  <Form gridHeight="8" gridWidth="46" name="form" text="ClientZoom">
+    <Table gridHeight="6" gridWidth="44" name="consultcompanion1" posX="1" posY="1" totalRows="5">
+      <Edit colName="clientid" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" name="clients.clientid" posX="1" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Client ID" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="clientname" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clients.clientname" posX="12" posY="0" scroll="true" sqlTabName="clients" tabIndex="-1" title="Client Name" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Table>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewAyADUAMQBkAGIAYgAzAGYALQA2ADQAYgAwAC0ANAA0ADEANgAtAGEAMQA4ADAALQA0ADcAYwAwADgAMwBkAGEAZABiADkAMAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

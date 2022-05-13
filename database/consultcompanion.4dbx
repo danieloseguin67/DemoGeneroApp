@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Schema gstVersion="31409" id="{b77912c7-1608-4e61-a440-399ab86be759}" version="4.0">
+  <AGSettings version="1.1">
+    <DynamicProperties version="2">
+      <DynamicProperty description="Associated label when generating form" initialValue="" isDefaultInherited="false" isHidden="false" label="Label" name="label" readOnly="false" type="TEXT"/>
+      <DynamicProperty description="Associated widget" editorInfo="contains:ButtonEdit|CheckBox|ComboBox|DateEdit|DateTimeEdit|Edit|FFImage|FFLabel|Field|Phantom|ProgressBar|RadioGroup|Slider|SpinEdit|TextEdit|TimeEdit" initialValue="Edit" isDefaultInherited="false" isHidden="false" label="Widget" name="widget" readOnly="false" type="ENUM"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Database Data Events" name="DatabaseDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Formfied properties" label="Formfield" name="formfieldGroup" properties="label;widget"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="db/column" properties="widget;label"/>
+    </NodeInfos>
+  </AGSettings>
+  <ExtractionSettings/>
+  <GenerationSettings>
+    <GenerationOptions casens="LowerCase" generate="true" genidx="true" genpk="1" genuq="1" national="false" nobackup="true" populate="false" version="Microsoft SQL Server 2008+"/>
+  </GenerationSettings>
+  <Table active="true" name="seqreg" status="A" uuid="db/table2">
+    <Column fglLength="30" fglType="201" name="sr_name" notNull="true" order="1" status="A" uuid="db/column2"/>
+    <Column fglLength="4" fglType="2" name="sr_last" notNull="true" order="2" status="A" uuid="db/column4"/>
+    <Index indexColumns="sr_name" indexConstraint="primaryKey" name="pk_seqreg" status="A" uuid="db/index2"/>
+  </Table>
+  <Table active="true" name="preferences" status="A" uuid="db/table4">
+    <Column fglLength="4" fglType="6" name="seqid" notNull="true" order="1" status="A" uuid="db/column6"/>
+    <Index indexColumns="seqid" indexConstraint="primaryKey" name="PK_preferences_1" status="A" uuid="db/index12"/>
+  </Table>
+  <Table active="true" name="clients" status="A" uuid="db/table6">
+    <Column fglLength="4" fglType="6" name="clientid" notNull="true" order="1" status="A" uuid="db/column8"/>
+    <Column fglLength="30" fglType="0" name="clientname" notNull="true" order="2" status="A" uuid="db/column10"/>
+    <Column fglLength="60" fglType="0" name="address1" notNull="true" order="3" status="A" uuid="db/column12"/>
+    <Column fglLength="60" fglType="0" name="address2" notNull="false" order="4" status="A" uuid="db/column14"/>
+    <Column fglLength="30" fglType="0" name="city" notNull="true" order="5" status="A" uuid="db/column16"/>
+    <Column fglLength="4" fglType="2" name="provinceid" notNull="true" order="6" status="A" uuid="db/column18">
+      <DynamicProperty name="widget" value="ButtonEdit"/>
+    </Column>
+    <Column fglLength="10" fglType="0" name="postalzip" notNull="true" order="7" status="A" uuid="db/column20"/>
+    <Column fglLength="30" fglType="0" name="primarycontact" notNull="true" order="8" status="A" uuid="db/column22"/>
+    <Column fglLength="80" fglType="0" name="primaryemail" notNull="true" order="9" status="A" uuid="db/column24"/>
+    <Column fglLength="4" fglType="2" name="clienttypeid" notNull="true" order="10" status="A" uuid="db/column26">
+      <DynamicProperty name="widget" value="ButtonEdit"/>
+    </Column>
+    <Column fglLength="1" fglType="45" name="preferred" notNull="true" order="11" status="A" uuid="db/column28">
+      <DynamicProperty name="widget" value="ButtonEdit"/>
+    </Column>
+    <Column fglLength="4" fglType="2" name="paytermid" notNull="true" order="12" status="A" uuid="db/column30">
+      <DynamicProperty name="widget" value="ButtonEdit"/>
+    </Column>
+    <Column fglLength="1" fglType="0" name="primaryphone" notNull="true" order="13" status="A" uuid="db/column83">
+      <DynamicProperty name="widget" value="ComboBox"/>
+    </Column>
+    <Column fglLength="15" fglType="0" name="homephone" notNull="false" order="14" status="A" uuid="db/column85"/>
+    <Column fglLength="15" fglType="0" name="workphone" notNull="false" order="15" status="A" uuid="db/column87"/>
+    <Column fglLength="15" fglType="0" name="mobilephone" notNull="false" order="16" status="A" uuid="db/column89"/>
+    <Column fglLength="10" fglType="0" name="workextension" notNull="false" order="17" status="A" uuid="db/column127"/>
+    <Column fglLength="4" fglType="2" name="countryid" notNull="true" order="18" status="A" uuid="db/column1089">
+      <DynamicProperty name="widget" value="ButtonEdit"/>
+    </Column>
+    <Index indexColumns="clientid" indexConstraint="primaryKey" name="PK_clients_1" status="A" uuid="db/index4"/>
+  </Table>
+  <Table active="true" name="provinces" status="A" uuid="db/table8">
+    <Column fglLength="4" fglType="6" name="provinceid" notNull="true" order="1" status="A" uuid="db/column32"/>
+    <Column fglLength="30" fglType="0" name="provincename" notNull="true" order="2" status="A" uuid="db/column34"/>
+    <Column fglLength="4" fglType="2" name="countryid" notNull="true" order="3" status="A" uuid="db/column1091"/>
+    <Index indexColumns="provinceid" indexConstraint="primaryKey" name="PK_provinces_1" status="A" uuid="db/index6"/>
+  </Table>
+  <Table active="true" name="clienttypes" status="A" uuid="db/table10">
+    <Column fglLength="4" fglType="6" name="clienttypeid" notNull="true" order="1" status="A" uuid="db/column36"/>
+    <Column fglLength="30" fglType="0" name="clientypename" notNull="true" order="2" status="A" uuid="db/column38"/>
+    <Index indexColumns="clienttypeid" indexConstraint="primaryKey" name="PK_clientTypes_1" status="A" uuid="db/index8"/>
+  </Table>
+  <Table active="true" name="paymentterms" status="A" uuid="db/table12">
+    <Column fglLength="4" fglType="6" name="paytermid" notNull="true" order="1" status="A" uuid="db/column40"/>
+    <Column fglLength="30" fglType="0" name="paytermname" notNull="true" order="2" status="A" uuid="db/column42"/>
+    <Column fglLength="4" fglType="2" name="paytermdays" notNull="true" order="3" status="A" uuid="db/column44"/>
+    <Index indexColumns="paytermid" indexConstraint="primaryKey" name="PK_paymentTerms_1" status="A" uuid="db/index10"/>
+  </Table>
+  <Table active="true" name="clientstakeholders" status="A" uuid="db/table14">
+    <Column fglLength="4" fglType="2" name="clientId" notNull="true" order="1" status="A" uuid="db/column47"/>
+    <Column fglLength="4" fglType="6" name="stakeholderId" notNull="true" order="2" status="A" uuid="db/column49"/>
+    <Column fglLength="30" fglType="0" name="stakeholdername" notNull="true" order="3" status="A" uuid="db/column51"/>
+    <Index indexColumns="stakeholderId" indexConstraint="primaryKey" name="PK_clientStakeholders_1" status="A" uuid="db/index14"/>
+  </Table>
+  <Table active="true" name="employees" status="A" uuid="db/table16">
+    <Column fglLength="4" fglType="6" name="employeeid" notNull="true" order="1" status="A" uuid="db/column53"/>
+    <Column fglLength="30" fglType="0" name="empname" notNull="true" order="2" status="A" uuid="db/column55"/>
+    <Column fglLength="4" fglType="2" name="emptype" notNull="true" order="3" status="A" uuid="db/column57">
+      <DynamicProperty name="widget" value="ButtonEdit"/>
+    </Column>
+    <Column fglLength="60" fglType="0" name="address1" notNull="true" order="4" status="A" uuid="db/column59"/>
+    <Column fglLength="60" fglType="0" name="address2" notNull="false" order="5" status="A" uuid="db/column61"/>
+    <Column fglLength="30" fglType="0" name="city" notNull="true" order="6" status="A" uuid="db/column63"/>
+    <Column fglLength="4" fglType="2" name="provinceId" notNull="true" order="7" status="A" uuid="db/column65">
+      <DynamicProperty name="widget" value="ButtonEdit"/>
+    </Column>
+    <Column fglLength="10" fglType="0" name="postalzip" notNull="true" order="8" status="A" uuid="db/column67"/>
+    <Column fglLength="15" fglType="0" name="mobilephone" notNull="false" order="9" status="A" uuid="db/column69"/>
+    <Column fglLength="15" fglType="0" name="workphone" notNull="false" order="10" status="A" uuid="db/column71"/>
+    <Column fglLength="15" fglType="0" name="homephone" notNull="false" order="11" status="A" uuid="db/column73"/>
+    <Column fglLength="1" fglType="0" name="primaryphone" notNull="true" order="12" status="A" uuid="db/column75">
+      <DynamicProperty name="widget" value="ComboBox"/>
+    </Column>
+    <Column fglLength="1282" fglType="5" name="dayRate" notNull="true" order="13" status="A" uuid="db/column77"/>
+    <Column fglLength="4" fglType="2" name="countryid" notNull="true" order="14" status="A" uuid="db/column1093"/>
+    <Index indexColumns="employeeid" indexConstraint="primaryKey" name="PK_employees_1" status="A" uuid="db/index16"/>
+  </Table>
+  <Table active="true" name="employeetypes" status="A" uuid="db/table18">
+    <Column fglLength="4" fglType="6" name="emptypeid" notNull="true" order="1" status="A" uuid="db/column79"/>
+    <Column fglLength="30" fglType="0" name="emptypename" notNull="true" order="2" status="A" uuid="db/column81"/>
+    <Index indexColumns="emptypeid" indexConstraint="primaryKey" name="PK_employeeTypes_1" status="A" uuid="db/index18"/>
+  </Table>
+  <Table active="true" name="projects" status="A" uuid="db/table20">
+    <Column fglLength="4" fglType="6" name="projectId" notNull="true" order="1" status="A" uuid="db/column91"/>
+    <Column fglLength="30" fglType="0" name="projectName" notNull="true" order="2" status="A" uuid="db/column93"/>
+    <Index indexColumns="projectId" indexConstraint="primaryKey" name="PK_projects_1" status="A" uuid="db/index20"/>
+  </Table>
+  <Table active="true" name="rfs" status="A" uuid="db/table22">
+    <Column fglLength="4" fglType="6" name="rfsId" notNull="true" order="1" status="A" uuid="db/column95"/>
+    <Column fglLength="4" fglType="2" name="clientid" notNull="true" order="2" status="A" uuid="db/column97"/>
+    <Column fglLength="4" fglType="2" name="stakeholderId" notNull="true" order="3" status="A" uuid="db/column99"/>
+    <Column fglLength="20" fglType="0" name="offernumber" notNull="false" order="4" status="A" uuid="db/column101"/>
+    <Column fglLength="60" fglType="0" name="offertitle" notNull="true" order="5" status="A" uuid="db/column103"/>
+    <Column fglLength="4" fglType="7" name="offerdate" notNull="true" order="6" status="A" uuid="db/column105"/>
+    <Column fglLength="4" fglType="7" name="offersubmitted" notNull="false" order="7" status="A" uuid="db/column107"/>
+    <Column fglLength="4" fglType="2" name="offerstatusid" notNull="true" order="8" status="A" uuid="db/column109">
+      <DynamicProperty name="widget" value="ButtonEdit"/>
+    </Column>
+    <Column fglLength="4" fglType="7" name="interviewdate" notNull="false" order="9" status="A" uuid="db/column111"/>
+    <Column fglLength="56" fglType="12" name="offerlink" notNull="false" order="10" status="A" uuid="db/column113"/>
+    <Column fglLength="56" fglType="12" name="offernote" notNull="false" order="11" status="A" uuid="db/column115"/>
+    <Column fglLength="4" fglType="7" name="accepteddate" notNull="false" order="12" status="A" uuid="db/column121"/>
+    <Index indexColumns="rfsId" indexConstraint="primaryKey" name="PK_RFS_1" status="A" uuid="db/index22"/>
+  </Table>
+  <Table active="true" name="offerstatuses" status="A" uuid="db/table24">
+    <Column fglLength="4" fglType="6" name="offerstatusid" notNull="true" order="1" status="A" uuid="db/column117"/>
+    <Column fglLength="30" fglType="0" name="offerstatusname" notNull="true" order="2" status="A" uuid="db/column119"/>
+    <Index indexColumns="offerstatusid" indexConstraint="primaryKey" name="PK_offerStatuses_1" status="A" uuid="db/index24"/>
+  </Table>
+  <Table active="true" name="country" status="A" uuid="db/table194">
+    <Column fglLength="4" fglType="6" name="countryid" notNull="true" order="1" status="A" uuid="db/column1085"/>
+    <Column fglLength="30" fglType="0" name="countryname" notNull="true" order="2" status="A" uuid="db/column1087"/>
+    <Index indexColumns="countryid" indexConstraint="primaryKey" name="PK_country_1" status="A" uuid="db/index195"/>
+  </Table>
+  <ForeignKey cascadeDelete="false" fkColumns="provinceid" fkRefColumns="provinceid" name="FK_clients_provinces_1" refTable="provinces" status="A" table="clients" uuid="db/foreignkey2"/>
+  <ForeignKey cascadeDelete="false" fkColumns="clienttypeid" fkRefColumns="clienttypeid" name="FK_clients_clientTypes_1" refTable="clienttypes" status="A" table="clients" uuid="db/foreignkey4"/>
+  <ForeignKey cascadeDelete="false" fkColumns="paytermid" fkRefColumns="paytermid" name="FK_clients_paymentTerms_1" refTable="paymentterms" status="A" table="clients" uuid="db/foreignkey6"/>
+  <ForeignKey cascadeDelete="false" fkColumns="clientId" fkRefColumns="clientid" name="FK_clientStakeholders_clients_1" refTable="clients" status="A" table="clientstakeholders" uuid="db/foreignkey8"/>
+  <ForeignKey cascadeDelete="false" fkColumns="provinceId" fkRefColumns="provinceid" name="FK_employees_provinces_1" refTable="provinces" status="A" table="employees" uuid="db/foreignkey10"/>
+  <ForeignKey cascadeDelete="false" fkColumns="emptype" fkRefColumns="emptypeid" name="FK_employees_employeeTypes_1" refTable="employeetypes" status="A" table="employees" uuid="db/foreignkey12"/>
+  <ForeignKey cascadeDelete="false" fkColumns="clientid" fkRefColumns="clientid" name="FK_RFS_clients_1" refTable="clients" status="A" table="rfs" uuid="db/foreignkey14"/>
+  <ForeignKey cascadeDelete="false" fkColumns="stakeholderId" fkRefColumns="stakeholderId" name="FK_RFS_clientStakeholders_1" refTable="clientstakeholders" status="A" table="rfs" uuid="db/foreignkey16"/>
+  <ForeignKey cascadeDelete="false" fkColumns="offerstatusid" fkRefColumns="offerstatusid" name="FK_RFS_offerStatuses_1" refTable="offerstatuses" status="A" table="rfs" uuid="db/foreignkey18"/>
+  <ForeignKey cascadeDelete="false" fkColumns="countryid" fkRefColumns="countryid" name="FK_clients_country_1" refTable="country" status="A" table="clients" uuid="db/foreignkey153"/>
+  <ForeignKey cascadeDelete="false" fkColumns="countryid" fkRefColumns="countryid" name="FK_employees_country_1" refTable="country" status="A" table="employees" uuid="db/foreignkey157"/>
+  <ForeignKey cascadeDelete="false" fkColumns="countryid" fkRefColumns="countryid" name="FK_provinces_country_1" refTable="country" status="A" table="provinces" uuid="db/foreignkey159"/>
+  <Views ActiveView="View-1" showLabels="true">
+    <View Name="View-1">
+      <Layout>
+        <![CDATA[AAAAAgAAABQAZABiAC8AdABhAGIAbABlADEAMECSxAAAAAAAQHkgAAAAAAA/3Jul41P31QEAAAASAGQAYgAvAHQAYQBiAGwAZQAyQJP5VVa+VVfAVmqqnZqquD/z64UeuFF1AQAAABQAZABiAC8AdABhAGIAbABlADIAMECWXi6Loui6QIYv//////8/9AQYk3S78QEAAAAWAGQAYgAvAHQAYQBiAGwAZQAxADkANECJaNeUNeUOwErryhryhrw/8qwIMSbpKQEAAAAUAGQAYgAvAHQAYQBiAGwAZQAxADhAnkgAAAAAAEBRgAAAAAAAP91wo9cKPXcBAAAAEgBkAGIALwB0AGEAYgBsAGUANECeWg+D4PhCwGhZNk2TZOQ/9DlYEGJNUwEAAAASAGQAYgAvAHQAYQBiAGwAZQA2QIS4AAAAAABAbiAAAAAAAD/yo9cKPXBVAQAAABQAZABiAC8AdABhAGIAbABlADIAMkCdyAAAAAAAQHkQAAAAAAA/4DlYEGJN1gEAAAAUAGQAYgAvAHQAYQBiAGwAZQAxADZAmKgAAAAAAMBZQAAAAAAAP+j987ZFodABAAAAFABkAGIALwB0AGEAYgBsAGUAMQAyQJAwAAAAAABAh8AAAAAAAD/krAgxJul9AQAAABQAZABiAC8AdABhAGIAbABlADIANECfoAAAAAAAQIeYAAAAAAA/3jU/fO2RbwEAAAASAGQAYgAvAHQAYQBiAGwAZQA4QJOAAAAAAABAaiAAAAAAAD/wNT987ZFlAQAAABQAZABiAC8AdABhAGIAbABlADEANECT3AAAAAAAQIDoAAAAAAA/2j1wo9cKQwE=]]>
+      </Layout>
+    </View>
+  </Views>
+</Schema>

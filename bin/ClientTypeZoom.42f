@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="ClientTypeZoom.tmp" build="3.20.11" sqlDbName="consultcompanion" text="ClientTypeZoom" width="44" height="5">
+  <LStr text="ClientTypeZoom"/>
+  <Grid>
+    <Table gridWidth="44" gridHeight="5" pageSize="5" name="consultcompanion1" tabName="record1">
+      <TableColumn name="clienttypes.clienttypeid" colName="clienttypeid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="clienttypes" text="Client Type ID" tabIndex="1" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="Client Type ID"/>
+      </TableColumn>
+      <TableColumn name="clienttypes.clientypename" colName="clientypename" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="clienttypes" text="Client Type Name" tabIndex="2">
+        <Edit width="30" scroll="1"/>
+        <LStr text="Client Type Name"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="clienttypes">
+    <Link colName="clienttypeid" fieldIdRef="0"/>
+    <Link colName="clientypename" fieldIdRef="1"/>
+  </RecordView>
+</Form>

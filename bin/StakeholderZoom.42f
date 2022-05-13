@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="StakeholderZoom.tmp" build="3.20.11" sqlDbName="consultcompanion" text="StakeholderZoom" width="56" height="5">
+  <LStr text="StakeholderZoom"/>
+  <Grid>
+    <Table gridWidth="56" gridHeight="5" pageSize="5" name="consultcompanion1" tabName="record1">
+      <TableColumn name="clientstakeholders.stakeholderid" colName="stakeholderid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="clientstakeholders" text="Stakeholder ID" tabIndex="1" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="Stakeholder ID"/>
+      </TableColumn>
+      <TableColumn name="clientstakeholders.stakeholdername" colName="stakeholdername" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="clientstakeholders" text="Stakeholder Name" tabIndex="2">
+        <Edit width="30" scroll="1"/>
+        <LStr text="Stakeholder Name"/>
+      </TableColumn>
+      <TableColumn name="clientstakeholders.clientid" colName="clientid" sqlType="INTEGER" required="1" notNull="1" fieldId="2" sqlTabName="clientstakeholders" text="Client ID" noEntry="1" hidden="1" tabIndex="3" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="Client ID"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="clientstakeholders">
+    <Link colName="stakeholderid" fieldIdRef="0"/>
+    <Link colName="stakeholdername" fieldIdRef="1"/>
+    <Link colName="clientid" fieldIdRef="2"/>
+  </RecordView>
+</Form>

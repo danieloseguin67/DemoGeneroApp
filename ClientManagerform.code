@@ -1,0 +1,183 @@
+{<CODEFILE version="1.0" encoding="CP1252">}
+{<SOURCEFILE name="ClientManagerform_uidata.4gl" hash="BWOLY2WEhEuyDLGUELPTTA==">}
+{<USERCODE>}
+{<POINT Name="fct.record1_getDataArray.define" Status="MODIFIED">}  {</POINT>}{<BLOCK Name="fct.record1_insertRow" Status="MODIFIED">}
+#+ Insert a row in the database
+#+
+#+ @param p_rec_br Business record values to insert/
+#+
+#+ @returnType INTEGER, STRING, RECORD
+#+ @return     ERROR_SUCCESS|ERROR_FAILURE, error message, Business Record unique keys
+PUBLIC FUNCTION ClientManagerform_uidata_record1_insertRow(p_rec_br)
+    DEFINE p_rec_br record1_br_type
+    DEFINE dataInsert RECORD LIKE clients.*
+    DEFINE ret record1_br_uk_type
+    DEFINE errNo INTEGER
+    DEFINE errMsg STRING
+    {<POINT Name="fct.record1_insertRow.define">} {</POINT>}
+
+    --Init local data with default values from the DB schema
+    CALL consultcompanion_dbxdata.consultcompanion_dbxdata_clients_setDefaultValuesFromDBSchema() RETURNING dataInsert.*
+    --Set local data with form field values
+    LET dataInsert.clientid = p_rec_br.clients_clientid
+    LET dataInsert.clientname = p_rec_br.clients_clientname
+    LET dataInsert.address1 = p_rec_br.clients_address1
+    LET dataInsert.address2 = p_rec_br.clients_address2
+    LET dataInsert.city = p_rec_br.clients_city
+    LET dataInsert.provinceid = p_rec_br.clients_provinceid
+    LET dataInsert.postalzip = p_rec_br.clients_postalzip
+    LET dataInsert.primarycontact = p_rec_br.clients_primarycontact
+    LET dataInsert.primaryemail = p_rec_br.clients_primaryemail
+    LET dataInsert.clienttypeid = p_rec_br.clients_clienttypeid
+    LET dataInsert.preferred = p_rec_br.clients_preferred
+    LET dataInsert.paytermid = p_rec_br.clients_paytermid
+    LET dataInsert.primaryphone = p_rec_br.clients_primaryphone
+    LET dataInsert.homephone = p_rec_br.clients_homephone
+    LET dataInsert.workphone = p_rec_br.clients_workphone
+    LET dataInsert.mobilephone = p_rec_br.clients_mobilephone
+    let dataInsert.workextension = p_rec_br.clients_workextension
+    LET dataInsert.countryid = p_rec_br.clients_countryid
+    {<POINT Name="fct.record1_insertRow.init" Status="MODIFIED">} 
+    {</POINT>}
+
+    IF ClientManagerform_events.m_DataEvent_record1_BeforeInsertRow IS NOT NULL THEN
+        CALL ClientManagerform_events.m_DataEvent_record1_BeforeInsertRow(dataInsert.*)
+            RETURNING errNo, errMsg, dataInsert.*
+    END IF
+    IF errNo == ERROR_SUCCESS THEN
+        --Call the database insert row
+        CALL consultcompanion_dbxdata.consultcompanion_dbxdata_clients_PK_clients_1_insertRowByKey(dataInsert.*) RETURNING errNo, errMsg, ret.clients_clientid
+        IF errNo == ERROR_SUCCESS THEN
+            IF ClientManagerform_events.m_DataEvent_record1_AfterInsertRow IS NOT NULL THEN
+                CALL ClientManagerform_events.m_DataEvent_record1_AfterInsertRow(errNo, errMsg, ret.*)
+                    RETURNING errNo, errMsg
+            END IF
+        END IF
+    END IF
+
+    LET errMsg = IIF(errNo = ERROR_SUCCESS, C_TXT_INSERT_SUCCESS_MSG, C_TXT_INSERT_FAIL_MSG), errMsg
+
+    {<POINT Name="fct.record1_insertRow.user">} {</POINT>}
+    RETURN errNo, errMsg, ret.*
+END FUNCTION
+{</BLOCK>}
+{<POINT Name="fct.record1_insertRow.init" Status="MODIFIED">} 
+    {</POINT>}
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{<SOURCEFILE name="ClientManagerform_uidialogdata.4gl" hash="1B2M2Y8AsgTpgAmY7PhCfg==">}
+{<USERCODE>}
+
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{<SOURCEFILE name="ClientManagerform_uidialog.4gl" hash="b5xZEgY75qocqCH0EIagaQ==">}
+{<USERCODE>}
+{<POINT Name="dlg.record1.uiInput.define" Status="MODIFIED">} 
+    DEFINE l_checkprovince SMALLINT = 0
+    {</POINT>}{<POINT Name="dlg.record1.uiInput.afterField.record1.provinceid" Status="MODIFIED">} 
+            SELECT COUNT(*)
+               INTO l_checkprovince
+               FROM provinces
+               WHERE provinceid = m_record1_arrRecList[m_record1_keyIndex].clients_provinceid
+            IF l_checkprovince = 0 THEN
+               ERROR "You have not selected the province/state"
+               NEXT FIELD record1.provinceid
+            ELSE
+                SELECT countryid 
+                   INTO m_record1_arrRecList[m_record1_keyIndex].clients_countryid
+                   FROM provinces
+                   WHERE provinceid = m_record1_arrRecList[m_record1_keyIndex].clients_provinceid
+            END IF
+            {</POINT>}{<POINT Name="user.functions" Status="MODIFIED">} 
+FUNCTION isPrimaryEmailValid(p_email)
+   DEFINE p_email STRING 
+   RETURN TRUE
+END function
+
+
+FUNCTION isPhoneValid(p_phone)
+
+   DEFINE p_phone STRING 
+   
+   RETURN TRUE
+   
+END function
+
+{</POINT>}
+
+{</USERCODE>}
+{<LOSTCODE>}
+{<POINT Name="dlg.record1.uiInput.afterField.record1.PRIMARYEMAIL" Status="LOST">}
+--  
+--         AFTER FIELD record1.primaryemail
+--            IF m_record1_arrRecList[m_record1_keyIndex].clients_primaryemail IS NULL THEN
+--               ERROR "Primary email address is not valid"
+--               NEXT FIELD primaryemail
+--            END IF           
+{</POINT>}
+{<POINT Name="dlg.record1.uiInput.afterField.record1.homephone" Status="LOST">}
+--  
+--         AFTER FIELD record1.homephone
+--         
+{</POINT>}
+{<POINT Name="dlg.record1.uiInput.afterField.record1.mobilephone" Status="LOST">}
+--  
+--         AFTER FIELD record1.mobilephone
+--         
+{</POINT>}
+{<POINT Name="dlg.record1.uiInput.afterField.record1.workphone" Status="LOST">}
+--  
+--         AFTER FIELD record1.workphone
+--         
+{</POINT>}
+{<POINT Name="dlg.record1.uiInput.afterField.record1.PRIMARYEMAIL" Status="LOST">}
+--  
+--         AFTER FIELD primaryemail
+--            IF m_record1_arrRecList[m_record1_keyIndex].clients_primaryemail IS NULL THEN
+--               ERROR "Primary email address is not valid"
+--               NEXT FIELD primaryemail
+--            END IF           
+{</POINT>}
+{<BLOCK Name="fct." Status="LOST">}
+-- #+ Populate the 'clients.primaryphone' ComboBox
+-- #+
+-- #+ @param cb   The comboBox to populate
+-- PUBLIC FUNCTION (cb)
+--     --Declaration of parameters
+--     DEFINE cb ui.ComboBox
+--     --Declaration of local types, variables, constants
+--     DEFINE cbKeyValuePairs DYNAMIC ARRAY OF record1_clients_primaryphone_br_type
+--     DEFINE errNo INTEGER
+--     DEFINE i INTEGER
+--     {<POINT Name="fct..define">} {</POINT>}
+--     {<POINT Name="fct..init">} {</POINT>}
+--     CALL cb.clear()
+--     CALL  ClientManagerform_uidata.ClientManagerform_uidata_record1__FillArray(cbKeyValuePairs) RETURNING errNo
+--     IF errNo >= ERROR_SQL_SUCCESS THEN
+--         FOR i=1 TO cbKeyValuePairs.getLength()
+--             CALL cb.addItem(cbKeyValuePairs[i].key CLIPPED, cbKeyValuePairs[i].value CLIPPED)
+--         END FOR
+--     ELSE
+--         CALL libdbapp_utilMsgStatusBar(errNo, libdbapp_formatSqlErrorMsg(errNo))
+--     END IF
+--     {<POINT Name="fct..user">} {</POINT>}
+-- END FUNCTION
+{</BLOCK>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{<SOURCEFILE name="ClientManagerform_ui.4gl" hash="1B2M2Y8AsgTpgAmY7PhCfg==">}
+{<USERCODE>}
+
+{</USERCODE>}
+{<LOSTCODE>}
+
+{</LOSTCODE>}
+{</SOURCEFILE>}
+{</CODEFILE>}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{c968de6e-79b1-44d9-9482-2d115161d775}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canAdd" name="canAdd" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canDelete" name="canDelete" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canModify" name="canModify" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="provinces" name="record1" order="provinces.countryid(ASC),provinces.provinceid(ASC)" uid="{d7181f0a-c653-4f61-a0c6-165d6d9413f9}">
+    <RecordField colName="countryid" fieldIdRef="1" fieldType="TABLE_COLUMN" name="provinces.countryid" sqlTabName="provinces" uid="{40f83037-7558-4706-9029-36216d7e8d1f}"/>
+    <RecordField colName="provinceid" fieldIdRef="2" fieldType="TABLE_COLUMN" name="provinces.provinceid" sqlTabName="provinces" uid="{5ab6ba17-0423-4abd-b8f0-88581995c03c}"/>
+    <RecordField colName="provincename" fieldIdRef="3" fieldType="TABLE_COLUMN" name="provinces.provincename" sqlTabName="provinces" uid="{6ead7902-46a5-40e1-91a1-a9cce0582479}"/>
+  </Record>
+  <Form gridHeight="8" gridWidth="63" name="form" text="ProvinceZoom">
+    <Table gridHeight="6" gridWidth="59" name="consultcompanion1" posX="1" posY="1" totalRows="5">
+      <Edit colName="countryid" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" name="provinces.countryid" posX="0" posY="0" scroll="true" sqlTabName="provinces" tabIndex="-1" title="Country" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="provinceid" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="14" name="provinces.provinceid" posX="11" posY="0" scroll="true" sqlTabName="provinces" tabIndex="-1" title="Province / State" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="provincename" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="provinces.provincename" posX="25" posY="0" scroll="true" sqlTabName="provinces" tabIndex="-1" title="Province / State Name" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Table>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBkADcAMQA4ADEAZgAwAGEALQBjADYANQAzAC0ANABmADYAMQAtAGEAMABjADYALQAxADYANQBkADYAZAA5ADQAMQAzAGYAOQB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

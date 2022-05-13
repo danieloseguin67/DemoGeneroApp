@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="PayTermZoom.tmp" build="3.20.11" sqlDbName="consultcompanion" text="PayTermZoom" width="44" height="5">
+  <LStr text="PayTermZoom"/>
+  <Grid>
+    <Table gridWidth="44" gridHeight="5" pageSize="5" name="consultcompanion1" tabName="record1">
+      <TableColumn name="paymentterms.paytermid" colName="paytermid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="paymentterms" text="Payment Term Id" tabIndex="1" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="Payment Term Id"/>
+      </TableColumn>
+      <TableColumn name="paymentterms.paytermname" colName="paytermname" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="paymentterms" text="Payment Term Name" tabIndex="2">
+        <Edit width="30" scroll="1"/>
+        <LStr text="Payment Term Name"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="paymentterms">
+    <Link colName="paytermid" fieldIdRef="0"/>
+    <Link colName="paytermname" fieldIdRef="1"/>
+  </RecordView>
+</Form>
