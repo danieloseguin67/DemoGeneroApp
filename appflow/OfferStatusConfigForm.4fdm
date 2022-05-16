@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{4e64f560-9747-4a85-b04d-604ea6dbd175}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canAdd" name="canAdd" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDelete" name="canDelete" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canModify" name="canModify" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="offerstatuses" name="record1" order="offerstatuses.offerstatusid(ASC)" uid="{32ca6524-8d1b-4909-8bde-7617dbb21ce5}">
+    <RecordField colName="offerstatusid" fieldIdRef="1" fieldType="TABLE_COLUMN" name="offerstatuses.offerstatusid" sqlTabName="offerstatuses" uid="{e5056914-1388-4728-a7d2-d12f752adc90}"/>
+    <RecordField colName="offerstatusname" fieldIdRef="2" fieldType="TABLE_COLUMN" name="offerstatuses.offerstatusname" sqlTabName="offerstatuses" uid="{1f449652-b5b6-4459-bc1b-acf2813ed777}"/>
+  </Record>
+  <Form gridHeight="5" gridWidth="76" name="form" text="OfferStatusConfigForm">
+    <Grid gridHeight="3" gridWidth="74" name="consultcompanion1" posX="1" posY="1">
+      <Label gridHeight="1" gridWidth="13" name="offerstatuses_offerstatusid_label1" posX="1" posY="1" text="Offer Status ID">
+        <Initializer text="dbschema:offerstatuses.offerstatusid/@label"/>
+      </Label>
+      <ButtonEdit action="browse" colName="offerstatusid" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="fa-list-alt" name="offerstatuses.offerstatusid" posX="15" posY="1" scroll="true" sqlTabName="offerstatuses" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Label gridHeight="1" gridWidth="15" name="offerstatuses_offerstatusname_label1" posX="27" posY="1" text="Offer Status Name">
+        <Initializer text="dbschema:offerstatuses.offerstatusname/@label"/>
+      </Label>
+      <Edit colName="offerstatusname" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="offerstatuses.offerstatusname" posX="43" posY="1" scroll="true" sqlTabName="offerstatuses" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewAzADIAYwBhADYANQAyADQALQA4AGQAMQBiAC0ANAA5ADAAOQAtADgAYgBkAGUALQA3ADYAMQA3AGQAYgBiADIAMQBjAGUANQB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

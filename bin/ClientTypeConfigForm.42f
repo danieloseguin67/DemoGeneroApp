@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="ClientTypeConfigForm.tmp" build="3.20.11" sqlDbName="consultcompanion" text="ClientTypeConfigForm" width="71" height="3">
+  <LStr text="ClientTypeConfigForm"/>
+  <Grid name="consultcompanion1" width="71" height="3">
+    <Label name="clienttypes_clienttypeid_label1" width="12" text="Client Type ID" posY="1" posX="1" gridWidth="12">
+      <LStr text="Client Type ID"/>
+    </Label>
+    <FormField name="clienttypes.clienttypeid" colName="clienttypeid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="clienttypes" tabIndex="1">
+      <Edit width="11" scroll="1" posY="1" posX="14" gridWidth="11"/>
+    </FormField>
+    <Label name="clienttypes_clientypename_label1" width="13" text="Client Type Name" posY="1" posX="26" gridWidth="13">
+      <LStr text="Client Type Name"/>
+    </Label>
+    <FormField name="clienttypes.clientypename" colName="clientypename" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="clienttypes" tabIndex="2">
+      <Edit width="30" scroll="1" posY="1" posX="40" gridWidth="30"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="clienttypes">
+    <Link colName="clienttypeid" fieldIdRef="0"/>
+    <Link colName="clientypename" fieldIdRef="1"/>
+  </RecordView>
+  <RecordView tabName="record1">
+    <Link colName="clienttypeid" fieldIdRef="0"/>
+    <Link colName="clientypename" fieldIdRef="1"/>
+  </RecordView>
+</Form>

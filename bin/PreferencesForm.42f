@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="PreferencesForm.tmp" build="3.20.11" sqlDbName="consultcompanion" text="PreferencesForm" width="19" height="3">
+  <LStr text="PreferencesForm"/>
+  <Grid name="consultcompanion1" width="19" height="3">
+    <Label name="preferences_seqid_label1" width="5" text="seqid" posY="1" posX="1" gridWidth="5">
+      <LStr text="seqid"/>
+    </Label>
+    <FormField name="preferences.seqid" colName="seqid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="preferences" tabIndex="1">
+      <Edit width="11" scroll="1" posY="1" posX="7" gridWidth="11"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="preferences">
+    <Link colName="seqid" fieldIdRef="0"/>
+  </RecordView>
+  <RecordView tabName="record1">
+    <Link colName="seqid" fieldIdRef="0"/>
+  </RecordView>
+</Form>

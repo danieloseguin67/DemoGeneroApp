@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<AG businessApplicationFile="C:\SoftDev\GeneroApps\ConsultCompanion\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
-  <File dir="C:\SoftDev\GeneroApps\ConsultCompanion\appflow" filename="MainProgram.4prg" locator="/Item/MainProgram" name="MainProgram" type="Program">
-    <File dir="C:\SoftDev\GeneroApps\ConsultCompanion\appflow" filename="MainForm.4fdc" locator="/Item/Consultant&apos;s Companion App" name="Consultant&apos;s Companion App" type="CustomForm">
-      <ModuleRelation destination="Consultant&apos;s Companion App" locator="/Relation/Relation1" source="MainProgram" type="CustomFormRelation">
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow" filename="MainProgram.4prg" locator="/Item/MainProgram" name="MainProgram" type="Program">
+    <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp" filename="LogonForm.4fdc" locator="/Item/LogonForm" name="LogonForm" type="CustomForm">
+      <ModuleRelation destination="LogonForm" locator="/Relation/Relation23" source="MainProgram" type="CustomFormRelation">
         <DynamicProperties>
           <DynamicProperty name="action" value=""/>
           <DynamicProperty name="dataRefresh" value="Current Row"/>
@@ -14,8 +14,11 @@
         </DynamicProperties>
       </ModuleRelation>
       <Module locator="/managedform">
-        <Record alias="" container="Form" locator="/managedform/record1" name="record1" size="1" table="">
-          <Fields/>
+        <Record alias="" container="Grid" locator="/managedform/record1" name="record1" size="1" table="">
+          <Fields>
+            <Field datatype="CHAR(12)" length="12" locator="/managedform/record1/login" name="login" widget="Edit"/>
+            <Field datatype="CHAR(50)" length="50" locator="/managedform/record1/password" name="password" widget="Edit"/>
+          </Fields>
         </Record>
       </Module>
     </File>

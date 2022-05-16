@@ -63,7 +63,7 @@ FUNCTION MainProgram_openFirstForm()
 
     {<POINT Name="fct.openFirstForm.init">} {</POINT>}
 
-    CALL MainForm_ui_uiOpenForm(l_whereRelation, l_uiSettings.*) RETURNING errNo, actionNo
+    CALL LogonForm_ui_uiOpenForm(l_whereRelation, l_uiSettings.*) RETURNING errNo, actionNo
 
     {<POINT Name="fct.openFirstForm.user">} {</POINT>}
 

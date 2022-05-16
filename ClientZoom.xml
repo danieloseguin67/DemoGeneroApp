@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<AG businessApplicationFile="C:\SoftDev\GeneroApps\ConsultCompanion\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
-  <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="ClientZoom.4fdz" locator="/Item/ClientZoom" name="ClientZoom" type="Zoom">
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp" filename="ClientZoom.4fdz" locator="/Item/ClientZoom" name="ClientZoom" type="Zoom">
     <DynamicProperties>
       <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
       <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
@@ -21,6 +21,43 @@
       <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
       <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
     </DynamicProperties>
+    <ModuleRelation destination="ClientZoom" locator="/Relation/Relation19" source="StakeHolderManagerForm" type="Relation">
+      <DynamicProperties>
+        <DynamicProperty name="action" value="zm_client"/>
+        <DynamicProperty name="dataRefresh" value="Current Row"/>
+        <DynamicProperty name="defaultMode" value=""/>
+        <DynamicProperty name="disableAdd" value="false"/>
+        <DynamicProperty name="disableDelete" value="false"/>
+        <DynamicProperty name="disableDisplay" value="false"/>
+        <DynamicProperty name="disableEmpty" value="false"/>
+        <DynamicProperty name="disableModify" value="false"/>
+        <DynamicProperty name="disableSearch" value="false"/>
+        <DynamicProperty name="filterDstField"/>
+        <DynamicProperty name="filterSrcField"/>
+        <DynamicProperty name="openMode" value=""/>
+        <DynamicProperty name="relationTransitionAddCancel" value=""/>
+        <DynamicProperty name="relationTransitionAddClose" value=""/>
+        <DynamicProperty name="relationTransitionAddExit" value=""/>
+        <DynamicProperty name="relationTransitionAddOk" value=""/>
+        <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+        <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+        <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+        <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+        <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+        <DynamicProperty name="relationTransitionModifyClose" value=""/>
+        <DynamicProperty name="relationTransitionModifyExit" value=""/>
+        <DynamicProperty name="relationTransitionModifyOk" value=""/>
+        <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+        <DynamicProperty name="relationTransitionSearchClose" value=""/>
+        <DynamicProperty name="relationTransitionSearchExit" value=""/>
+        <DynamicProperty name="relationTransitionSearchOk" value=""/>
+        <DynamicProperty name="rowbound" value="false"/>
+        <DynamicProperty name="srcField">
+          <Field alias="clientstakeholders" column="clientId" name="clientstakeholders.clientId" table="clientstakeholders"/>
+        </DynamicProperty>
+        <DynamicProperty name="srcRecord" value=""/>
+      </DynamicProperties>
+    </ModuleRelation>
     <ModuleRelation destination="ClientZoom" locator="/Relation/Relation12" source="RFSManagerform" type="Relation">
       <DynamicProperties>
         <DynamicProperty name="action" value="zm_client"/>
@@ -81,7 +118,7 @@
       </Record>
     </Module>
   </File>
-  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\ConsultCompanion\database\consultcompanion.4dbx">
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\DemoGeneroApp\database\consultcompanion.4dbx">
     <Table name="clients">
       <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="clientid" notNull="1">
         <DynamicProperties>

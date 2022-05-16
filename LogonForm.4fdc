@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm fileVersion="31400" gstVersion="31409" name="managedform" uid="{0dc50e2b-fe25-4b1c-8966-13ca65e4e838}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+  </AGSettings>
+  <Record active="true" name="record1" uid="{16f69dad-cf3f-42ab-8949-7fed411e670b}">
+    <RecordField fieldIdRef="1" length="12" name="login" uid="{b06aa6a7-e1a9-4dbe-b6fb-1f78364ad05d}"/>
+    <RecordField fieldIdRef="2" length="50" name="password" uid="{146a90a3-6761-4e6a-957a-ce1a0e2948b4}"/>
+  </Record>
+  <Form gridHeight="25" gridWidth="80" name="form" text="LogonForm">
+    <Grid gridHeight="9" gridWidth="36" name="grid2" posX="22" posY="8">
+      <Label gridHeight="1" gridWidth="8" name="label1" posX="1" posY="1" text="Username"/>
+      <Edit fieldId="1" gridHeight="1" gridWidth="34" length="12" name="login" placeholder="Enter Username" posX="1" posY="2" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="8" name="label2" posX="1" posY="4" text="Password"/>
+      <Edit fieldId="2" gridHeight="1" gridWidth="34" invisible="true" length="50" name="password" placeholder="Enter Password" posX="1" posY="5" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Button gridHeight="1" gridWidth="9" name="accept" posX="1" posY="7" tabIndex="-1" text="Login"/>
+      <Button gridHeight="1" gridWidth="9" name="cancel" posX="25" posY="7" tabIndex="-1" text="Cancel"/>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewAxADYAZgA2ADkAZABhAGQALQBjAGYAMwBmAC0ANAAyAGEAYgAtADgAOQA0ADkALQA3AGYAZQBkADQAMQAxAGUANgA3ADAAYgB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm fileVersion="31400" gstVersion="31409" name="managedform" uid="{ab56959e-a2a5-4f05-9b61-9f5c8fd7f8e3}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+  </AGSettings>
+  <Record active="true" name="record1" uid="{ed6a8e34-7da5-44d7-bc35-1e2d84b2665a}">
+    <RecordField fieldIdRef="1" name="Control Table" uid="{13f7a58a-2a85-41f7-8e78-0859c92ffb5a}"/>
+    <RecordField fieldIdRef="2" name="edit2" uid="{4ca3214b-3631-443a-a2b3-b06efef8848d}"/>
+    <RecordField fieldIdRef="5" name="edit3" uid="{2c2bbd08-7edc-4527-84e3-923610dc98ce}"/>
+    <RecordField fieldIdRef="6" name="edit4" uid="{af594103-9969-457a-84b7-2289ccbddc84}"/>
+    <RecordField fieldIdRef="7" name="edit5" uid="{f5f8cfe9-0bf1-4cb7-b784-b82792f73d5d}"/>
+    <RecordField fieldIdRef="8" name="edit6" uid="{09aa2d3f-d6a9-4474-af23-cea5cd519244}"/>
+    <RecordField fieldIdRef="3" name="phantom1" uid="{b7e42e40-23d5-4eed-9791-4fc52c971aef}"/>
+    <RecordField fieldIdRef="4" name="phantom2" uid="{50b34893-0d08-45c3-b067-8e6c62244206}"/>
+  </Record>
+  <Form gridHeight="28" gridWidth="94" name="form" text="MainMenu">
+    <HBox gridHeight="27" gridWidth="92" name="hbox1" posX="1" posY="0">
+      <Tree gridHeight="27" gridWidth="88" idColumn="phantom2" name="tree1" parentIdColumn="phantom1" posX="2" posY="0" totalRows="5">
+        <Edit fieldId="1" gridHeight="1" gridWidth="8" name="Control Table" posX="0" posY="0" program="PreferenceConfig" tabIndex="-1" title="Setup" widget="Edit"/>
+        <Edit fieldId="2" gridHeight="1" gridWidth="8" name="edit2" posX="8" posY="0" tabIndex="-1" title="Client" widget="Edit"/>
+        <Edit fieldId="5" gridHeight="1" gridWidth="8" name="edit3" posX="16" posY="0" tabIndex="-1" title="Employee" widget="Edit"/>
+        <Edit fieldId="6" gridHeight="1" gridWidth="8" name="edit4" posX="24" posY="0" tabIndex="-1" title="RFS" widget="Edit"/>
+        <Edit fieldId="7" gridHeight="1" gridWidth="8" name="edit5" posX="32" posY="0" tabIndex="-1" title="Report" widget="Edit"/>
+        <Edit fieldId="8" gridHeight="1" gridWidth="8" name="edit6" posX="40" posY="0" tabIndex="-1" title="Help" widget="Edit"/>
+        <Phantom fieldId="3" name="phantom1" widget="Phantom"/>
+        <Phantom fieldId="4" name="phantom2" widget="Phantom"/>
+      </Tree>
+    </HBox>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBlAGQANgBhADgAZQAzADQALQA3AGQAYQA1AC0ANAA0AGQANwAtAGIAYwAzADUALQAxAGUAMgBkADgANABiADIANgA2ADUAYQB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

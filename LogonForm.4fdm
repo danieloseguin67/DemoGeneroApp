@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm fileVersion="31400" gstVersion="31409" name="managedform" uid="{de89c069-af76-46fa-ad21-a76237440b72}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canAdd" name="canAdd" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDelete" name="canDelete" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canModify" name="canModify" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" name="record1" uid="{30cb80f7-3789-42ca-9b9b-f4922870d7e1}">
+    <RecordField fieldIdRef="1" length="12" name="login" uid="{f3abd7ea-b7c4-4889-9c2f-8f3ac9aa70a0}"/>
+    <RecordField fieldIdRef="2" length="50" name="password" uid="{9ef08eb6-fc11-4969-9c4e-3681b4d93e52}"/>
+  </Record>
+  <Form gridHeight="25" gridWidth="80" name="form" text="LogonForm">
+    <Grid gridHeight="9" gridWidth="36" name="grid2" posX="22" posY="7">
+      <Label gridHeight="1" gridWidth="8" name="label1" posX="1" posY="1" text="Username"/>
+      <Edit fieldId="1" gridHeight="1" gridWidth="34" length="12" name="login" placeholder="Enter Username" posX="1" posY="2" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Label gridHeight="1" gridWidth="8" name="label2" posX="1" posY="4" text="Password"/>
+      <Edit fieldId="2" gridHeight="1" gridWidth="34" invisible="true" length="50" name="password" placeholder="Enter Password" posX="1" posY="5" tabIndex="-1" title="edit1" widget="Edit"/>
+      <Button gridHeight="1" gridWidth="9" name="accept" posX="1" posY="7" tabIndex="-1" text="Login"/>
+      <Button gridHeight="1" gridWidth="9" name="cancel" posX="25" posY="7" tabIndex="-1" text="Cancel"/>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewAzADAAYwBiADgAMABmADcALQAzADcAOAA5AC0ANAAyAGMAYQAtADkAYgA5AGIALQBmADQAOQAyADIAOAA3ADAAZAA3AGUAMQB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

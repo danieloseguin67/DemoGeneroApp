@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{2f117ff6-128c-43c4-993b-9ea2d37418c8}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canAdd" name="canAdd" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDelete" name="canDelete" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canModify" name="canModify" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="projects" name="record1" order="projects.projectId(ASC)" uid="{98c3fbc5-89a0-42fb-8f16-84cb7fbe75aa}">
+    <RecordField colName="projectId" fieldIdRef="1" fieldType="TABLE_COLUMN" name="projects.projectId" sqlTabName="projects" uid="{5ca26471-b967-4aac-9e1d-addfe2bec884}"/>
+    <RecordField colName="projectName" fieldIdRef="2" fieldType="TABLE_COLUMN" name="projects.projectName" sqlTabName="projects" uid="{0852596a-c2fb-4f98-8cc2-da18102056b1}"/>
+  </Record>
+  <Form gridHeight="5" gridWidth="68" name="form" text="ProjectManagerForm">
+    <Grid gridHeight="3" gridWidth="66" name="consultcompanion1" posX="1" posY="1">
+      <Label gridHeight="1" gridWidth="9" name="projects_projectId_label1" posX="1" posY="1" text="Project ID">
+        <Initializer text="dbschema:projects.projectId/@label"/>
+      </Label>
+      <ButtonEdit action="browse" colName="projectId" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="fa-list-alt" name="projects.projectId" posX="11" posY="1" scroll="true" sqlTabName="projects" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Label gridHeight="1" gridWidth="11" name="projects_projectName_label1" posX="23" posY="1" text="Project Name">
+        <Initializer text="dbschema:projects.projectName/@label"/>
+      </Label>
+      <Edit colName="projectName" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="projects.projectName" posX="35" posY="1" scroll="true" sqlTabName="projects" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewA5ADgAYwAzAGYAYgBjADUALQA4ADkAYQAwAC0ANAAyAGYAYgAtADgAZgAxADYALQA4ADQAYwBiADcAZgBiAGUANwA1AGEAYQB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

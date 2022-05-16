@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <AG version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
-  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\ConsultCompanion\database\consultcompanion.4dbx">
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\DemoGeneroApp\database\consultcompanion.4dbx">
     <Table name="seqreg">
       <DBColumn datatype="VARCHAR(30)" defaultValue="" fglDatatype="VARCHAR2(30)" fglLength="30" length="30" name="sr_name" notNull="1">
         <DynamicProperties>

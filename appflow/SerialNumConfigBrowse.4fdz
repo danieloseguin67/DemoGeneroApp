@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{bcf0d907-8a03-432b-b8ad-f748d542e5d4}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canAdd" name="canAdd" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canDelete" name="canDelete" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="false" isDefaultInherited="false" isHidden="true" label="canModify" name="canModify" readOnly="true" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="seqreg" name="record1" order="seqreg.sr_name(ASC)" uid="{542640ac-518b-4ec7-b208-73b68b3e620e}">
+    <RecordField colName="sr_name" fieldIdRef="1" fieldType="TABLE_COLUMN" name="seqreg.sr_name" sqlTabName="seqreg" uid="{cc17e626-1e2e-4227-8b36-286a8441cbd3}"/>
+    <RecordField colName="sr_last" fieldIdRef="2" fieldType="TABLE_COLUMN" name="seqreg.sr_last" sqlTabName="seqreg" uid="{926dd12d-1d95-47d9-b1e8-c96f79d18f2a}"/>
+  </Record>
+  <Form gridHeight="8" gridWidth="46" name="form" text="SerialNumConfigBrowse">
+    <Table gridHeight="6" gridWidth="44" name="consultcompanion1" posX="1" posY="1" totalRows="5">
+      <Edit colName="sr_name" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="seqreg.sr_name" posX="1" posY="0" scroll="true" sqlTabName="seqreg" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Edit colName="sr_last" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" name="seqreg.sr_last" posX="31" posY="0" scroll="true" sqlTabName="seqreg" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Table>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewA1ADQAMgA2ADQAMABhAGMALQA1ADEAOABiAC0ANABlAGMANwAtAGIAMgAwADgALQA3ADMAYgA2ADgAYgAzAGUANgAyADAAZQB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="test" build="3.20.11" width="80" height="24">
+  <Screen width="80" height="24">
+    <FormField name="formonly.fieldfiller" colName="fieldfiller" fieldId="0" sqlTabName="formonly" tabIndex="1">
+      <Edit width="1" posY="23" posX="78" gridWidth="1"/>
+    </FormField>
+  </Screen>
+  <RecordView tabName="formonly">
+    <Link colName="fieldfiller" fieldIdRef="0"/>
+  </RecordView>
+</Form>

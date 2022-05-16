@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{645888b7-7c7d-4849-b311-e2bf4c0b9d82}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canAdd" name="canAdd" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDelete" name="canDelete" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canModify" name="canModify" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" masterTable="paymentterms" name="record1" order="paymentterms.paytermid(ASC)" uid="{8f172a79-edf6-479d-9993-0b4df3d92998}">
+    <RecordField colName="paytermid" fieldIdRef="1" fieldType="TABLE_COLUMN" name="paymentterms.paytermid" sqlTabName="paymentterms" uid="{bc225bd9-dd05-4ef2-a67c-b349b2384230}"/>
+    <RecordField colName="paytermname" fieldIdRef="2" fieldType="TABLE_COLUMN" name="paymentterms.paytermname" sqlTabName="paymentterms" uid="{0644cf52-46eb-4986-bb33-e9fae6e65b6a}"/>
+    <RecordField colName="paytermdays" fieldIdRef="3" fieldType="TABLE_COLUMN" name="paymentterms.paytermdays" sqlTabName="paymentterms" uid="{b5de3af5-135b-4d68-88f5-15ffe30416ac}"/>
+  </Record>
+  <Form gridHeight="6" gridWidth="70" name="form" text="PayTermConfirmForm">
+    <Grid gridHeight="4" gridWidth="68" name="consultcompanion1" posX="1" posY="1">
+      <Label gridHeight="1" gridWidth="11" name="paymentterms_paytermid_label1" posX="1" posY="1">
+        <Initializer text="dbschema:paymentterms.paytermid/@label"/>
+      </Label>
+      <ButtonEdit action="browse" colName="paytermid" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="fa-list-alt" name="paymentterms.paytermid" posX="13" posY="1" scroll="true" sqlTabName="paymentterms" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Label gridHeight="1" gridWidth="11" name="paymentterms_paytermname_label1" posX="25" posY="1">
+        <Initializer text="dbschema:paymentterms.paytermname/@label"/>
+      </Label>
+      <Edit colName="paytermname" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="paymentterms.paytermname" posX="37" posY="1" scroll="true" sqlTabName="paymentterms" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+      <Label gridHeight="1" gridWidth="11" name="paymentterms_paytermdays_label1" posX="1" posY="2">
+        <Initializer text="dbschema:paymentterms.paytermdays/@label"/>
+      </Label>
+      <Edit colName="paytermdays" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" name="paymentterms.paytermdays" posX="13" posY="2" scroll="true" sqlTabName="paymentterms" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewA4AGYAMQA3ADIAYQA3ADkALQBlAGQAZgA2AC0ANAA3ADkAZAAtADkAOQA5ADMALQAwAGIANABkAGYAMwBkADkAMgA5ADkAOAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

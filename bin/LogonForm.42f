@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="LogonForm.tmp" build="3.20.11" text="LogonForm" width="36" height="9">
+  <LStr text="LogonForm"/>
+  <Grid name="grid2" width="36" height="9">
+    <Label name="label1" width="8" text="Username" posY="1" posX="1" gridWidth="8">
+      <LStr text="Username"/>
+    </Label>
+    <FormField name="formonly.login" colName="login" fieldId="0" sqlTabName="formonly" tabIndex="1">
+      <Edit width="34" placeholder="Enter Username" posY="2" posX="1" gridWidth="34">
+        <LStr placeholder="Enter Username"/>
+      </Edit>
+    </FormField>
+    <Label name="label2" width="8" text="Password" posY="4" posX="1" gridWidth="8">
+      <LStr text="Password"/>
+    </Label>
+    <FormField name="formonly.password" colName="password" fieldId="1" sqlTabName="formonly" tabIndex="2">
+      <Edit width="34" placeholder="Enter Password" isPassword="1" posY="5" posX="1" gridWidth="34">
+        <LStr placeholder="Enter Password"/>
+      </Edit>
+    </FormField>
+    <Button name="accept" width="9" text="Login" posY="7" posX="1" gridWidth="9" tabIndex="3">
+      <LStr text="Login"/>
+    </Button>
+    <Button name="cancel" width="9" text="Cancel" posY="7" posX="25" gridWidth="9" tabIndex="4">
+      <LStr text="Cancel"/>
+    </Button>
+  </Grid>
+  <RecordView tabName="formonly">
+    <Link colName="login" fieldIdRef="0"/>
+    <Link colName="password" fieldIdRef="1"/>
+  </RecordView>
+  <RecordView tabName="record1">
+    <Link colName="login" fieldIdRef="0"/>
+    <Link colName="password" fieldIdRef="1"/>
+  </RecordView>
+</Form>

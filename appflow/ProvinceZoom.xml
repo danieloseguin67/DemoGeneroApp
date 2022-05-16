@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<AG businessApplicationFile="C:\SoftDev\GeneroApps\ConsultCompanion\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
-  <File dir="C:\SoftDev\GeneroApps\ConsultCompanion\appflow" filename="ProvinceZoom.4fdz" locator="/Item/ProvinceZoom" name="ProvinceZoom" type="Zoom">
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow" filename="ProvinceZoom.4fdz" locator="/Item/ProvinceZoom" name="ProvinceZoom" type="Zoom">
     <DynamicProperties>
       <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
       <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
@@ -128,7 +128,7 @@
       </Record>
     </Module>
   </File>
-  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\ConsultCompanion\database\consultcompanion.4dbx">
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\DemoGeneroApp\database\consultcompanion.4dbx">
     <Table name="provinces">
       <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="provinceid" notNull="1">
         <DynamicProperties>

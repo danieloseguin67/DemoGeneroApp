@@ -134,12 +134,17 @@ END FUNCTION
 
 {</LOSTCODE>}
 {</SOURCEFILE>}
-{<SOURCEFILE name="consultcompanion_dbxdata.4gl" hash="TDun5D9TjVoCYmTGdcSO2A==">}
+{<SOURCEFILE name="consultcompanion_dbxdata.4gl" hash="g/9CUDEUGZ5Ge8Z1ccBfIw==">}
 {<USERCODE>}
 {<POINT Name="import" Status="MODIFIED">} 
 IMPORT FGL fgldialog
 {</POINT>}
-{<POINT Name="fct.clients_insertRowByKey.define" Status="MODIFIED">} 
+{<POINT Name="fct.seqreg_pk_seqreg_selectRowByKey.define" Status="MODIFIED">} 
+    DEFINE l_flag smallint
+    {</POINT>}{<POINT Name="fct.seqreg_pk_seqreg_selectRowByKey.init" Status="MODIFIED">}
+       # example to add code similar than fg .ext files 
+       LET l_flag = 0       
+    {</POINT>}{<POINT Name="fct.clients_insertRowByKey.define" Status="MODIFIED">} 
     DEFINE l_scratch string
     {</POINT>}{<POINT Name="fct.clients_insertRowByKey.beforeInsert" Status="MODIFIED">} 
             {</POINT>}

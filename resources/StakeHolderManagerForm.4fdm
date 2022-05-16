@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm databaseName="consultcompanion" fileVersion="31400" gstVersion="31409" name="managedform" uid="{189eebaf-de49-4715-b7e7-0d59ab19a247}">
+  <AGSettings>
+    <DynamicProperties version="2">
+      <DynamicProperty description="Allow adding items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canAdd" name="canAdd" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow deleting items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDelete" name="canDelete" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow displaying items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canDisplay" name="canDisplay" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow the empty mode" initialValue="true" isDefaultInherited="false" isHidden="false" label="canEmpty" name="canEmpty" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow modifying existing items" initialValue="true" isDefaultInherited="false" isHidden="false" label="canModify" name="canModify" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty description="Allow search using Query By Example" initialValue="true" isDefaultInherited="false" isHidden="false" label="canSearch" name="canSearch" readOnly="false" type="BOOLEAN"/>
+      <DynamicProperty dynamicContent="srcFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="foreignFields" name="foreignFields" readOnly="false" type="FIELDS"/>
+      <DynamicProperty dynamicContent="dstFieldsContent" editorInfo="isDynamic:true" initialValue="" isDefaultInherited="false" isHidden="false" label="primaryFields" name="primaryFields" readOnly="false" type="FIELDS"/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Data Events" name="DialogDataEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Dialog Events" name="DialogEvents" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Files" name="codeFiles" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Put user code to customize the application" label="Code Links" name="codeLinks" properties=""/>
+      <DynamicPropertyGroup collapsed="false" description="Functionality properties group" label="Functionality" name="functionality" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <DynamicPropertyGroup collapsed="false" description="Relation properties group" label="Relation" name="relations" properties="foreignFields;primaryFields"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="BR/Record" properties="canDisplay;canAdd;canModify;canDelete;canSearch;canEmpty"/>
+      <NodeInfo mimeType="BR/Relation" properties="primaryFields;foreignFields"/>
+    </NodeInfos>
+  </AGSettings>
+  <Record active="true" joinLeft="clientstakeholders.clientId" joinOperator="INNER" joinRight="clients.clientid" masterTable="clientstakeholders" name="record1" order="clientstakeholders.clientId(ASC),clientstakeholders.stakeholderId(ASC)" uid="{8b807078-4510-431c-9777-51b8b9dc206d}">
+    <RecordField colName="clientId" fieldIdRef="1" fieldType="TABLE_COLUMN" name="clientstakeholders.clientId" sqlTabName="clientstakeholders" uid="{fcc442ef-88aa-4ec9-8f4b-4f2d099663fd}"/>
+    <RecordField colName="clientname" fieldIdRef="2" fieldType="TABLE_COLUMN" name="clients.clientname" sqlTabName="clients" uid="{ad86216f-aa14-4fbd-90ed-c13eecf70b99}"/>
+    <RecordField colName="stakeholderId" fieldIdRef="3" fieldType="TABLE_COLUMN" name="clientstakeholders.stakeholderId" sqlTabName="clientstakeholders" uid="{18c2dee3-5f9a-4bfa-9ccd-9fe06e0c9986}"/>
+    <RecordField colName="stakeholdername" fieldIdRef="4" fieldType="TABLE_COLUMN" name="clientstakeholders.stakeholdername" sqlTabName="clientstakeholders" uid="{21d38cb0-63e0-43df-9ad1-501ddb6d0486}"/>
+  </Record>
+  <Form gridHeight="6" gridWidth="76" name="form" text="StakeHolderManagerForm">
+    <Grid gridHeight="4" gridWidth="74" name="consultcompanion1" posX="1" posY="1">
+      <Label gridHeight="1" gridWidth="13" name="clientstakeholders_clientId_label1" posX="1" posY="1" text="Client ID">
+        <Initializer text="dbschema:clientstakeholders.clientId/@label"/>
+      </Label>
+      <ButtonEdit action="zm_client" colName="clientId" fieldId="1" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="mag" name="clientstakeholders.clientId" posX="15" posY="1" scroll="true" sqlTabName="clientstakeholders" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Label gridHeight="1" gridWidth="15" name="clients_clientname_label1" posX="27" posY="1" text="Client Name">
+        <Initializer text="dbschema:clients.clientname/@label"/>
+      </Label>
+      <FFLabel colName="clientname" fieldId="2" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clients.clientname" posX="43" posY="1" sqlTabName="clients" widget="FFLabel">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </FFLabel>
+      <Label gridHeight="1" gridWidth="13" name="clientstakeholders_stakeholderId_label1" posX="1" posY="2" text="Stakeholder ID">
+        <Initializer text="dbschema:clientstakeholders.stakeholderId/@label"/>
+      </Label>
+      <ButtonEdit action="browse" colName="stakeholderId" fieldId="3" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="11" image="fa-list-alt" name="clientstakeholders.stakeholderId" posX="15" posY="2" scroll="true" sqlTabName="clientstakeholders" tabIndex="-1" widget="ButtonEdit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </ButtonEdit>
+      <Label gridHeight="1" gridWidth="15" name="clientstakeholders_stakeholdername_label1" posX="27" posY="2" text="Stakeholder Name">
+        <Initializer text="dbschema:clientstakeholders.stakeholdername/@label"/>
+      </Label>
+      <Edit colName="stakeholdername" fieldId="4" fieldType="TABLE_COLUMN" gridHeight="1" gridWidth="30" name="clientstakeholders.stakeholdername" posX="43" posY="2" scroll="true" sqlTabName="clientstakeholders" tabIndex="-1" widget="Edit">
+        <Initializer title="dbschema:$(sqlTabName).$(colName)/@label"/>
+      </Edit>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewA4AGIAOAAwADcAMAA3ADgALQA0ADUAMQAwAC0ANAAzADEAYwAtADkANwA3ADcALQA1ADEAYgA4AGIAOQBkAGMAMgAwADYAZAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

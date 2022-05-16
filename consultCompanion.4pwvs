@@ -9,6 +9,7 @@
     <Node path="consultCompanion.4pw/ApplicationFlow/Applicationflow" type="pm/library"/>
     <Node path="consultCompanion.4pw/ApplicationFlow/Config" type="pm/library"/>
     <Node path="consultCompanion.4pw/ApplicationFlow/Database" type="pm/library"/>
+    <Node path="consultCompanion.4pw/ApplicationFlow/Helpers" type="pm/library"/>
     <Node path="consultCompanion.4pw/ApplicationFlow/Zooms" type="pm/library"/>
     <Node path="consultCompanion.4pw/ClientManagement" type="pm/group"/>
     <Node path="consultCompanion.4pw/ClientManagement/ClientManager" type="pm/application"/>
@@ -23,24 +24,13 @@
   <OpenDocuments>
     <Document container="true" filePath="database/consultcompanion.4dbx" locator="" module="mod-db3"/>
     <Document container="true" filePath="appflow/appflow.4ba" locator="" module="mod-ba"/>
-    <Document container="true" filePath="ClientManagerform_ui.4gl" locator="1:1" module="mod-ce3">
+    <Document container="true" filePath="C:/SoftDev/GeneroApps/DemoGeneroApp/LogonForm.4fdm" locator="" module="mod-fd"/>
+    <Document container="true" filePath="LogonForm.4fdc" locator="" module="mod-fd"/>
+    <Document container="true" filePath="appflow/MainProgram.4gl" locator="97:52" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
-    <Document container="true" filePath="ClientManagerform.4gl" locator="77:7" module="mod-ce3">
-      <Data name="8" value="CP1252"/>
-    </Document>
-    <Document container="true" filePath="ClientManagerform_uidata.4gl" locator="32:42" module="mod-ce3">
-      <Data name="8" value="CP1252"/>
-    </Document>
-    <Document container="true" filePath="ClientManagerform_uidialog.4gl" locator="1511:5" module="mod-ce3">
-      <Data name="8" value="CP1252"/>
-    </Document>
-    <Document container="true" filePath="database/consultcompanion_dbxdata.4gl" locator="36:1" module="mod-ce3">
-      <Data name="8" value="CP1252"/>
-    </Document>
-    <Document container="true" filePath="database/main.4gl" locator="21:1" module="mod-ce3">
-      <Data name="8" value="CP1252"/>
-    </Document>
+    <Document container="true" filePath="RFSManagerform.4fdm" locator="" module="mod-fd"/>
+    <Document container="true" filePath="resources/StakeHolderManagerForm.4fdm" locator="" module="mod-fd"/>
   </OpenDocuments>
-  <CurrentDocument filePath="database/consultcompanion.4dbx" module="mod-db3"/>
+  <CurrentDocument filePath="appflow/MainProgram.4gl" module="mod-ce3"/>
 </WorkspaceViewState>

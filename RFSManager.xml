@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<AG businessApplicationFile="C:\SoftDev\GeneroApps\ConsultCompanion\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
-  <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="RFSManager.4prg" locator="/Item/RFSManager" name="RFSManager" type="Program">
-    <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="RFSManagerform.4fdm" locator="/Item/RFSManagerform" name="RFSManagerform" type="Form">
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp" filename="RFSManager.4prg" locator="/Item/RFSManager" name="RFSManager" type="Program">
+    <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp" filename="RFSManagerform.4fdm" locator="/Item/RFSManagerform" name="RFSManagerform" type="Form">
       <DynamicProperties>
         <DynamicProperty name="canExport" value="true"/>
         <DynamicProperty name="formDefaultMode" value="DISPLAY"/>
@@ -64,7 +64,7 @@
           <DynamicProperty name="srcRecord" value=""/>
         </DynamicProperties>
       </ModuleRelation>
-      <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="OfferStatusZoom.4fdz" locator="/Item/OfferStatusZoom" name="OfferStatusZoom" type="Zoom">
+      <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp" filename="OfferStatusZoom.4fdz" locator="/Item/OfferStatusZoom" name="OfferStatusZoom" type="Zoom">
         <DynamicProperties>
           <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
           <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
@@ -123,7 +123,7 @@
           </DynamicProperties>
         </ModuleRelation>
       </File>
-      <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="StakeholderZoom.4fdz" locator="/Item/StakeholderZoom" name="StakeholderZoom" type="Zoom">
+      <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp" filename="StakeholderZoom.4fdz" locator="/Item/StakeholderZoom" name="StakeholderZoom" type="Zoom">
         <DynamicProperties>
           <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
           <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
@@ -182,7 +182,7 @@
           </DynamicProperties>
         </ModuleRelation>
       </File>
-      <File dir="C:\SoftDev\GeneroApps\ConsultCompanion" filename="ClientZoom.4fdz" locator="/Item/ClientZoom" name="ClientZoom" type="Zoom">
+      <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp" filename="ClientZoom.4fdz" locator="/Item/ClientZoom" name="ClientZoom" type="Zoom">
         <DynamicProperties>
           <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
           <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
@@ -276,7 +276,7 @@
     </File>
     <Program/>
   </File>
-  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\ConsultCompanion\database\consultcompanion.4dbx">
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\DemoGeneroApp\database\consultcompanion.4dbx">
     <Table name="rfs">
       <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="rfsId" notNull="1">
         <DynamicProperties>

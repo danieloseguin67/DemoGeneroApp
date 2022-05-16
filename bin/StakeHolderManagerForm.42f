@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="StakeHolderManagerForm.tmp" build="3.20.11" sqlDbName="consultcompanion" text="StakeHolderManagerForm" width="74" height="4">
+  <LStr text="StakeHolderManagerForm"/>
+  <Grid name="consultcompanion1" width="74" height="4">
+    <Label name="clientstakeholders_clientid_label1" width="13" text="Client ID" posY="1" posX="1" gridWidth="13">
+      <LStr text="Client ID"/>
+    </Label>
+    <FormField name="clientstakeholders.clientid" colName="clientid" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="clientstakeholders" tabIndex="1">
+      <ButtonEdit width="9" action="zm_client" image="mag" scroll="1" posY="1" posX="15" gridWidth="11"/>
+    </FormField>
+    <Label name="clients_clientname_label1" width="15" text="Client Name" posY="1" posX="27" gridWidth="15">
+      <LStr text="Client Name"/>
+    </Label>
+    <FormField name="clients.clientname" colName="clientname" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="clients" noEntry="1" tabIndex="2">
+      <Label width="30" posY="1" posX="43" gridWidth="30"/>
+    </FormField>
+    <Label name="clientstakeholders_stakeholderid_label1" width="13" text="Stakeholder ID" posY="2" posX="1" gridWidth="13">
+      <LStr text="Stakeholder ID"/>
+    </Label>
+    <FormField name="clientstakeholders.stakeholderid" colName="stakeholderid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="2" sqlTabName="clientstakeholders" tabIndex="3">
+      <ButtonEdit width="9" action="browse" image="fa-list-alt" scroll="1" posY="2" posX="15" gridWidth="11"/>
+    </FormField>
+    <Label name="clientstakeholders_stakeholdername_label1" width="15" text="Stakeholder Name" posY="2" posX="27" gridWidth="15">
+      <LStr text="Stakeholder Name"/>
+    </Label>
+    <FormField name="clientstakeholders.stakeholdername" colName="stakeholdername" sqlType="CHAR(30)" required="1" notNull="1" fieldId="3" sqlTabName="clientstakeholders" tabIndex="4">
+      <Edit width="30" scroll="1" posY="2" posX="43" gridWidth="30"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="clients">
+    <Link colName="clientname" fieldIdRef="1"/>
+  </RecordView>
+  <RecordView tabName="clientstakeholders">
+    <Link colName="clientid" fieldIdRef="0"/>
+    <Link colName="stakeholderid" fieldIdRef="2"/>
+    <Link colName="stakeholdername" fieldIdRef="3"/>
+  </RecordView>
+  <RecordView tabName="record1">
+    <Link colName="clientid" fieldIdRef="0"/>
+    <Link colName="clientname" fieldIdRef="1"/>
+    <Link colName="stakeholderid" fieldIdRef="2"/>
+    <Link colName="stakeholdername" fieldIdRef="3"/>
+  </RecordView>
+</Form>

@@ -1,4 +1,4 @@
-{<CODEFILE Path="consultcompanion.code" Hash="TDun5D9TjVoCYmTGdcSO2A==" />}
+{<CODEFILE Path="consultcompanion.code" Hash="g/9CUDEUGZ5Ge8Z1ccBfIw==" />}
 #+ DB schema - Data Management (consultcompanion)
 
 --------------------------------------------------------------------------------
@@ -42,12 +42,17 @@ PUBLIC FUNCTION consultcompanion_dbxdata_seqreg_pk_seqreg_selectRowByKey(p_key, 
     DEFINE l_data RECORD LIKE seqreg.*
     DEFINE l_supportLock BOOLEAN
     DEFINE errNo INTEGER
-    {<POINT Name="fct.seqreg_pk_seqreg_selectRowByKey.define">} {</POINT>}
+    {<POINT Name="fct.seqreg_pk_seqreg_selectRowByKey.define" Status="MODIFIED">} 
+    DEFINE l_flag smallint
+    {</POINT>}
 
     LET errNo = ERROR_SUCCESS
     -- SQLite does not support the FOR UPDATE close in SELECT syntax
     LET l_supportLock = (UPSHIFT(fgl_db_driver_type()) != "SQT")
-    {<POINT Name="fct.seqreg_pk_seqreg_selectRowByKey.init">} {</POINT>}
+    {<POINT Name="fct.seqreg_pk_seqreg_selectRowByKey.init" Status="MODIFIED">}
+       # example to add code similar than fg .ext files 
+       LET l_flag = 0       
+    {</POINT>}
     TRY
         IF p_lock AND l_supportLock THEN
             SELECT * INTO l_data.* FROM seqreg

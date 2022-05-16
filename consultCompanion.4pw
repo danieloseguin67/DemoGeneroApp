@@ -70,33 +70,44 @@
       <File filePath="EmployeeManagerForm.4fdm"/>
     </Application>
   </Group>
-  <Group id="494191020" label=" MainMenu" language="Genero"/>
   <Group id="17762905" label=" Setup" language="Genero">
-    <Application binaryName="ClientTypeConfig" dependencies="455109296,212784684,254073396,197712104" id="741800634" label="ClientTypeConfig">
+    <Application binaryName="ClientTypeConfig" dependencies="455109296,212784684,254073396,197712104,159917928" id="741800634" label="ClientTypeConfig">
       <File filePath="ClientTypeConfig.4prg"/>
+      <File filePath="resources/ClientTypeConfigForm.4fdm"/>
+      <File filePath="test.per"/>
     </Application>
     <Application binaryName="EmployeeTypeManager" dependencies="455109296,212784684,254073396,197712104" id="182163399" label="EmployeeTypeManager">
+      <File filePath="appflow/EmployeeTypeBrowse.4fdz"/>
       <File filePath="EmployeeTypeConfig.4prg"/>
+      <File filePath="appflow/EmployeeTypeConfigForm.4fdm"/>
     </Application>
     <Application binaryName="OfferStastusConfig" dependencies="159917928,455109296,212784684,254073396,197712104" id="22639845" label="OfferStastusConfig">
       <File filePath="OfferStatusConfig.4prg"/>
+      <File filePath="appflow/OfferStatusConfigBrowse.4fdz"/>
+      <File filePath="appflow/OfferStatusConfigForm.4fdm"/>
     </Application>
     <Application binaryName="PayTermConfig" dependencies="159917928,455109296,212784684,254073396,197712104" id="14176809" label="PayTermConfig">
       <File filePath="PayTermConfig.4prg"/>
+      <File filePath="appflow/PayTermConfirmBrowse.4fdz"/>
+      <File filePath="appflow/PayTermConfirmForm.4fdm"/>
     </Application>
-    <Application binaryName="PreferencesConfig" dependencies="455109296,212784684,254073396,197712104" id="94064157" label="PreferencesConfig">
-      <File filePath="PreferencesConfig.4prg"/>
+    <Application binaryName="PreferencesConfig" dependencies="455109296,212784684,254073396,197712104,159917928" id="94064157" label="PreferencesConfig">
+      <File filePath="PreferenceControlManager.4prg"/>
+      <File filePath="PreferencesForm.4fdm"/>
     </Application>
     <Application binaryName="SerialNumConfig" dependencies="159917928,455109296,212784684,254073396,197712104" id="305302730" label="SerialNumConfig">
       <File filePath="SerialNumConfig.4prg"/>
+      <File filePath="appflow/SerialNumConfigBrowse.4fdz"/>
+      <File filePath="appflow/SerialNumConfigForm.4fdm"/>
     </Application>
     <Application binaryName="StakeholderManager" dependencies="159917928,455109296,212784684,254073396,197712104" id="488178496" label="StakeholderManager">
       <File filePath="StakeHolderManager.4prg"/>
+      <File filePath="resources/StakeHolderManagerForm.4fdm"/>
     </Application>
   </Group>
   <Group environment="dirlist:DBPATH=$(ProjectDir)/database;$(DBPATH),dirlist:FGLIMAGEPATH=$(ProjectDir)/images;$(FGLDIR)/lib/image2font.txt;$(ProjectDir);$(FGLIMAGEPATH)" id="20809256" label="ApplicationFlow" language="Genero">
     <Application binaryName="Application" dependencies="159917928,212784684,455109296,227843242" id="400358049" label="Application">
-      <File filePath="appflow/MainForm.4fdc"/>
+      <File filePath="LogonForm.4fdc"/>
       <File filePath="src/MainForm.per"/>
       <File filePath="appflow/MainProgram.4prg"/>
     </Application>
@@ -110,10 +121,11 @@
       <File filePath="database/consultcompanion.4dbx"/>
     </Library>
     <Library binaryName="Entities" dependencies="455109296" externalDependencies="libgre.42x" id="212784684" label="Entities"/>
-    <Library binaryName="Helpers" id="254073396" label="Helpers"/>
+    <Library binaryName="Helpers" dependencies="159917928,455109296" id="254073396" label="Helpers"/>
     <Library binaryName="Resources" environment="filelist:FGLPROFILE=$(ProjectDir)/resources/fglprofile" id="159917928" label="Resources"/>
     <Application binaryName="Test" commandLineArguments="tcp --working-directory  ../bin" dependencies="400358049" id="207681000" label="Test" targetDirectory="$(ProjectDir)/testbin"/>
     <Library binaryName="Zooms" dependencies="455109296" id="197712104" label="Zooms">
+      <File filePath="resources/ClientTypeBrowse.4fdz"/>
       <File filePath="ClientTypeZoom.4fdz"/>
       <File filePath="ClientZoom.4fdz"/>
       <File filePath="database/CountryZoom.4fdz"/>
@@ -151,7 +163,9 @@
   </Group>
   <Group id="537753216" label="ProjectManagement" language="Genero">
     <Application binaryName="ProjectManager" dependencies="455109296,212784684,254073396,197712104" id="515722428" label="ProjectManager">
+      <File filePath="appflow/ProjectBrowse.4fdz"/>
       <File filePath="ProjectManager.4prg"/>
+      <File filePath="ProjectManagerForm.4fdm"/>
     </Application>
   </Group>
   <Group id="319130735" label="RequestForServices" language="Genero">
