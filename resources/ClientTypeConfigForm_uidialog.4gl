@@ -372,6 +372,50 @@ DIALOG ClientTypeConfigForm_uidialog_record1_uiInput()
                     EXIT DIALOG
             END CASE
 
+        BEFORE FIELD clienttypes.clienttypeid
+            {<POINT Name="dlg.record1.uiInput.beforeField.clienttypes.clienttypeid">} {</POINT>}
+            CALL DIALOG.setActionActive('zoom', TRUE)
+            IF libdbapp_isMobile() THEN
+                CALL DIALOG.setActionHidden('zoom', FALSE)
+            END IF
+
+            INITIALIZE ClientTypeConfigForm_events.m_DlgCtrlInstruction TO NULL
+            IF ClientTypeConfigForm_events.m_DlgEvent_record1_BeforeField IS NOT NULL THEN
+                CALL ClientTypeConfigForm_events.m_DlgEvent_record1_BeforeField(DIALOG, m_state, ClientTypeConfigForm_events.m_DlgCtrlInstruction, "clienttypes.clienttypeid")
+                    RETURNING ClientTypeConfigForm_events.m_DlgCtrlInstruction
+            END IF
+
+            CASE ClientTypeConfigForm_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
+        AFTER FIELD clienttypes.clienttypeid
+            {<POINT Name="dlg.record1.uiInput.afterField.clienttypes.clienttypeid">} {</POINT>}
+            CALL DIALOG.setActionActive('zoom', FALSE)
+            IF libdbapp_isMobile() THEN
+                CALL DIALOG.setActionHidden('zoom', TRUE)
+            END IF
+
+            INITIALIZE ClientTypeConfigForm_events.m_DlgCtrlInstruction TO NULL
+            IF ClientTypeConfigForm_events.m_DlgEvent_record1_AfterField IS NOT NULL THEN
+                CALL ClientTypeConfigForm_events.m_DlgEvent_record1_AfterField(DIALOG, m_state, ClientTypeConfigForm_events.m_DlgCtrlInstruction, "clienttypes.clienttypeid")
+                    RETURNING ClientTypeConfigForm_events.m_DlgCtrlInstruction
+            END IF
+
+            CASE ClientTypeConfigForm_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
         ON ACTION dialogtouched --INPUT (record1)
             {<POINT Name="dlg.record1.uiInput.onAction.dialogtouched">} {</POINT>}
             IF m_state == C_MODE_MODIFY THEN
@@ -432,6 +476,49 @@ DIALOG ClientTypeConfigForm_uidialog_record1_uiConstruct()
                     clienttypes.clientypename
              FROM clienttypes.clienttypeid,
                     clienttypes.clientypename
+        BEFORE FIELD clienttypes.clienttypeid
+            {<POINT Name="dlg.record1.uiConstruct.beforeField.clienttypes.clienttypeid">} {</POINT>}
+            CALL DIALOG.setActionActive('zoom', TRUE)
+            IF libdbapp_isMobile() THEN
+                CALL DIALOG.setActionHidden('zoom', FALSE)
+            END IF
+
+            INITIALIZE ClientTypeConfigForm_events.m_DlgCtrlInstruction TO NULL
+            IF ClientTypeConfigForm_events.m_DlgEvent_record1_BeforeField IS NOT NULL THEN
+                CALL ClientTypeConfigForm_events.m_DlgEvent_record1_BeforeField(DIALOG, m_state, ClientTypeConfigForm_events.m_DlgCtrlInstruction, "clienttypes.clienttypeid")
+                    RETURNING ClientTypeConfigForm_events.m_DlgCtrlInstruction
+            END IF
+
+            CASE ClientTypeConfigForm_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
+
+        AFTER FIELD clienttypes.clienttypeid
+            {<POINT Name="dlg.record1.uiConstruct.afterField.clienttypes.clienttypeid">} {</POINT>}
+            CALL DIALOG.setActionActive('zoom', FALSE)
+            IF libdbapp_isMobile() THEN
+                CALL DIALOG.setActionHidden('zoom', TRUE)
+            END IF
+
+            INITIALIZE ClientTypeConfigForm_events.m_DlgCtrlInstruction TO NULL
+            IF ClientTypeConfigForm_events.m_DlgEvent_record1_AfterField IS NOT NULL THEN
+                CALL ClientTypeConfigForm_events.m_DlgEvent_record1_AfterField(DIALOG, m_state, ClientTypeConfigForm_events.m_DlgCtrlInstruction, "clienttypes.clienttypeid")
+                    RETURNING ClientTypeConfigForm_events.m_DlgCtrlInstruction
+            END IF
+
+            CASE ClientTypeConfigForm_events.m_DlgCtrlInstruction
+                WHEN libdbappEvents.ACCEPT_DIALOG
+                    ACCEPT DIALOG
+                WHEN libdbappEvents.CONTINUE_DIALOG
+                    CONTINUE DIALOG
+                WHEN libdbappEvents.EXIT_DIALOG
+                    EXIT DIALOG
+            END CASE
 
         BEFORE CONSTRUCT
         INITIALIZE ClientTypeConfigForm_events.m_DlgCtrlInstruction TO NULL

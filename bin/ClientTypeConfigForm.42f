@@ -6,7 +6,7 @@
       <LStr text="Client Type ID"/>
     </Label>
     <FormField name="clienttypes.clienttypeid" colName="clienttypeid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="clienttypes" tabIndex="1">
-      <Edit width="11" scroll="1" posY="1" posX="14" gridWidth="11"/>
+      <ButtonEdit width="9" action="browse" image="fa-list-alt" scroll="1" posY="1" posX="14" gridWidth="11"/>
     </FormField>
     <Label name="clienttypes_clientypename_label1" width="13" text="Client Type Name" posY="1" posX="26" gridWidth="13">
       <LStr text="Client Type Name"/>

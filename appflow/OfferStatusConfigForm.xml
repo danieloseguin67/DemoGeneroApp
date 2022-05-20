@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow" filename="OfferStatusConfigForm.4fdm" locator="/Item/OfferStatusConfigForm" name="OfferStatusConfigForm" type="Form">
+    <DynamicProperties>
+      <DynamicProperty name="canExport" value="true"/>
+      <DynamicProperty name="formDefaultMode" value="DISPLAY"/>
+      <DynamicProperty name="formOpenMode" value="DISPLAY"/>
+      <DynamicProperty name="formTransitionAddCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionAddClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionAddExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionAddOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionDisplayCancel" value="ExitForm"/>
+      <DynamicProperty name="formTransitionDisplayClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionDisplayExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionDisplayOk" value="ExitForm"/>
+      <DynamicProperty name="formTransitionModifyCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionModifyClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionModifyExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionModifyOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionSearchCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="formTransitionSearchClose" value="ExitForm"/>
+      <DynamicProperty name="formTransitionSearchExit" value="ExitApp"/>
+      <DynamicProperty name="formTransitionSearchOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="quickHTML" value="true"/>
+      <DynamicProperty name="quickPDF" value="true"/>
+      <DynamicProperty name="quickPreview" value="true"/>
+      <DynamicProperty name="quickPrint" value="true"/>
+      <DynamicProperty name="quickRTF" value="true"/>
+      <DynamicProperty name="quickXLS" value="true"/>
+    </DynamicProperties>
+    <ModuleRelation destination="OfferStatusConfigForm" locator="/Relation/Relation17" source="OfferStatusConfig" type="Relation">
+      <DynamicProperties>
+        <DynamicProperty name="action" value=""/>
+        <DynamicProperty name="dataRefresh" value="Current Row"/>
+        <DynamicProperty name="defaultMode" value=""/>
+        <DynamicProperty name="disableAdd" value="false"/>
+        <DynamicProperty name="disableDelete" value="false"/>
+        <DynamicProperty name="disableDisplay" value="false"/>
+        <DynamicProperty name="disableEmpty" value="false"/>
+        <DynamicProperty name="disableModify" value="false"/>
+        <DynamicProperty name="disableSearch" value="false"/>
+        <DynamicProperty name="filterDstField"/>
+        <DynamicProperty name="filterSrcField"/>
+        <DynamicProperty name="openMode" value=""/>
+        <DynamicProperty name="relationTransitionAddCancel" value=""/>
+        <DynamicProperty name="relationTransitionAddClose" value=""/>
+        <DynamicProperty name="relationTransitionAddExit" value=""/>
+        <DynamicProperty name="relationTransitionAddOk" value=""/>
+        <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+        <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+        <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+        <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+        <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+        <DynamicProperty name="relationTransitionModifyClose" value=""/>
+        <DynamicProperty name="relationTransitionModifyExit" value=""/>
+        <DynamicProperty name="relationTransitionModifyOk" value=""/>
+        <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+        <DynamicProperty name="relationTransitionSearchClose" value=""/>
+        <DynamicProperty name="relationTransitionSearchExit" value=""/>
+        <DynamicProperty name="relationTransitionSearchOk" value=""/>
+        <DynamicProperty name="rowbound" value="false"/>
+        <DynamicProperty name="srcField"/>
+        <DynamicProperty name="srcRecord" value=""/>
+      </DynamicProperties>
+    </ModuleRelation>
+    <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow" filename="OfferStatusConfigBrowse.4fdz" locator="/Item/OfferStatusConfigBrowse" name="OfferStatusConfigBrowse" type="Zoom">
+      <DynamicProperties>
+        <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
+        <DynamicProperty name="zoomTransitionAddCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionAddClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionAddExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionAddOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionDisplayCancel" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionDisplayExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionDisplayOk" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionModifyClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionModifyExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionModifyOk" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchCancel" value="ReturnToDefaultMode"/>
+        <DynamicProperty name="zoomTransitionSearchClose" value="ExitForm"/>
+        <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
+        <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
+      </DynamicProperties>
+      <ModuleRelation destination="OfferStatusConfigBrowse" locator="/Relation/Relation28" source="OfferStatusConfigForm" type="Relation">
+        <DynamicProperties>
+          <DynamicProperty name="action" value="browse"/>
+          <DynamicProperty name="dataRefresh" value="Current Row"/>
+          <DynamicProperty name="defaultMode" value=""/>
+          <DynamicProperty name="disableAdd" value="false"/>
+          <DynamicProperty name="disableDelete" value="false"/>
+          <DynamicProperty name="disableDisplay" value="false"/>
+          <DynamicProperty name="disableEmpty" value="false"/>
+          <DynamicProperty name="disableModify" value="false"/>
+          <DynamicProperty name="disableSearch" value="false"/>
+          <DynamicProperty name="filterDstField"/>
+          <DynamicProperty name="filterSrcField"/>
+          <DynamicProperty name="openMode" value=""/>
+          <DynamicProperty name="relationTransitionAddCancel" value=""/>
+          <DynamicProperty name="relationTransitionAddClose" value=""/>
+          <DynamicProperty name="relationTransitionAddExit" value=""/>
+          <DynamicProperty name="relationTransitionAddOk" value=""/>
+          <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+          <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+          <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+          <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+          <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+          <DynamicProperty name="relationTransitionModifyClose" value=""/>
+          <DynamicProperty name="relationTransitionModifyExit" value=""/>
+          <DynamicProperty name="relationTransitionModifyOk" value=""/>
+          <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+          <DynamicProperty name="relationTransitionSearchClose" value=""/>
+          <DynamicProperty name="relationTransitionSearchExit" value=""/>
+          <DynamicProperty name="relationTransitionSearchOk" value=""/>
+          <DynamicProperty name="rowbound" value="false"/>
+          <DynamicProperty name="srcField">
+            <Field alias="offerstatuses" column="offerstatusid" name="offerstatuses.offerstatusid" table="offerstatuses"/>
+          </DynamicProperty>
+          <DynamicProperty name="srcRecord" value=""/>
+        </DynamicProperties>
+      </ModuleRelation>
+    </File>
+    <Module databaseName="consultcompanion" locator="/managedform">
+      <Record alias="offerstatuses" container="Grid" locator="/managedform/record1" name="record1" size="1" table="offerstatuses">
+        <DynamicProperties>
+          <DynamicProperty name="canDisplay" value="true"/>
+          <DynamicProperty name="canAdd" value="true"/>
+          <DynamicProperty name="canModify" value="true"/>
+          <DynamicProperty name="canDelete" value="true"/>
+          <DynamicProperty name="canSearch" value="true"/>
+          <DynamicProperty name="canEmpty" value="true"/>
+        </DynamicProperties>
+        <Fields>
+          <Field alias="offerstatuses" column="offerstatusid" defaultValue="" isKey="1" isRequired="1" locator="/managedform/record1/offerstatuses.offerstatusid" name="offerstatuses.offerstatusid" table="offerstatuses" widget="ButtonEdit"/>
+          <Field alias="offerstatuses" column="offerstatusname" defaultValue="" isRequired="1" locator="/managedform/record1/offerstatuses.offerstatusname" name="offerstatuses.offerstatusname" table="offerstatuses" widget="Edit"/>
+        </Fields>
+        <UniqueKey>
+          <Field alias="offerstatuses" column="offerstatusid" name="offerstatuses.offerstatusid" table="offerstatuses"/>
+        </UniqueKey>
+        <Query>
+          <OrderBy alias="offerstatuses" column="offerstatusid" order="ASC" table="offerstatuses"/>
+        </Query>
+      </Record>
+    </Module>
+  </File>
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\DemoGeneroApp\database\consultcompanion.4dbx">
+    <Table name="offerstatuses">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="offerstatusid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offerstatusid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="offerstatusname" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="offerstatusname"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_offerStatuses_1">
+        <Column name="offerstatusid"/>
+      </DBConstraint>
+      <DBIndex name="PK_offerStatuses_1" primary="1" unique="0">
+        <Column name="offerstatusid"/>
+      </DBIndex>
+    </Table>
+  </Database>
+</AG>

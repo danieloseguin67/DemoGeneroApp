@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="SerialNumConfigBrowse.tmp" build="3.20.11" sqlDbName="consultcompanion" text="SerialNumConfigBrowse" width="44" height="5">
+  <LStr text="SerialNumConfigBrowse"/>
+  <Grid>
+    <Table gridWidth="44" gridHeight="5" pageSize="5" name="consultcompanion1" tabName="record1">
+      <TableColumn name="seqreg.sr_name" colName="sr_name" sqlType="VARCHAR(30)" required="1" notNull="1" fieldId="0" sqlTabName="seqreg" text="sr_name" tabIndex="1">
+        <Edit width="30" scroll="1"/>
+        <LStr text="sr_name"/>
+      </TableColumn>
+      <TableColumn name="seqreg.sr_last" colName="sr_last" sqlType="INTEGER" required="1" notNull="1" fieldId="1" sqlTabName="seqreg" text="sr_last" tabIndex="2" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="sr_last"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="seqreg">
+    <Link colName="sr_name" fieldIdRef="0"/>
+    <Link colName="sr_last" fieldIdRef="1"/>
+  </RecordView>
+</Form>

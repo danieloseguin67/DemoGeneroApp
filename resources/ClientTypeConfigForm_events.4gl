@@ -109,6 +109,8 @@ PUBLIC DEFINE m_DlgEvent_record1_AfterField T_DlgEvent_FieldLevel
 PUBLIC DEFINE m_DlgEvent_record1_OnChange T_DlgEvent_FieldLevel
 
 -- EVENT FUNCTION VARIABLES - BA RELATION LEVEL
+PUBLIC DEFINE m_DlgEvent__action_browse_BeforeOpeningTheForm T_DlgEvent_BeforeOpeningTheForm
+PUBLIC DEFINE m_DlgEvent__action_browse_AfterClosingTheForm T_DlgEvent_AfterClosingTheForm
 
 -- DATA EVENT FUNCTION VARIABLES
 -- DATA EVENT FUNCTION VARIABLES - ROW LEVEL

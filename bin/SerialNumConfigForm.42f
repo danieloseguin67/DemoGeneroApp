@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="SerialNumConfigForm.tmp" build="3.20.11" sqlDbName="consultcompanion" text="SerialNumConfigForm" width="60" height="3">
+  <LStr text="SerialNumConfigForm"/>
+  <Grid name="consultcompanion1" width="60" height="3">
+    <Label name="seqreg_sr_name_label1" width="7" text="sr_name" posY="1" posX="1" gridWidth="7">
+      <LStr text="sr_name"/>
+    </Label>
+    <FormField name="seqreg.sr_name" colName="sr_name" sqlType="VARCHAR(30)" required="1" notNull="1" fieldId="0" sqlTabName="seqreg" tabIndex="1">
+      <ButtonEdit width="28" action="browse" image="fa-list-alt" scroll="1" posY="1" posX="9" gridWidth="30"/>
+    </FormField>
+    <Label name="seqreg_sr_last_label1" width="7" text="sr_last" posY="1" posX="40" gridWidth="7">
+      <LStr text="sr_last"/>
+    </Label>
+    <FormField name="seqreg.sr_last" colName="sr_last" sqlType="INTEGER" required="1" notNull="1" fieldId="1" sqlTabName="seqreg" tabIndex="2">
+      <Edit width="11" scroll="1" posY="1" posX="48" gridWidth="11"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="seqreg">
+    <Link colName="sr_name" fieldIdRef="0"/>
+    <Link colName="sr_last" fieldIdRef="1"/>
+  </RecordView>
+  <RecordView tabName="record1">
+    <Link colName="sr_name" fieldIdRef="0"/>
+    <Link colName="sr_last" fieldIdRef="1"/>
+  </RecordView>
+</Form>

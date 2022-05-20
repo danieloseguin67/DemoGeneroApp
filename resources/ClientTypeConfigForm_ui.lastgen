@@ -410,7 +410,12 @@ FUNCTION ClientTypeConfigForm_ui_uiInput(p_prevState, p_prevAction, p_state)
     DEFINE p_state SMALLINT
     DEFINE l_internalAction SMALLINT
     DEFINE errNo INTEGER
+    DEFINE errMsg STRING
+    DEFINE actionNo SMALLINT
 
+    DEFINE l_br_uk_browse RECORD
+        clienttypes_clienttypeid LIKE clienttypes.clienttypeid
+    END RECORD
     {<POINT Name="fct.uiInput.define">} {</POINT>}
 
     INITIALIZE m_copy_record1.* TO NULL
@@ -421,6 +426,61 @@ FUNCTION ClientTypeConfigForm_ui_uiInput(p_prevState, p_prevAction, p_state)
     {<POINT Name="fct.uiInput.init">} {</POINT>}
     DIALOG ATTRIBUTES(UNBUFFERED, FIELD ORDER FORM)
         SUBDIALOG ClientTypeConfigForm_uidialog.ClientTypeConfigForm_uidialog_record1_uiInput
+
+        ON ACTION browse
+            {<POINT Name="fct.uiInput.dlg.onAction.browse" Aliases="Input.action.browse">} {</POINT>}
+            CALL ClientTypeConfigForm_ui_action_browse() RETURNING errNo, actionNo, l_br_uk_browse.*
+            IF errNo == ERROR_SUCCESS THEN
+                IF actionNo == C_ACTION_EXIT_APP THEN --Exit Application was raised on the zoom, then the application should be closed without handle the return value of the zoom
+                    LET m_actionNo = C_ACTION_EXIT_APP
+                    LET m_dataProcessing = TRUE
+                    ACCEPT DIALOG
+                END IF
+                IF actionNo == C_ACTION_ACCEPT THEN --Handle the return value of the zoom
+                    IF (m_record1_arrRecGrid[1].clienttypes_clienttypeid IS NULL) OR (m_record1_arrRecGrid[1].clienttypes_clienttypeid != l_br_uk_browse.clienttypes_clienttypeid) THEN
+                        CALL DIALOG.setFieldTouched("clienttypes.clienttypeid", TRUE)
+                        LET m_record1_arrRecGrid[1].clienttypes_clienttypeid = l_br_uk_browse.clienttypes_clienttypeid
+                        --The 'NEXT FIELD CURRENT' is done to trigger existing 'ON CHANGE'.
+                        --Especially in the following case:
+                        --  - The value of the field is 'A'
+                        --  - Select a value 'B' using the ZOOM functionality
+                        --  - On the return of the zoom, the _runUpdates function is executed, the focus is in the field
+                        --  - Remain in the field and input again the value 'A'
+                        --  - Leave the field
+                        NEXT FIELD CURRENT
+                    END IF
+                END IF
+            ELSE
+                MESSAGE "Error on the zoom"
+            END IF
+        ON ACTION zoom
+            {<POINT Name="fct.uiInput.dlg.onAction.zoom" Aliases="Input.action.zoom">} {</POINT>}
+            IF INFIELD(clienttypes.clienttypeid) THEN
+                CALL ClientTypeConfigForm_ui_action_browse() RETURNING errNo, actionNo, l_br_uk_browse.*
+                IF errNo == ERROR_SUCCESS THEN
+                    IF actionNo == C_ACTION_EXIT_APP THEN --Exit Application was raised on the zoom, then the application should be closed without handle the return value of the zoom
+                        LET m_actionNo = C_ACTION_EXIT_APP
+                        LET m_dataProcessing = TRUE
+                        ACCEPT DIALOG
+                    END IF
+                    IF actionNo == C_ACTION_ACCEPT THEN --Handle the return value of the zoom
+                        IF (m_record1_arrRecGrid[1].clienttypes_clienttypeid IS NULL) OR (m_record1_arrRecGrid[1].clienttypes_clienttypeid != l_br_uk_browse.clienttypes_clienttypeid) THEN
+                            CALL DIALOG.setFieldTouched("clienttypes.clienttypeid", TRUE)
+                            LET m_record1_arrRecGrid[1].clienttypes_clienttypeid = l_br_uk_browse.clienttypes_clienttypeid
+                            --The 'NEXT FIELD CURRENT' is done to trigger existing 'ON CHANGE'.
+                            --Especially in the following case:
+                            --  - The value of the field is 'A'
+                            --  - Select a value 'B' using the ZOOM functionality
+                            --  - On the return of the zoom, the _runUpdates function is executed, the focus is in the field
+                            --  - Remain in the field and input again the value 'A'
+                            --  - Leave the field
+                            NEXT FIELD CURRENT
+                        END IF
+                    END IF
+                ELSE
+                    MESSAGE "Error on the zoom"
+                END IF
+            END IF
 
         ON ACTION new
             {<POINT Name="fct.uiInput.dlg.onAction.new">} {</POINT>}
@@ -577,6 +637,10 @@ FUNCTION ClientTypeConfigForm_ui_uiInput(p_prevState, p_prevAction, p_state)
                 CALL DIALOG.setActionActive('exit', FALSE)
                 CALL DIALOG.setActionHidden('exit', TRUE)
             END IF
+            CALL DIALOG.setActionActive('zoom', FALSE)
+            IF libdbapp_isMobile() THEN
+                CALL DIALOG.setActionHidden('zoom', TRUE)
+            END IF
 
         AFTER DIALOG
             INITIALIZE ClientTypeConfigForm_events.m_DlgCtrlInstruction TO NULL
@@ -617,7 +681,11 @@ FUNCTION ClientTypeConfigForm_ui_uiConstruct(p_prevState, p_prevAction, p_state)
     DEFINE l_where STRING
     DEFINE l_detailList STRING
     DEFINE errNo INTEGER
-
+    DEFINE actionNo SMALLINT
+    DEFINE l_uiSettings UISettings_Type
+    DEFINE l_br_uk_browse RECORD
+        clienttypes_clienttypeid LIKE clienttypes.clienttypeid
+    END RECORD
     {<POINT Name="fct.uiConstruct.define">} {</POINT>}
 
     INITIALIZE m_copy_record1.* TO NULL
@@ -630,6 +698,39 @@ FUNCTION ClientTypeConfigForm_ui_uiConstruct(p_prevState, p_prevAction, p_state)
 
     DIALOG ATTRIBUTES(UNBUFFERED, FIELD ORDER FORM)
         SUBDIALOG ClientTypeConfigForm_uidialog.ClientTypeConfigForm_uidialog_record1_uiConstruct
+
+        ON ACTION browse
+            {<POINT Name="fct.uiConstruct.dlg.onAction.browse" Aliases="Construct.action.browse">} {</POINT>}
+            CALL ClientTypeConfigForm_ui_action_browse() RETURNING errNo, actionNo, l_br_uk_browse.*
+            IF errNo == ERROR_SUCCESS THEN
+                IF actionNo == C_ACTION_EXIT_APP THEN --Exit Application was raised on the zoom, then the application should be closed without handle the return value of the zoom
+                    LET m_actionNo = C_ACTION_EXIT_APP
+                    LET m_dataProcessing = TRUE
+                    ACCEPT DIALOG
+                END IF
+                IF actionNo == C_ACTION_ACCEPT THEN --Handle the return value of the zoom
+                    DISPLAY l_br_uk_browse.clienttypes_clienttypeid TO clienttypes.clienttypeid
+                END IF
+            ELSE
+                MESSAGE "Error on the zoom"
+            END IF
+        ON ACTION zoom
+            {<POINT Name="fct.uiConstruct.dlg.onAction.zoom" Aliases="Construct.action.zoom">} {</POINT>}
+            IF INFIELD(clienttypes.clienttypeid) THEN
+                CALL ClientTypeConfigForm_ui_action_browse() RETURNING errNo, actionNo, l_br_uk_browse.*
+                IF errNo == ERROR_SUCCESS THEN
+                    IF actionNo == C_ACTION_EXIT_APP THEN --Exit Application was raised on the zoom, then the application should be closed without handle the return value of the zoom
+                        LET m_actionNo = C_ACTION_EXIT_APP
+                        LET m_dataProcessing = TRUE
+                        ACCEPT DIALOG
+                    END IF
+                    IF actionNo == C_ACTION_ACCEPT THEN --Handle the return value of the zoom
+                        DISPLAY l_br_uk_browse.clienttypes_clienttypeid TO clienttypes.clienttypeid
+                    END IF
+                ELSE
+                    MESSAGE "Error on the zoom"
+                END IF
+            END IF
 
         ON ACTION accept
             {<POINT Name="fct.uiConstruct.dlg.onAction.accept">} {</POINT>}
@@ -712,6 +813,13 @@ FUNCTION ClientTypeConfigForm_ui_uiConstruct(p_prevState, p_prevAction, p_state)
             IF libdbapp_isMobile() THEN
                 CALL DIALOG.setActionActive('exit', FALSE)
                 CALL DIALOG.setActionHidden('exit', TRUE)
+            END IF
+            IF NOT libdbapp_isMobile() THEN
+                MESSAGE "" --Clear the status bar (For example to clean DVM validation messages that have been displayed in a previous DIALOG)
+            END IF
+            CALL DIALOG.setActionActive('zoom', FALSE)
+            IF libdbapp_isMobile() THEN
+                CALL DIALOG.setActionHidden('zoom', TRUE)
             END IF
 
             INITIALIZE ClientTypeConfigForm_events.m_DlgCtrlInstruction TO NULL
@@ -921,6 +1029,8 @@ PUBLIC FUNCTION ClientTypeConfigForm_ui_uiInitializeDefaultActions(p_actionList)
     LET p_actionList[10] = "prevpage"
     LET p_actionList[11] = "nextpage"
     LET p_actionList[12] = "exit"
+    LET p_actionList[13] = "zoom"
+    LET p_actionList[14] = "browse"
     IF NOT m_uiSettings.disableAdd THEN
         LET p_actionList[p_actionList.getLength() + 1] = "new"
     END IF
@@ -971,6 +1081,55 @@ PUBLIC FUNCTION ClientTypeConfigForm_ui_initializeDefaultUISettings()
     RETURN l_uiSettings.*
 END FUNCTION
 {</BLOCK>} --fct.initializeDefaultUISettings
+
+--------------------------------------------------------------------------------
+--zoom open functions
+{<BLOCK Name="fct.action_browse">}
+#+ Launch the module
+#+
+#+
+#+ @return None
+FUNCTION ClientTypeConfigForm_ui_action_browse()
+    DEFINE l_uiSettings UISettings_Type
+
+    DEFINE l_br_uk RECORD
+        clienttypes_clienttypeid LIKE clienttypes.clienttypeid
+    END RECORD
+
+    DEFINE l_whereRelation STRING
+    DEFINE errNo INTEGER
+    DEFINE actionNo SMALLINT
+    {<POINT Name="fct.action_browse.define" Aliases="action_browse.define">} {</POINT>}
+
+    --Initialized UI settings defined on the relation
+    LET l_uiSettings.openMode = C_MODE_UNDEFINED
+    LET l_uiSettings.defaultMode = C_MODE_UNDEFINED
+    LET l_uiSettings.disableDisplay = FALSE
+    LET l_uiSettings.disableAdd = FALSE
+    LET l_uiSettings.disableModify = FALSE
+    LET l_uiSettings.disableDelete = FALSE
+    LET l_uiSettings.disableSearch = FALSE
+    LET l_uiSettings.disableEmpty = FALSE
+
+    CALL l_uiSettings.transitions.clear()
+
+    LET l_br_uk.clienttypes_clienttypeid = m_record1_arrRecGrid[1].clienttypes_clienttypeid
+    INITIALIZE l_whereRelation TO NULL
+
+    {<POINT Name="fct.action_browse.init">} {</POINT>}
+    IF ClientTypeConfigForm_events.m_DlgEvent__action_browse_BeforeOpeningTheForm IS NOT NULL THEN
+        CALL ClientTypeConfigForm_events.m_DlgEvent__action_browse_BeforeOpeningTheForm(m_state)
+    END IF
+
+    CALL ClientTypeBrowse_ui_uiOpenFormByKey(l_whereRelation, l_uiSettings.*, l_br_uk.*) RETURNING errNo, actionNo, l_br_uk.*
+
+    IF ClientTypeConfigForm_events.m_DlgEvent__action_browse_AfterClosingTheForm IS NOT NULL THEN
+        CALL ClientTypeConfigForm_events.m_DlgEvent__action_browse_AfterClosingTheForm(m_state)
+    END IF
+
+    RETURN errNo, actionNo, l_br_uk.*
+END FUNCTION
+{</BLOCK>} --fct.action_browse
 
 {<BLOCK Name="fct.validateCRUDOperationWrapper">}
 #+ Validate a CRUD operation for a record (INSERT, UPDATE, DELETE)

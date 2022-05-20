@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="OfferStatusConfigBrowse.tmp" build="3.20.11" sqlDbName="consultcompanion" text="OfferStatusConfigBrowse" width="44" height="5">
+  <LStr text="OfferStatusConfigBrowse"/>
+  <Grid>
+    <Table gridWidth="44" gridHeight="5" pageSize="5" name="consultcompanion1" tabName="record1">
+      <TableColumn name="offerstatuses.offerstatusid" colName="offerstatusid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="offerstatuses" text="offerstatusid" tabIndex="1" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="offerstatusid"/>
+      </TableColumn>
+      <TableColumn name="offerstatuses.offerstatusname" colName="offerstatusname" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="offerstatuses" text="offerstatusname" tabIndex="2">
+        <Edit width="30" scroll="1"/>
+        <LStr text="offerstatusname"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="offerstatuses">
+    <Link colName="offerstatusid" fieldIdRef="0"/>
+    <Link colName="offerstatusname" fieldIdRef="1"/>
+  </RecordView>
+</Form>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="EmployeeTypeBrowse.tmp" build="3.20.11" sqlDbName="consultcompanion" text="EmployeeTypeBrowse" width="44" height="5">
+  <LStr text="EmployeeTypeBrowse"/>
+  <Grid>
+    <Table gridWidth="44" gridHeight="5" pageSize="5" name="consultcompanion1" tabName="record1">
+      <TableColumn name="employeetypes.emptypeid" colName="emptypeid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="employeetypes" text="emptypeid" tabIndex="1" numAlign="1">
+        <Edit width="11" scroll="1"/>
+        <LStr text="emptypeid"/>
+      </TableColumn>
+      <TableColumn name="employeetypes.emptypename" colName="emptypename" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="employeetypes" text="emptypename" tabIndex="2">
+        <Edit width="30" scroll="1"/>
+        <LStr text="emptypename"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="employeetypes">
+    <Link colName="emptypeid" fieldIdRef="0"/>
+    <Link colName="emptypename" fieldIdRef="1"/>
+  </RecordView>
+</Form>

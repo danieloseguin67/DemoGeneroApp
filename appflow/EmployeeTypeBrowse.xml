@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AG businessApplicationFile="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow\appflow.4ba" version="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.4js.com/ns/gst/3.20/agmodel.xsd">
+  <File dir="C:\SoftDev\GeneroApps\DemoGeneroApp\appflow" filename="EmployeeTypeBrowse.4fdz" locator="/Item/EmployeeTypeBrowse" name="EmployeeTypeBrowse" type="Zoom">
+    <DynamicProperties>
+      <DynamicProperty name="zoomDefaultMode" value="DISPLAY"/>
+      <DynamicProperty name="zoomOpenMode" value="DISPLAY"/>
+      <DynamicProperty name="zoomTransitionAddCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionAddClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionAddExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionAddOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionDisplayCancel" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionDisplayClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionDisplayExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionDisplayOk" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionModifyCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionModifyClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionModifyExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionModifyOk" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionSearchCancel" value="ReturnToDefaultMode"/>
+      <DynamicProperty name="zoomTransitionSearchClose" value="ExitForm"/>
+      <DynamicProperty name="zoomTransitionSearchExit" value="ExitApp"/>
+      <DynamicProperty name="zoomTransitionSearchOk" value="ReturnToDefaultMode"/>
+    </DynamicProperties>
+    <ModuleRelation destination="EmployeeTypeBrowse" locator="/Relation/Relation25" source="EmployeeTypeConfigForm" type="Relation">
+      <DynamicProperties>
+        <DynamicProperty name="action" value="browse"/>
+        <DynamicProperty name="dataRefresh" value="Current Row"/>
+        <DynamicProperty name="defaultMode" value=""/>
+        <DynamicProperty name="disableAdd" value="false"/>
+        <DynamicProperty name="disableDelete" value="false"/>
+        <DynamicProperty name="disableDisplay" value="false"/>
+        <DynamicProperty name="disableEmpty" value="false"/>
+        <DynamicProperty name="disableModify" value="false"/>
+        <DynamicProperty name="disableSearch" value="false"/>
+        <DynamicProperty name="filterDstField"/>
+        <DynamicProperty name="filterSrcField"/>
+        <DynamicProperty name="openMode" value=""/>
+        <DynamicProperty name="relationTransitionAddCancel" value=""/>
+        <DynamicProperty name="relationTransitionAddClose" value=""/>
+        <DynamicProperty name="relationTransitionAddExit" value=""/>
+        <DynamicProperty name="relationTransitionAddOk" value=""/>
+        <DynamicProperty name="relationTransitionDisplayCancel" value=""/>
+        <DynamicProperty name="relationTransitionDisplayClose" value=""/>
+        <DynamicProperty name="relationTransitionDisplayExit" value=""/>
+        <DynamicProperty name="relationTransitionDisplayOk" value=""/>
+        <DynamicProperty name="relationTransitionModifyCancel" value=""/>
+        <DynamicProperty name="relationTransitionModifyClose" value=""/>
+        <DynamicProperty name="relationTransitionModifyExit" value=""/>
+        <DynamicProperty name="relationTransitionModifyOk" value=""/>
+        <DynamicProperty name="relationTransitionSearchCancel" value=""/>
+        <DynamicProperty name="relationTransitionSearchClose" value=""/>
+        <DynamicProperty name="relationTransitionSearchExit" value=""/>
+        <DynamicProperty name="relationTransitionSearchOk" value=""/>
+        <DynamicProperty name="rowbound" value="false"/>
+        <DynamicProperty name="srcField">
+          <Field alias="employeetypes" column="emptypeid" name="employeetypes.emptypeid" table="employeetypes"/>
+        </DynamicProperty>
+        <DynamicProperty name="srcRecord" value=""/>
+      </DynamicProperties>
+    </ModuleRelation>
+    <Module databaseName="consultcompanion" locator="/managedform">
+      <Record alias="employeetypes" container="Table" locator="/managedform/record1" name="record1" size="5" table="employeetypes">
+        <DynamicProperties>
+          <DynamicProperty name="canDisplay" value="true"/>
+          <DynamicProperty name="canAdd" value="false"/>
+          <DynamicProperty name="canModify" value="false"/>
+          <DynamicProperty name="canDelete" value="false"/>
+          <DynamicProperty name="canSearch" value="true"/>
+          <DynamicProperty name="canEmpty" value="true"/>
+        </DynamicProperties>
+        <Fields>
+          <Field alias="employeetypes" column="emptypeid" defaultValue="" isKey="1" isRequired="1" locator="/managedform/record1/employeetypes.emptypeid" name="employeetypes.emptypeid" table="employeetypes" widget="Edit"/>
+          <Field alias="employeetypes" column="emptypename" defaultValue="" isRequired="1" locator="/managedform/record1/employeetypes.emptypename" name="employeetypes.emptypename" table="employeetypes" widget="Edit"/>
+        </Fields>
+        <UniqueKey>
+          <Field alias="employeetypes" column="emptypeid" name="employeetypes.emptypeid" table="employeetypes"/>
+        </UniqueKey>
+        <Query>
+          <OrderBy alias="employeetypes" column="emptypeid" order="ASC" table="employeetypes"/>
+        </Query>
+      </Record>
+    </Module>
+  </File>
+  <Database name="consultcompanion" schemaFile="C:\SoftDev\GeneroApps\DemoGeneroApp\database\consultcompanion.4dbx">
+    <Table name="employeetypes">
+      <DBColumn datatype="SERIAL" defaultValue="" fglDatatype="SERIAL" fglLength="4" length="11" name="emptypeid" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="emptypeid"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBColumn datatype="CHAR(30)" defaultValue="" fglDatatype="CHAR(30)" fglLength="30" length="30" name="emptypename" notNull="1">
+        <DynamicProperties>
+          <DynamicProperty name="widget" value="Edit"/>
+          <DynamicProperty name="label" value="emptypename"/>
+        </DynamicProperties>
+      </DBColumn>
+      <DBConstraint constraint="primaryKey" name="PK_employeeTypes_1">
+        <Column name="emptypeid"/>
+      </DBConstraint>
+      <DBIndex name="PK_employeeTypes_1" primary="1" unique="0">
+        <Column name="emptypeid"/>
+      </DBIndex>
+    </Table>
+  </Database>
+</AG>

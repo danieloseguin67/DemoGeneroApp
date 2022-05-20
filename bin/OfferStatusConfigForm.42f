@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Form name="OfferStatusConfigForm.tmp" build="3.20.11" sqlDbName="consultcompanion" text="OfferStatusConfigForm" width="74" height="3">
+  <LStr text="OfferStatusConfigForm"/>
+  <Grid name="consultcompanion1" width="74" height="3">
+    <Label name="offerstatuses_offerstatusid_label1" width="13" text="Offer Status ID" posY="1" posX="1" gridWidth="13">
+      <LStr text="Offer Status ID"/>
+    </Label>
+    <FormField name="offerstatuses.offerstatusid" colName="offerstatusid" noEntry="1" sqlType="INTEGER" required="1" notNull="1" fieldId="0" sqlTabName="offerstatuses" tabIndex="1">
+      <ButtonEdit width="9" action="browse" image="fa-list-alt" scroll="1" posY="1" posX="15" gridWidth="11"/>
+    </FormField>
+    <Label name="offerstatuses_offerstatusname_label1" width="15" text="Offer Status Name" posY="1" posX="27" gridWidth="15">
+      <LStr text="Offer Status Name"/>
+    </Label>
+    <FormField name="offerstatuses.offerstatusname" colName="offerstatusname" sqlType="CHAR(30)" required="1" notNull="1" fieldId="1" sqlTabName="offerstatuses" tabIndex="2">
+      <Edit width="30" scroll="1" posY="1" posX="43" gridWidth="30"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="offerstatuses">
+    <Link colName="offerstatusid" fieldIdRef="0"/>
+    <Link colName="offerstatusname" fieldIdRef="1"/>
+  </RecordView>
+  <RecordView tabName="record1">
+    <Link colName="offerstatusid" fieldIdRef="0"/>
+    <Link colName="offerstatusname" fieldIdRef="1"/>
+  </RecordView>
+</Form>
