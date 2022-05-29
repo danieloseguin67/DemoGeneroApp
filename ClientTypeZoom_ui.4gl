@@ -1,4 +1,4 @@
-{<CODEFILE Path="ClientTypeZoom.code" Hash="1B2M2Y8AsgTpgAmY7PhCfg==" />}
+{<CODEFILE Path="ClientTypeZoom.code" Hash="Q67HDKLaGpUizQyhw0l+6Q==" />}
 #+ User Interface
 
 --------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ SCHEMA consultcompanion
 --------------------------------------------------------------------------------
 --Functions
 
-{<BLOCK Name="fct.uiOpenFormByKey">}
+{<BLOCK Name="fct.uiOpenFormByKey" Status="MODIFIED">}
 #+ Launch the module according to the open mode and position to the key
 #+
 #+ @param p_whereRelation   Part of the WHERE clause defined by entity relations in the BA
@@ -88,7 +88,7 @@ PUBLIC FUNCTION ClientTypeZoom_ui_uiOpenFormByKey(p_whereRelation, p_uiSettings,
 
     --Fetch keys and data according to open mode
     IF m_uiSettings.openMode != C_MODE_SEARCH AND m_uiSettings.openMode != C_MODE_EMPTY THEN
-        CALL ClientTypeZoom_uidialogdata_record1_fetchAll(m_where, m_detailList)
+        CALL ClientTypeZoom_uidialogdata_record1_All(m_where, m_detailList)
         LET m_record1_keyIndex = ClientTypeZoom_uidialogdata_record1_seek(p_br_uk.*)
     END IF
     --Call the UI automaton
@@ -342,7 +342,7 @@ FUNCTION ClientTypeZoom_ui_uiDisplay(p_prevState, p_prevAction, p_state)
 END FUNCTION
 {</BLOCK>} --fct.uiDisplay
 
-{<BLOCK Name="fct.uiConstruct">}
+{<BLOCK Name="fct.uiConstruct" Status="MODIFIED">}
 #+ DIALOG statement function for full CONSTRUCT mode
 #+
 #+ @param p_prevState  The state from which the function was invoked
@@ -501,7 +501,7 @@ FUNCTION ClientTypeZoom_ui_uiConstruct(p_prevState, p_prevAction, p_state)
                     EXIT DIALOG
             END CASE
 
-            CALL ClientTypeZoom_uidialogdata_record1_fetchAll(m_where, m_detailList)
+            CALL ClientTypeZoom_uidialogdata_record1_All(m_where, m_detailList)
             --After the execution of the search, the focus goes to the master record of the form
             LET m_subDialog = "record1"
             CLEAR FORM

@@ -1,4 +1,4 @@
-{<CODEFILE Path="PayTermZoom.code" Hash="1B2M2Y8AsgTpgAmY7PhCfg==" />}
+{<CODEFILE Path="PayTermZoom.code" Hash="bLdc7IlXkAg2Dt1vBAlfBA==" />}
 #+ User Interface
 
 --------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ SCHEMA consultcompanion
 --------------------------------------------------------------------------------
 --Functions
 
-{<BLOCK Name="fct.uiOpenFormByKey">}
+{<BLOCK Name="fct.uiOpenFormByKey" Status="MODIFIED">}
 #+ Launch the module according to the open mode and position to the key
 #+
 #+ @param p_whereRelation   Part of the WHERE clause defined by entity relations in the BA
@@ -86,9 +86,9 @@ PUBLIC FUNCTION PayTermZoom_ui_uiOpenFormByKey(p_whereRelation, p_uiSettings, p_
         CALL PayTermZoom_events.m_DlgEvent_OnOpenForm(w.getForm())
     END IF
 
-    --Fetch keys and data according to open mode
+    -- keys and data according to open mode
     IF m_uiSettings.openMode != C_MODE_SEARCH AND m_uiSettings.openMode != C_MODE_EMPTY THEN
-        CALL PayTermZoom_uidialogdata_record1_fetchAll(m_where, m_detailList)
+        CALL PayTermZoom_uidialogdata_record1_All(m_where, m_detailList)
         LET m_record1_keyIndex = PayTermZoom_uidialogdata_record1_seek(p_br_uk.*)
     END IF
     --Call the UI automaton

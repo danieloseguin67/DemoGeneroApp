@@ -46,6 +46,8 @@ MAIN
   LET HelpSmc = createStartMenuCommand(HelpSmg,"About ConsultantCompanion","fglrun aboutpage",NULL)
 
   MENU "Options"
+    COMMAND "Excel" "Test excel feature"
+       CALL openexcel()   
     COMMAND "Exit" "This will exit the application"
       EXIT PROGRAM       
   END MENU

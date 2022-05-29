@@ -2210,31 +2210,36 @@
 </Fct>
 <Fct c="17" el="42" l="35" n="StakeHolderManagerForm_uidialogdata_record1_clear()" t="F" v="pub"/>
 </File>
-<File n="LogonForm.4gl" s="2" ts="20220519222641856">
+<File n="LogonForm.4gl" s="2" ts="20220519224642352">
 <Fct c="10" el="113" l="85" n="signIn(p_username CHAR(10),p_password CHAR(20))" t="F" v="pub"/>
 <Fct c="17" el="79" l="34" n="LogonForm_ui_uiOpenForm(p_whereRelation STRING,p_uiSettings RECORD)" t="F" v="pub">
 <Call c="26" l="63" n="signIn" t="F"/>
 </Fct>
 </File>
-<File n="appflow/MainProgram.4gl" s="2" ts="20220519222636191">
-<Fct c="10" el="196" l="185" n="createStartMenuCommand(p om.DomNode,t STRING,c STRING,i STRING)" t="F" v="pub"/>
-<Fct c="10" el="182" l="173" n="createStartMenuGroup(p om.DomNode,t STRING)" t="F" v="pub"/>
-<Fct c="10" el="170" l="94" n="showmenu()" t="F" v="pub">
-<Call c="19" l="137" n="createStartMenuGroup" t="F"/>
+<File n="appflow/MainProgram.4gl" s="2" ts="20220519225533898">
+<Fct c="10" el="195" l="184" n="createStartMenuCommand(p om.DomNode,t STRING,c STRING,i STRING)" t="F" v="pub"/>
+<Fct c="10" el="181" l="172" n="createStartMenuGroup(p om.DomNode,t STRING)" t="F" v="pub"/>
+<Fct c="10" el="169" l="94" n="showmenu()" t="F" v="pub">
+<Call c="19" l="136" n="createStartMenuGroup" t="F"/>
+<Call c="19" l="137" n="createStartMenuCommand" t="F"/>
 <Call c="19" l="138" n="createStartMenuCommand" t="F"/>
 <Call c="19" l="139" n="createStartMenuCommand" t="F"/>
 <Call c="19" l="140" n="createStartMenuCommand" t="F"/>
 <Call c="19" l="141" n="createStartMenuCommand" t="F"/>
 <Call c="19" l="142" n="createStartMenuCommand" t="F"/>
 <Call c="19" l="143" n="createStartMenuCommand" t="F"/>
-<Call c="19" l="144" n="createStartMenuCommand" t="F"/>
-<Call c="19" l="146" n="createStartMenuGroup" t="F"/>
-<Call c="19" l="147" n="createStartMenuCommand" t="F"/>
-<Call c="20" l="149" n="createStartMenuGroup" t="F"/>
+<Call c="19" l="145" n="createStartMenuGroup" t="F"/>
+<Call c="19" l="146" n="createStartMenuCommand" t="F"/>
+<Call c="20" l="148" n="createStartMenuGroup" t="F"/>
+<Call c="20" l="149" n="createStartMenuCommand" t="F"/>
 <Call c="20" l="150" n="createStartMenuCommand" t="F"/>
-<Call c="20" l="151" n="createStartMenuCommand" t="F"/>
-<Call c="21" l="153" n="createStartMenuGroup" t="F"/>
-<Call c="21" l="154" n="createStartMenuCommand" t="F"/>
+<Call c="21" l="152" n="createStartMenuGroup" t="F"/>
+<Call c="21" l="153" n="createStartMenuCommand" t="F"/>
+<Call c="19" l="155" n="createStartMenuGroup" t="F"/>
+<Call c="19" l="156" n="createStartMenuCommand" t="F"/>
+<Call c="19" l="157" n="createStartMenuCommand" t="F"/>
+<Call c="17" l="159" n="createStartMenuGroup" t="F"/>
+<Call c="17" l="160" n="createStartMenuCommand" t="F"/>
 </Fct>
 <Fct c="10" el="84" l="64" n="MainProgram_openFirstForm()" t="F" v="pub">
 <Call c="10" l="78" n="LogonForm_ui_uiOpenForm" t="F"/>
@@ -2248,8 +2253,8 @@
 <File n="database/consultcompanion.4gl" s="2" ts="20210609094946486">
 <Fct c="17" el="22" l="13" n="dbxDataEvent_clients_BeforeInsertRowByKey(p_data RECORD)" t="F" v="pub"/>
 </File>
-<File n="database/consultcompanion_common.4gl" s="2" ts="20220519222641717"/>
-<File n="database/consultcompanion_dbxconstraints.4gl" s="2" ts="20220519222641923">
+<File n="database/consultcompanion_common.4gl" s="2" ts="20220519224642181"/>
+<File n="database/consultcompanion_dbxconstraints.4gl" s="2" ts="20220519224642416">
 <Fct c="17" el="2982" l="2951" n="consultcompanion_dbxconstraints_clients_PK_clients_1_checkFKConstraint(p_data RECORD)" t="F" v="pub">
 <Call c="22" i="libdbappCore" l="2974" n="libdbapp_utilBuildErrorNoAndErrorMsg" t="F"/>
 </Fct>
@@ -2673,7 +2678,7 @@
 <Call c="10" i="libdbappCore" l="59" n="libdbapp_utilBuildErrorNoAndErrorMsg" t="F"/>
 </Fct>
 </File>
-<File n="database/consultcompanion_dbxdata.4gl" s="2" ts="20220519222641648">
+<File n="database/consultcompanion_dbxdata.4gl" s="2" ts="20220519224642134">
 <Fct c="17" el="4568" l="4557" n="consultcompanion_dbxdata_clients_setDefaultValuesFromDBSchema()" t="F" v="pub"/>
 <Fct c="17" el="4551" l="4488" n="consultcompanion_dbxdata_clients_PK_clients_1_deleteReferencingRowsByKey(p_key RECORD)" t="F" v="pub">
 <Call c="10" l="4508" n="consultcompanion_dbxdata_clients_PK_clients_1_selectRowByKey" t="F"/>
@@ -3160,15 +3165,15 @@
 </Fct>
 <Fct c="17" el="74" l="36" n="consultcompanion_dbxdata_seqreg_pk_seqreg_selectRowByKey(p_key RECORD,p_lock BOOLEAN)" t="F" v="pub"/>
 </File>
-<File n="database/consultcompanion_events.4gl" s="2" ts="20220519222641810">
+<File n="database/consultcompanion_events.4gl" s="2" ts="20220519224642304">
 <Fct c="17" el="282" l="278" n="registerDbxEvents()" t="F" v="pub">
 <Call c="64" i="consultcompanion" l="281" n="dbxDataEvent_clients_BeforeInsertRowByKey" t="F"/>
 </Fct>
 </File>
-<File n="appflow/main.4gl" s="2" ts="20220519224319109">
-<Fct c="10" el="78" l="67" n="createStartMenuCommand(p om.DomNode,t STRING,c STRING,i STRING)" t="F" v="pub"/>
-<Fct c="10" el="64" l="56" n="createStartMenuGroup(p om.DomNode,t STRING)" t="F" v="pub"/>
-<Fct c="1" el="53" l="1" n="main()" t="F" v="pub">
+<File n="appflow/main.4gl" s="2" ts="20220529131927412">
+<Fct c="10" el="80" l="69" n="createStartMenuCommand(p om.DomNode,t STRING,c STRING,i STRING)" t="F" v="pub"/>
+<Fct c="10" el="66" l="58" n="createStartMenuGroup(p om.DomNode,t STRING)" t="F" v="pub"/>
+<Fct c="1" el="55" l="1" n="main()" t="F" v="pub">
 <Call c="19" l="22" n="createStartMenuGroup" t="F"/>
 <Call c="19" l="23" n="createStartMenuCommand" t="F"/>
 <Call c="19" l="24" n="createStartMenuCommand" t="F"/>
@@ -3189,6 +3194,21 @@
 <Call c="19" l="43" n="createStartMenuCommand" t="F"/>
 <Call c="17" l="45" n="createStartMenuGroup" t="F"/>
 <Call c="17" l="46" n="createStartMenuCommand" t="F"/>
+<Call c="13" l="50" n="openexcel" t="F"/>
+</Fct>
+</File>
+<File n="appflow/openexcel.4gl" s="2" ts="20220529133123117">
+<Fct c="10" el="74" l="58" n="checkError(res INTEGER,lin INTEGER)" t="F" v="pub">
+<Call c="10" l="69" n="freeMemory" t="F"/>
+</Fct>
+<Fct c="10" el="56" l="46" n="freeMemory()" t="F" v="pub"/>
+<Fct c="10" el="44" l="4" n="openexcel()" t="F" v="pub">
+<Call c="8" l="17" n="checkError" t="F"/>
+<Call c="8" l="22" n="checkError" t="F"/>
+<Call c="8" l="27" n="checkError" t="F"/>
+<Call c="8" l="33" n="checkError" t="F"/>
+<Call c="8" l="38" n="checkError" t="F"/>
+<Call c="8" l="42" n="freeMemory" t="F"/>
 </Fct>
 </File>
 <File n="resources/ClientTypeBrowse.4gl" s="2" ts="20220515191906659"/>

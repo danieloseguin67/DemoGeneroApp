@@ -23,8 +23,76 @@
 
 {</LOSTCODE>}
 {</SOURCEFILE>}
-{<SOURCEFILE name="PayTermZoom_ui.4gl" hash="1B2M2Y8AsgTpgAmY7PhCfg==">}
+{<SOURCEFILE name="PayTermZoom_ui.4gl" hash="bLdc7IlXkAg2Dt1vBAlfBA==">}
 {<USERCODE>}
+{<BLOCK Name="fct.uiOpenFormByKey" Status="MODIFIED">}
+#+ Launch the module according to the open mode and position to the key
+#+
+#+ @param p_whereRelation   Part of the WHERE clause defined by entity relations in the BA
+#+ @param p_uiSettings      UI Settings defined on the relation
+#+ @param p_br_uk           Key used for position
+PUBLIC FUNCTION PayTermZoom_ui_uiOpenFormByKey(p_whereRelation, p_uiSettings, p_br_uk)
+    DEFINE p_whereRelation STRING
+    DEFINE p_uiSettings UISettings_Type
+    DEFINE p_br_uk record1_br_uk_type
+    DEFINE errNo INTEGER
+    DEFINE actionNo SMALLINT
+    DEFINE l_record1_br_uk record1_br_uk_type
+    DEFINE l_defaultUISettings UISettings_Type
+    DEFINE l_actionList DYNAMIC ARRAY OF STRING
+    DEFINE l_windowStyle STRING
+    DEFINE l_toolbar STRING
+    DEFINE l_topmenu STRING
+    DEFINE w ui.Window
+    {<POINT Name="fct.uiOpenFormByKey.define">} {</POINT>}
+
+    OPEN WINDOW w_PayTermZoom WITH FORM 'PayTermZoom' ATTRIBUTES(STYLE=NVL(l_windowStyle, "zoom_dbapp"))
+    --Initialize UI settings with default form UI settings
+    CALL PayTermZoom_ui_initializeDefaultUISettings() RETURNING l_defaultUISettings.*
+    -- Update UI settings with Relation UI settings
+    CALL libdbapp_mergeUISettings(p_uiSettings.*, l_defaultUISettings.*) RETURNING m_uiSettings.*
+    --Initialize UI
+    LET w = ui.Window.getCurrent()
+
+    CALL PayTermZoom_events.registerDlgEvents()
+    CALL consultcompanion_events.registerDbxEvents()
+
+    --Load actions in the ToolBar and the TopMenu
+    IF NOT libdbapp_isMobile() THEN
+        CALL PayTermZoom_ui_uiInitializeDefaultActions(l_actionList)
+        CALL libdbapp_utilInitToolBar(NVL(l_toolbar, "dbapp"), w, l_actionList)
+        CALL libdbapp_utilInitTopMenu(NVL(l_topmenu, "dbapp"), w, l_actionList)
+    END IF
+
+    --Define the list of 'detail' records defined by entity relations in the BA
+    INITIALIZE m_detailList TO NULL
+    --Define the part of the WHERE clause defined by entity relations in the BA
+    LET m_whereRelation = IIF(p_whereRelation IS NULL, ' 1=1', p_whereRelation)
+    LET m_where = ' WHERE      ' || m_whereRelation
+    --Initialize index(es) of keys array(s)
+    LET m_record1_keyIndex = 0
+    {<POINT Name="fct.uiOpenFormByKey.init">} {</POINT>}
+    IF PayTermZoom_events.m_DlgEvent_OnOpenForm IS NOT NULL THEN
+        CALL PayTermZoom_events.m_DlgEvent_OnOpenForm(w.getForm())
+    END IF
+
+    -- keys and data according to open mode
+    IF m_uiSettings.openMode != C_MODE_SEARCH AND m_uiSettings.openMode != C_MODE_EMPTY THEN
+        CALL PayTermZoom_uidialogdata_record1_All(m_where, m_detailList)
+        LET m_record1_keyIndex = PayTermZoom_uidialogdata_record1_seek(p_br_uk.*)
+    END IF
+    --Call the UI automaton
+    CALL PayTermZoom_ui_uiAutomaton(m_uiSettings.*) RETURNING errNo, actionNo
+    INITIALIZE l_record1_br_uk.* TO NULL
+    IF m_record1_keyIndex > 0 THEN
+        LET l_record1_br_uk.paymentterms_paytermid = m_record1_arrRecList[m_record1_keyIndex].paymentterms_paytermid
+    END IF
+    CLOSE WINDOW w_PayTermZoom
+
+    {<POINT Name="fct.uiOpenFormByKey.user">} {</POINT>}
+    RETURN errNo, actionNo, l_record1_br_uk.*
+END FUNCTION
+{</BLOCK>}
 
 {</USERCODE>}
 {<LOSTCODE>}

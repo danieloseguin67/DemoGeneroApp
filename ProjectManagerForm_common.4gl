@@ -23,8 +23,8 @@ PUBLIC TYPE record1_br_uk_type
         projects_projectId LIKE projects.projectId
     END RECORD
 
-PUBLIC DEFINE m_where STRING --The WHERE clause to fetch the data set
-PUBLIC DEFINE m_detailList STRING --The list of details to fetch the data set
+PUBLIC DEFINE m_where STRING --The WHERE clause to  the data set
+PUBLIC DEFINE m_detailList STRING --The list of details to  the data set
 PUBLIC DEFINE m_whereRelation STRING --The part of the WHERE clause defined by entity relations in the BA
 PUBLIC DEFINE m_record1_arrKeyRec DYNAMIC ARRAY OF record1_br_uk_type
 PUBLIC DEFINE m_record1_arrRecGrid DYNAMIC ARRAY OF record1_br_type

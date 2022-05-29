@@ -4,6 +4,8 @@
     <Node path="consultCompanion.4pw" type="pm/main-project"/>
     <Node path="consultCompanion.4pw/ EmployeeManagement" type="pm/group"/>
     <Node path="consultCompanion.4pw/ Setup" type="pm/group"/>
+    <Node path="consultCompanion.4pw/ Setup/EmployeeTypeManager" type="pm/application"/>
+    <Node path="consultCompanion.4pw/ Setup/PreferencesConfig" type="pm/application"/>
     <Node path="consultCompanion.4pw/ApplicationFlow" type="pm/group"/>
     <Node path="consultCompanion.4pw/ApplicationFlow/Application" type="pm/application"/>
     <Node path="consultCompanion.4pw/ApplicationFlow/Applicationflow" type="pm/library"/>
@@ -29,15 +31,18 @@
     <Document container="true" filePath="LogonForm.4fdc" locator="" module="mod-fd"/>
     <Document container="true" filePath="RFSManagerform.4fdm" locator="" module="mod-fd"/>
     <Document container="true" filePath="resources/StakeHolderManagerForm.4fdm" locator="" module="mod-fd"/>
-    <Document container="true" filePath="appflow/MainProgram.4gl" locator="168:1" module="mod-ce3">
+    <Document container="true" filePath="appflow/MainProgram.4gl" locator="19:1" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
     <Document container="true" filePath="LogonForm.4gl" locator="45:4" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
-    <Document container="true" filePath="appflow/main.4gl" locator="57:1" module="mod-ce3">
+    <Document container="true" filePath="appflow/main.4gl" locator="53:11" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+    <Document container="true" filePath="appflow/openexcel.4gl" locator="81:1" module="mod-ce3">
       <Data name="8" value="CP1252"/>
     </Document>
   </OpenDocuments>
-  <CurrentDocument filePath="appflow/main.4gl" module="mod-ce3"/>
+  <CurrentDocument filePath="appflow/openexcel.4gl" module="mod-ce3"/>
 </WorkspaceViewState>

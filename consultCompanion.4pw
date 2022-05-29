@@ -123,8 +123,9 @@
     <Library binaryName="Entities" dependencies="455109296" externalDependencies="libgre.42x" id="212784684" label="Entities"/>
     <Library binaryName="Helpers" dependencies="159917928,455109296" id="254073396" label="Helpers"/>
     <Library binaryName="Resources" environment="filelist:FGLPROFILE=$(ProjectDir)/resources/fglprofile" id="159917928" label="Resources"/>
-    <Application binaryName="StartupProgram" dependencies="254073396,159917928,182163399,305302730,741800634,581274260,14176809,488178496,22639845,94064157" id="2498720" label="StartupProgram">
+    <Application binaryName="StartupProgram" dependencies="254073396,159917928,182163399,305302730,741800634,581274260,14176809,488178496,22639845,94064157,455109296" id="2498720" label="StartupProgram">
       <File filePath="appflow/main.4gl"/>
+      <File filePath="appflow/openexcel.4gl"/>
     </Application>
     <Library binaryName="Zooms" dependencies="455109296" id="197712104" label="Zooms">
       <File filePath="resources/ClientTypeBrowse.4fdz"/>
